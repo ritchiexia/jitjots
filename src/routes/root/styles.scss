@@ -1,0 +1,12 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+}
+
+main {
+  width: min(1280px, 100% - 4rem);
+  margin-inline: auto;
+  border: 1px blue solid; // TODO REMOVE
+}
