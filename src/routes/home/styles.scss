@@ -1,0 +1,81 @@
+.homepage {
+  text-align: start;
+
+  &__oneliner {
+    font-family: AmaticSC, sans-serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.3rem;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
+
+  &__booking {
+    position: relative;
+    display: flex;
+    gap: 1.5rem;
+  }
+
+  &__buttongroup {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  &__blockquote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #f9f9f9;
+    border-left: 1ch solid #ccc;
+    padding: 1rem 1rem;
+    margin: 1rem;
+
+    &:before {
+      color: #ccc;
+      content: open-quote;
+      font-size: 4rem;
+      line-height: 0.1rem;
+      margin-right: 0.25em;
+      vertical-align: -0.4em;
+    }
+
+    .quote {
+      font-size: larger;
+      font-weight: bolder;
+      line-height: 1.5rem;
+    }
+
+    .author {
+      font-size: medium;
+    }
+  }
+}
+
+.image {
+  width: min(50ch, 50vw);
+  border: solid 0.25rem #7c7287;
+  border-radius: 1rem;
+  box-sizing: border-box;
+  margin: auto;
+}
+
+@media (max-width: 1024px) {
+  .homepage {
+    &__oneliner {
+      font-size: 2rem;
+    }
+
+    &__booking {
+      flex-wrap: wrap;
+    }
+
+    &__buttongroup {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .image {
+    width: min(50ch, 100%);
+  }
+}
