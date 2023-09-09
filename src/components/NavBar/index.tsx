@@ -14,8 +14,12 @@ const routes = [
     to: "about",
   },
   {
-    name: "Booking",
-    to: "booking",
+    name: "Events",
+    to: "events",
+  },
+  {
+    name: "Get Involved",
+    to: "get-involved",
   },
 ];
 

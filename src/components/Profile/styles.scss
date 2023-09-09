@@ -2,11 +2,47 @@
   display: flex;
   gap: 1.5rem;
 
+  line-height: normal;
+
   &__picture {
-    width: min(10rem, 30vw);
+    width: min(10rem, 50vw);
     aspect-ratio: 1;
     border-radius: 50%;
+    border: 10px #7c7287 solid;
 
     margin: auto 0;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__headline {
+    margin: 1rem 0;
+
+    h3 {
+      font-family: sans-serif;
+      letter-spacing: normal;
+      margin: 0;
+    }
+
+    p {
+      color: grey;
+      font-size: smaller;
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .profile {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    text-align: center;
   }
 }

@@ -4,20 +4,42 @@
   &__oneliner {
     font-family: AmaticSC, sans-serif;
     font-size: 2.5rem;
-    letter-spacing: 0.3rem;
+    letter-spacing: 0.4rem;
+    word-spacing: 0.6rem;
     font-weight: bold;
-    margin: 1rem 0;
+    padding: 1rem;
+    line-height: normal;
+    text-align: center;
+
+    border: 1rem dotted #9dc0bc;
+    border-radius: 2rem;
   }
 
-  &__booking {
+  &__section {
     position: relative;
     display: flex;
     gap: 1.5rem;
+    padding: 2rem 2rem;
+
+    &-content {
+      margin: auto 0;
+    }
+
+    &--reverse {
+      background-color: rgb(220, 220, 220);
+
+      flex-direction: row-reverse;
+      text-align: end;
+    }
   }
 
   &__buttongroup {
     display: flex;
     gap: 0.25rem;
+
+    &--reverse {
+      justify-content: end;
+    }
   }
 
   &__blockquote {
@@ -59,14 +81,42 @@
   margin: auto;
 }
 
+.separator {
+  width: 0;
+  height: 0;
+
+  &--before {
+    border-right: min(1024px, 100vw - 3rem) solid transparent;
+    border-bottom: 5rem solid rgb(220, 220, 220);
+    margin-top: 3rem;
+  }
+
+  &--after {
+    border-left: min(1024px, 100vw - 3rem) solid transparent;
+    border-top: 5rem solid rgb(220, 220, 220);
+    margin-bottom: 3rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .homepage {
     &__oneliner {
       font-size: 2rem;
     }
 
-    &__booking {
+    &__section {
       flex-wrap: wrap;
+      padding: 2rem 0;
+
+      &-content {
+        margin: auto;
+        text-align: center;
+      }
+
+      &--reverse {
+        margin: 0 -1.5rem;
+        padding: 2rem 1.5rem;
+      }
     }
 
     &__buttongroup {
@@ -77,5 +127,9 @@
 
   .image {
     width: min(50ch, 100%);
+  }
+
+  .separator {
+    display: none;
   }
 }

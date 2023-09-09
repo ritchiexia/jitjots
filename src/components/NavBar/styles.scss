@@ -17,7 +17,6 @@
 
   &__primary-nav {
     display: flex;
-    gap: var(--gap, 1rem);
 
     list-style: none;
     padding-inline: 2rem;
@@ -29,14 +28,19 @@
     font-weight: 700;
     font-size: larger;
     text-transform: uppercase;
+    word-spacing: -0.3em;
     color: #b2edc5;
+
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
 
     &--active {
       text-decoration: underline wavy;
     }
 
     &:hover {
-      color: #b2edc586;
+      background-color: #9dc0bc82;
+      color: #b2edc5c2;
     }
   }
 
@@ -44,11 +48,9 @@
     display: none;
   }
 
-  @media (max-width: 35em) {
-    min-height: 2rem;
-
+  @media (max-width: 40em) {
     &__primary-nav {
-      --gap: 2em;
+      gap: 2em;
 
       position: fixed;
       z-index: 1000;

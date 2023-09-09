@@ -1,22 +1,39 @@
-import test from "@/assets/home.jpeg";
-
 import "./styles.scss";
 
-function Profile() {
+function Profile({ name, image, position, bio, fact, quote }: ProfileTypes) {
   return (
     <div className="profile">
-      <img src={test} alt="test" className="profile__picture" />
-      <div>
-        <h2>Name</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ex
-          alias quaerat ea unde illum, iure vel incidunt dolore voluptas ipsum
-          soluta repudiandae eius delectus consequatur voluptatem! Porro, atque
-          ullam?
-        </p>
+      <img src={image} alt="test" className="profile__picture" />
+      <div className="profile__content">
+        <span className="profile__headline">
+          <h3>{name}</h3>
+          <p>{position}</p>
+        </span>
+        <p>{bio}</p>
+        {quote && (
+          <p>
+            <b>Favourite science quote: </b>
+            {quote}
+          </p>
+        )}
+        {fact && (
+          <p>
+            <b>Favourite science fact: </b>
+            {fact}
+          </p>
+        )}
       </div>
     </div>
   );
 }
+
+type ProfileTypes = {
+  image: any;
+  name: string;
+  position: string;
+  bio: string;
+  fact?: string;
+  quote?: string;
+};
 
 export default Profile;

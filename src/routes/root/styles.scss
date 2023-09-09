@@ -6,6 +6,6 @@
 }
 
 main {
-  width: min(1024px, 100% - 3rem);
+  width: min(1024px, 100vw - 3rem);
   margin-inline: auto;
 }

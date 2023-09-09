@@ -2,10 +2,11 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./routes/root";
 import AboutPage from "./routes/about";
-import BookingPage from "./routes/booking";
+import EventsPage from "./routes/events";
+import HomePage from "./routes/home/index";
+import GetInvolvedPage from "./routes/get-involved";
 import ErrorPage from "./error-page";
 import "./index.scss";
-import HomePage from "./routes/home/index";
 
 const router = createBrowserRouter([
   {
@@ -19,8 +20,12 @@ const router = createBrowserRouter([
         element: <AboutPage />,
       },
       {
-        path: "booking",
-        element: <BookingPage />,
+        path: "events",
+        element: <EventsPage />,
+      },
+      {
+        path: "get-involved",
+        element: <GetInvolvedPage />,
       },
     ],
   },
