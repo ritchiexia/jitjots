@@ -1,0 +1,40 @@
+.button {
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  font-size: medium;
+  text-transform: uppercase;
+
+  flex-grow: 0;
+  margin: auto 0;
+
+  &--primary {
+    color: white;
+    background-color: #7c7287;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    border: solid 0.125rem #7c7287;
+    box-shadow: 0.25rem 0.25rem #7c72876a;
+
+    cursor: pointer;
+
+    transition: transform 50ms, box-shadow 50ms;
+  }
+
+  &--secondary {
+    color: #7c7287;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+    border: solid 0.125rem #7c7287;
+    box-shadow: 0.25rem 0.25rem #7c72876a;
+
+    cursor: pointer;
+
+    transition: transform 50ms, box-shadow 50ms;
+  }
+}
+
+.button:active {
+  transform: translate(0.125rem, 0.125rem);
+  box-shadow: 0.125rem 0.125rem #7c72876a;
+}

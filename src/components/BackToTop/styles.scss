@@ -1,0 +1,13 @@
+.backtotop {
+  background: white url(@/assets/vertical-align.svg) no-repeat center;
+  height: 50px;
+  aspect-ratio: 1;
+  border: 2px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 9999;
+}

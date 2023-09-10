@@ -1,12 +1,19 @@
-#root {
-  width: 100vw;
-  height: 100vh;
-  margin: 0 auto;
-  text-align: center;
+@font-face {
+  font-family: "IBM Plex Mono";
+  src: local("IBM Plex Mono"),
+    url(./fonts/IBMPlexMono-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-weight: 700;
+  src: local("IBM Plex Mono"),
+    url(./fonts/IBMPlexMono-Bold.ttf) format("truetype");
 }
 
 main {
   width: min(1280px, 100% - 4rem);
+  height: 100%;
   margin-inline: auto;
   border: 1px blue solid; // TODO REMOVE
 }

@@ -1,0 +1,19 @@
+.footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  gap: 1rem;
+
+  color: white;
+  background-color: #817f75;
+
+  &__icon-group {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    aspect-ratio: 1;
+  }
+}
