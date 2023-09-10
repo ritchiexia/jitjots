@@ -18,9 +18,11 @@ function AboutPage() {
       </p>
 
       <h1>👋 Meet the team!</h1>
-      {profiles.map((profile) => (
-        <Profile {...profile} />
-      ))}
+      <div className="profiles">
+        {profiles.map((profile) => (
+          <Profile {...profile} />
+        ))}
+      </div>
     </div>
   );
 }

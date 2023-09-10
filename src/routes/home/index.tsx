@@ -3,7 +3,6 @@ import Button from "@/components/Button";
 import test from "@/assets/home.jpeg";
 
 import "./styles.scss";
-import Carousel from "@/components/Carousel";
 
 function HomePage() {
   const navigate = useNavigate();
@@ -86,20 +85,6 @@ function HomePage() {
           <p className="author">- Neil deGrasse Tyson</p>
         </div>
       </blockquote>
-
-      <section></section>
-
-      <Carousel />
-
-      <p>
-        Jit Jots is a team of passionate science students who want to share
-        their love of science to others. Our goal is to instill curiosity and
-        wonder in aspiring scientists of the future! Growing up, many of us
-        viewed science as merely textbooks and diagrams, which deterred many
-        great, science-oriented minds from the amazing subject. Jit Jots was
-        founded to dispel the notion that “science is boring” and to share our
-        interest in learning more about how our crazy universe works.
-      </p>
     </div>
   );
 }
