@@ -6,9 +6,10 @@
 
   &__picture {
     width: min(10rem, 50vw);
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     border: 10px #7c7287 solid;
+    object-fit: cover;
 
     margin: auto 0;
   }
@@ -41,7 +42,7 @@
 @media (max-width: 1024px) {
   .profile {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 0rem;
     align-items: center;
     text-align: center;
   }

@@ -1,3 +1,25 @@
 .getinvolvedpage {
   text-align: start;
 }
+
+.volunteers {
+  &__team-content {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0;
+    gap: 1rem;
+  }
+
+  &__graphic {
+    width: clamp(40%, 40ch, 100%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .volunteers {
+    &__team-content {
+      flex-wrap: wrap;
+      padding: 2rem 0;
+    }
+  }
+}

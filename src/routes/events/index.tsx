@@ -14,7 +14,7 @@ function EventsPage() {
         booked for longer upon requests. Workshops can be booked in advance and
         are completely free.
       </p>
-      <Link to="" target="_blank">
+      <Link to="/" target="_blank">
         <Button>Book a Workshop</Button>
       </Link>
 

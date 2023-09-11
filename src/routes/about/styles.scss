@@ -5,3 +5,9 @@
     font-size: xx-large;
   }
 }
+
+.profiles {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
