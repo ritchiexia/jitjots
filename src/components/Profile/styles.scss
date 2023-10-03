@@ -5,7 +5,7 @@
   line-height: normal;
 
   &__picture {
-    width: min(10rem, 50vw);
+    width: min(12rem, 50vw);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
     border: 10px #7c7287 solid;
@@ -17,10 +17,16 @@
   &__content {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__extra {
+    color: darkslateblue;
+    font-size: smaller;
   }
 
   &__headline {
-    margin: 1rem 0;
+    margin-top: 1rem;
 
     h3 {
       font-family: sans-serif;

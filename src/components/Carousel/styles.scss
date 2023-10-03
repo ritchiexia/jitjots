@@ -1,5 +1,6 @@
 .carousel {
   position: relative;
+  width: min(50ch, 50vw);
 
   &__content {
     display: flex;

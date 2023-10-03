@@ -62,8 +62,9 @@ function NavBar() {
 
   return (
     <header className="navbar">
-      <NavLink to="/">
+      <NavLink to="/" className="navbar__title">
         <img className="navbar__logo" src={Logo} alt="Jit Jots Logo" />
+        <h3>Jit Jots</h3>
       </NavLink>
 
       <button

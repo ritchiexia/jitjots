@@ -1,3 +1,43 @@
 .eventspage {
   text-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .imagegroup {
+    border: solid 0.25rem #7c7287;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .image {
+    width: 50%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+
+  h1 {
+    margin: 1rem 0;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .eventspage {
+    .image {
+      width: min(50ch, 100%);
+      margin: 0;
+    }
+  }
 }

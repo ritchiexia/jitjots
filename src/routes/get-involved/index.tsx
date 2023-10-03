@@ -9,7 +9,7 @@ import "./styles.scss";
 function GetInvolvedPage() {
   return (
     <div className="getinvolvedpage">
-      {/* <h1>Sponsors</h1>
+      {/* <h1>Partners</h1>
       <p>
         Thank you for your interest in getting involved! Below are the ways that
         you can support our mission.

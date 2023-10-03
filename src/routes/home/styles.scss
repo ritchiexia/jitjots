@@ -71,14 +71,16 @@
       font-size: medium;
     }
   }
-}
 
-.image {
-  width: min(50ch, 50vw);
-  border: solid 0.25rem #7c7287;
-  border-radius: 1rem;
-  box-sizing: border-box;
-  margin: auto;
+  .image {
+    width: min(50ch, 50vw);
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: solid 0.25rem #7c7287;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    margin: auto;
+  }
 }
 
 .separator {
@@ -123,10 +125,10 @@
       display: flex;
       justify-content: center;
     }
-  }
 
-  .image {
-    width: min(50ch, 100%);
+    .image {
+      width: min(50ch, 100%);
+    }
   }
 
   .separator {

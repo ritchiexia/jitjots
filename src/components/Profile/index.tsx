@@ -11,13 +11,13 @@ function Profile({ name, image, position, bio, fact, quote }: ProfileTypes) {
         </span>
         <p>{bio}</p>
         {quote && (
-          <p>
+          <p className="profile__extra">
             <b>Favourite science quote: </b>
             {quote}
           </p>
         )}
         {fact && (
-          <p>
+          <p className="profile__extra">
             <b>Favourite science fact: </b>
             {fact}
           </p>

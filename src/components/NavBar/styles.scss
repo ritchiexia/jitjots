@@ -9,6 +9,15 @@
   width: 100%;
   min-height: 4rem;
 
+  &__title {
+    display: flex;
+    color: white;
+
+    h3 {
+      margin: auto;
+    }
+  }
+
   &__logo {
     width: 4rem;
     aspect-ratio: 1 / 1;
@@ -93,11 +102,10 @@
       object-fit: contain;
 
       background-image: url(@/assets/hamburger.svg);
+      background-position: center;
       width: 2rem;
-      height: 100%;
       border: 0;
       aspect-ratio: 1 / 1;
-      top: 1rem;
       right: 1rem;
       background-color: transparent;
       background-repeat: no-repeat;

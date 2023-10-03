@@ -1,6 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import Button from "@/components/Button";
-import test from "@/assets/home.jpeg";
+import OurGoalImage from "@/assets/home.jpeg";
+import Workshops1 from "@/assets/Workshops1.png";
+import Worksheets from "@/assets/worksheets.png";
 
 import "./styles.scss";
 
@@ -14,13 +16,13 @@ function HomePage() {
       </p>
 
       <span className="homepage__section">
-        <img src={test} className="image" />
+        <img src={OurGoalImage} className="image" />
         <div className="homepage__section-content">
           <div>
             <h2>🚀 Our goal</h2>
             <p>
-              We are a team of passionate science students who want to share our
-              love of science
+              We are a team of passionate students who want to share our love of
+              science to inspire the next generation of curious minds.
             </p>
           </div>
           <Button onClick={() => navigate("/about")} actionType="primary">
@@ -31,7 +33,7 @@ function HomePage() {
 
       <div className="separator separator--before" />
       <span className="homepage__section homepage__section--reverse">
-        <img src={test} className="image" />
+        <img src={Workshops1} className="image" />
         <div className="homepage__section-content">
           <div>
             <h2>🔬 Workshops</h2>
@@ -41,12 +43,12 @@ function HomePage() {
             </p>
           </div>
           <div className="homepage__buttongroup homepage__buttongroup--reverse">
-            <Button
+            {/* <Button
               onClick={() => navigate("TODO: add link to form for signing up")}
               actionType="primary"
             >
               Book a Workshop
-            </Button>
+            </Button> */}
             <Button onClick={() => navigate("/events")} actionType="secondary">
               Learn More
             </Button>
@@ -56,7 +58,7 @@ function HomePage() {
       <div className="separator separator--after" />
 
       <span className="homepage__section">
-        <img src={test} className="image" />
+        <img src={Worksheets} className="image" />
         <div className="homepage__section-content">
           <div>
             <h2>📝 Worksheets</h2>
