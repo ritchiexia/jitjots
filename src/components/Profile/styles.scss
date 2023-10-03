@@ -6,7 +6,7 @@
 
   &__picture {
     width: min(12rem, 50vw);
-    aspect-ratio: 1 / 1;
+    height: min(12rem, 50vw);
     border-radius: 50%;
     border: 10px #7c7287 solid;
     object-fit: cover;

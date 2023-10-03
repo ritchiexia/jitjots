@@ -40,6 +40,13 @@
   src: local("SuperDonuts"), url(./fonts/Super-Donuts.ttf) format("truetype");
 }
 
+@font-face {
+  font-family: "PatrickHand";
+  font-weight: 700;
+  src: local("PatrickHand"),
+    url(./fonts/PatrickHand-Regular.ttf) format("truetype");
+}
+
 :root {
   font-family: Rubik, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
