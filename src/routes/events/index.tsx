@@ -50,7 +50,10 @@ function EventsPage() {
           <img src={Worksheets1} alt="Worksheets 1" className="image" />
           <img src={Worksheets2} alt="Worksheets 2" className="image" />
         </div>
-        <Link to="https://drive.google.com" target="_blank">
+        <Link
+          to="https://drive.google.com/drive/folders/1vUK6vKhJydhI3UISJYHpvDY4wtJzhli2?usp=sharing"
+          target="_blank"
+        >
           <Button>View Worksheets</Button>
         </Link>
       </div>

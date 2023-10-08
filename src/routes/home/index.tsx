@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import Button from "@/components/Button";
 import OurGoalImage from "@/assets/home.jpeg";
 import Workshops1 from "@/assets/Workshops1.png";
@@ -68,12 +68,12 @@ function HomePage() {
             </p>
           </div>
           <div className="homepage__buttongroup">
-            <Button
-              onClick={() => navigate("TODO: add link to worksheets")}
-              actionType="primary"
+            <Link
+              to="https://drive.google.com/drive/folders/1vUK6vKhJydhI3UISJYHpvDY4wtJzhli2?usp=sharing"
+              target="_blank"
             >
-              View Worksheets
-            </Button>
+              <Button>View Worksheets</Button>
+            </Link>
             <Button onClick={() => navigate("/events")} actionType="secondary">
               Learn More
             </Button>
