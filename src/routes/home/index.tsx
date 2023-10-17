@@ -43,12 +43,9 @@ function HomePage() {
             </p>
           </div>
           <div className="homepage__buttongroup homepage__buttongroup--reverse">
-            {/* <Button
-              onClick={() => navigate("TODO: add link to form for signing up")}
-              actionType="primary"
-            >
-              Book a Workshop
-            </Button> */}
+            <Link to="https://forms.gle/aJbnMDKzNFnuWeDB6" target="_blank">
+              <Button actionType="primary">Book a Workshop</Button>
+            </Link>
             <Button onClick={() => navigate("/events")} actionType="secondary">
               Learn More
             </Button>

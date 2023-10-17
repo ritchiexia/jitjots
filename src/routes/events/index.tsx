@@ -32,9 +32,9 @@ function EventsPage() {
             className="image"
           />
         </div>
-        {/* <Link to="/" target="_blank">
+        <Link to="https://forms.gle/aJbnMDKzNFnuWeDB6" target="_blank">
           <Button>Book a Workshop</Button>
-        </Link> */}
+        </Link>
       </div>
 
       <div className="eventspage__section">
