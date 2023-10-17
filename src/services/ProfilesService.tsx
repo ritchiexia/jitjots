@@ -5,6 +5,7 @@ import Hannah from "@/assets/headshots/Hannah.png";
 import Jasmine from "@/assets/headshots/Jasmine.png";
 import Trinity from "@/assets/headshots/Trinity.png";
 import Breanna from "@/assets/headshots/Breanna.png";
+import Reina from "@/assets/headshots/Reina.png";
 
 const getProfiles = () => [
   {
@@ -57,6 +58,13 @@ const getProfiles = () => [
     bio: "Hi! I’m a 5th year UBC Biochemistry student, and the Communications Lead for Jit Jots. Besides handling our social media presence, I’m constantly designing posts, activity sheets, newsletters, etc. When I’m not studying or working on things for Jit Jots, I also enjoy music, and occasionally perform with traditional Chinese music instruments.",
     quote:
       '"If you can’t explain it to a six-year-old, you don’t understand it yourself." - Albert Einstein',
+  },
+  {
+    name: "Reina Yoo",
+    image: Reina,
+    position: "Marketing Team Lead",
+    bio: "Hello! My name is Reina and I am the Marketing Lead for Jit Jots. My role includes reaching out to sponsors, recruiting volunteers, and planning fundraising events! I am currently a 3rd year student studying Immunology and Public Health at UBC. I am particularly interested in how public health systems worldwide take different approaches to the spread of infectious diseases. In my spare time, I love going on hikes, playing tennis, and bullet journaling!",
+    quote: '"Creativity is intelligence having fun." - Albert Einstein',
   },
 ];
 

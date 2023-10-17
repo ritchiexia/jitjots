@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import DesignTeamGraphic from "@/assets/design-team-graphic.svg";
 import CommunicationsTeamGraphic from "@/assets/communications-team-graphic.svg";
 import OutreachTeamGraphic from "@/assets/outreach-team-graphic.svg";
+import MarketingTeamGraphic from "@/assets/marketing-team-graphic.svg";
 
 import "./styles.scss";
 
@@ -82,6 +83,33 @@ function GetInvolvedPage() {
         <img
           src={OutreachTeamGraphic}
           alt="Outreach Team Graphic"
+          className="volunteers__graphic"
+        />
+      </div>
+
+      <div className="volunteers__team-content">
+        <div>
+          <h2>Marketing Team</h2>
+          <p>
+            The marketing team will be primarily responsible for fundraising via
+            contacting sponsors and planning fundraisers. All of the money
+            collected through the efforts of the marketing team will be directly
+            invested into bettering Jit Jots’ workshops. The marketing lead will
+            oversee the marketing team and delegate tasks between volunteers.
+            The position offers a lot of room for creativity and flexibility, in
+            that the lead can freely plan and decide on the types of fundraising
+            events to be held, as well as what organizations to reach out to for
+            sponsorships. Potential examples of fundraisers include Krispy Kreme
+            sales and bake sales. The marketing team will also be responsible
+            for volunteer recruitment pitching. Overall, the marketing team is
+            vital for the organization as without a source of financial support,
+            Jit Jots will be unable to maintain high quality workshops for
+            children to enjoy!
+          </p>
+        </div>
+        <img
+          src={MarketingTeamGraphic}
+          alt="Marketing Team Graphic"
           className="volunteers__graphic"
         />
       </div>
