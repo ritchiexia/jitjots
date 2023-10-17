@@ -36,6 +36,8 @@ const getProfiles = () => [
     image: Hannah,
     position: "Outreach Team Lead",
     bio: "Hello there! I’m a recent B.Sc. Biochemistry graduate from UBC. As Outreach Lead, I schedule our Jit Jot workshops with youth programs and day camps in several community centers around Metro Vancouver. I’m also in charge of finding sponsors to keep Jit Jots going. Besides volunteering for Jit Jots, I also volunteer as a first aid responder and crisis responder and work as a lab technician in Richmond. During my down time, I love playing video games with my friends and crocheting stuffed toys.",
+    quote:
+      '"If we knew what it was we were doing, it would not be called research, would it?" - Albert Einstein',
   },
   {
     name: "Brian Tang",
@@ -55,7 +57,7 @@ const getProfiles = () => [
     name: "Jasmine Lay",
     image: Jasmine,
     position: "Communications Team Lead",
-    bio: "Hi! I’m a 5th year UBC Biochemistry student, and the Communications Lead for Jit Jots. Besides handling our social media presence, I’m constantly designing posts, activity sheets, newsletters, etc. When I’m not studying or working on things for Jit Jots, I also enjoy music, and occasionally perform with traditional Chinese music instruments.",
+    bio: "Hi! I’m a 5th year UBC Biochemistry student, and the Communications Lead for Jit Jots. Besides handling our social media presence, When I’m not studying or working on things for Jit Jots, I also enjoy music, and occasionally perform with traditional Chinese music instruments.",
     quote:
       '"If you can’t explain it to a six-year-old, you don’t understand it yourself." - Albert Einstein',
   },
