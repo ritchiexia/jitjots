@@ -44,6 +44,7 @@ const getProfiles = () => [
     image: Brian,
     position: "Design Team Lead",
     bio: "Hello everyone! My name is Brian and I am a 5th year student studying biology at UBC and I am the design lead for Jit Jots. My job involves designing the workshops for Jit Jots which involves finding interesting science experiments to present, creating lesson plans and designing powerpoints for our learners! Outside of Jit Jots, I am a researcher for two clinical studies at VGH and I also volunteer for other organisations in the lower mainland.",
+    quote: "“Science is nothing but perception.” - Plato",
   },
   {
     name: "Breanna Harada",

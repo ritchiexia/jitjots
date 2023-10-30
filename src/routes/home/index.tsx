@@ -3,6 +3,9 @@ import Button from "@/components/Button";
 import OurGoalImage from "@/assets/home.jpeg";
 import Workshops1 from "@/assets/Workshops1.png";
 import Worksheets from "@/assets/worksheets.png";
+import JJ from "@/assets/JJ_default.png";
+import JJ_labcoat from "@/assets/JJ_labcoat.png";
+import JJ_spacesuit from "@/assets/JJ_spacesuit.png";
 
 import "./styles.scss";
 
@@ -16,7 +19,10 @@ function HomePage() {
       </p>
 
       <span className="homepage__section">
-        <img src={OurGoalImage} className="image" />
+        <div style={{ position: "relative" }}>
+          <img src={OurGoalImage} className="image" />
+          <img src={JJ} className="image__decoration image__decoration--left" />
+        </div>
         <div className="homepage__section-content">
           <div>
             <h2>🚀 Our goal</h2>
@@ -33,7 +39,13 @@ function HomePage() {
 
       <div className="separator separator--before" />
       <span className="homepage__section homepage__section--reverse">
-        <img src={Workshops1} className="image" />
+        <div style={{ position: "relative" }}>
+          <img src={Workshops1} className="image" />
+          <img
+            src={JJ_labcoat}
+            className="image__decoration image__decoration--right"
+          />
+        </div>
         <div className="homepage__section-content">
           <div>
             <h2>🔬 Workshops</h2>
@@ -55,7 +67,13 @@ function HomePage() {
       <div className="separator separator--after" />
 
       <span className="homepage__section">
-        <img src={Worksheets} className="image" />
+        <div style={{ position: "relative" }}>
+          <img src={Worksheets} className="image" />
+          <img
+            src={JJ_spacesuit}
+            className="image__decoration image__decoration--left"
+          />
+        </div>
         <div className="homepage__section-content">
           <div>
             <h2>📝 Worksheets</h2>

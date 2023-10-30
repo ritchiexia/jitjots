@@ -72,6 +72,9 @@
     }
   }
 
+  .image-frame {
+    position: relative;
+  }
   .image {
     width: min(50ch, 50vw);
     aspect-ratio: 4 / 3;
@@ -80,6 +83,22 @@
     border-radius: 1rem;
     box-sizing: border-box;
     margin: auto;
+
+    &__decoration {
+      position: absolute;
+      bottom: 0;
+      width: 50%;
+
+      &--left {
+        left: 0;
+        transform: translate(-40%, 20%);
+      }
+
+      &--right {
+        right: 0;
+        transform: translate(30%, 20%);
+      }
+    }
   }
 }
 
