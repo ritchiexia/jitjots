@@ -4,7 +4,7 @@ import OurGoalImage from "@/assets/home.jpeg";
 import Workshops1 from "@/assets/Workshops1.png";
 import Worksheets from "@/assets/worksheets.png";
 import JJ from "@/assets/JJ_default.png";
-import JJ_labcoat from "@/assets/JJ_labcoat.png";
+import JJ_labcoat_L from "@/assets/JJ_labcoat_L.png";
 import JJ_spacesuit from "@/assets/JJ_spacesuit.png";
 
 import "./styles.scss";
@@ -42,7 +42,7 @@ function HomePage() {
         <div style={{ position: "relative" }}>
           <img src={Workshops1} className="image" />
           <img
-            src={JJ_labcoat}
+            src={JJ_labcoat_L}
             className="image__decoration image__decoration--right"
           />
         </div>

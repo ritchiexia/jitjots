@@ -92,19 +92,16 @@ function GetInvolvedPage() {
           <h2>Marketing Team</h2>
           <p>
             The marketing team will be primarily responsible for fundraising via
-            contacting sponsors and planning fundraisers. All of the money
+            contacting sponsors and planning fundraisers. All of the fundraising
             collected through the efforts of the marketing team will be directly
-            invested into bettering Jit Jots’ workshops. The marketing lead will
-            oversee the marketing team and delegate tasks between volunteers.
-            The position offers a lot of room for creativity and flexibility, in
-            that the lead can freely plan and decide on the types of fundraising
-            events to be held, as well as what organizations to reach out to for
-            sponsorships. Potential examples of fundraisers include Krispy Kreme
-            sales and bake sales. The marketing team will also be responsible
-            for volunteer recruitment pitching. Overall, the marketing team is
-            vital for the organization as without a source of financial support,
-            Jit Jots will be unable to maintain high quality workshops for
-            children to enjoy!
+            invested into bettering Jit Jots’ workshops and put towards select
+            charities. The team offers a lot of room for creativity and
+            flexibility, in that one can freely plan and decide on the types of
+            fundraising events, as well as what organizations to reach out to
+            for sponsorships. The marketing team will also be responsible for
+            volunteer recruitment pitching. Overall, the marketing team is vital
+            for Jit Jots to maintain high quality workshops for everyone to
+            enjoy!
           </p>
         </div>
         <img
