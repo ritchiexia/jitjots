@@ -72,11 +72,15 @@ function GetInvolvedPage() {
             The community outreach team is broadly responsible for developing
             and maintaining Jit Jots relationships with other organizations,
             daycares, recreational centers, community programs, and sponsors.
-            Typical tasks include finding new sponsors, creating fundraisers,
-            and reaching out to daycares and afterschool programs. The outreach
-            team will also be working very closely with the design team to
-            organize and schedule workshop presentation dates. The role is very
-            flexible and there is definitely room to take on bigger initiatives!
+            Routine tasks include reaching out to various programs to introduce
+            our fun workshops, and to continue scheduling with previous
+            partners. You will also be finding new sponsors and creating
+            fundraisers that will go into improving the quality of Jit Jots
+            activity sheets and workshops. The outreach team will be
+            collaborating very closely with the communications and design team
+            to create promotional material and to book workshops respectively.
+            This role offers incredible flexibility and opportunities to take on
+            larger initiatives!
           </p>
         </div>
         <img
