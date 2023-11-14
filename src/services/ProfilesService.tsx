@@ -65,7 +65,7 @@ const getProfiles = () => [
   {
     name: "Reina Yoo",
     image: Reina,
-    position: "Marketing Team Lead",
+    position: "Outreach Team Lead",
     bio: "Hello! My name is Reina and I am the Marketing Lead for Jit Jots. My role includes reaching out to sponsors, recruiting volunteers, and planning fundraising events! I am currently a 3rd year student studying Immunology and Public Health at UBC. I am particularly interested in how public health systems worldwide take different approaches to the spread of infectious diseases. In my spare time, I love going on hikes, playing tennis, and bullet journaling!",
     quote: '"Creativity is intelligence having fun." - Albert Einstein',
   },
