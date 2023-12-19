@@ -2,7 +2,7 @@ import Dean from "@/assets/headshots/Dean.png";
 import Sean from "@/assets/headshots/Sean.png";
 import Brian from "@/assets/headshots/Brian.png";
 import Hannah from "@/assets/headshots/Hannah.png";
-import Jasmine from "@/assets/headshots/Jasmine.png";
+import Kyara from "@/assets/headshots/Kyara.png";
 import Trinity from "@/assets/headshots/Trinity.png";
 import Breanna from "@/assets/headshots/Breanna.png";
 import Reina from "@/assets/headshots/Reina.png";
@@ -55,12 +55,12 @@ const getProfiles = () => [
       "“The more we know, the more we realize there is to know.” - Dr. Jennifer Doudna",
   },
   {
-    name: "Jasmine Lay",
-    image: Jasmine,
+    name: "Kyara Lynne",
+    image: Kyara,
     position: "Communications Team Lead",
-    bio: "Hi! I’m a 5th year UBC Biochemistry student, and the Communications Lead for Jit Jots. Besides handling our social media presence, When I’m not studying or working on things for Jit Jots, I also enjoy music, and occasionally perform with traditional Chinese music instruments.",
+    bio: "Hi everyone! My name is Kyara and I am a 2nd-year student majoring in Health Sciences at Simon Fraser University. I am the new Communications Lead with duties including a variety of tasks! These include—but are not limited to— increasing social media engagement for JitJots, making exciting graphic designs, making entertaining yet informative TikToks, and delegating tasks to my fellow Communication Volunteers. I am a music enthusiast with a love for singing, and playing various instruments (i.e. piano), and I continuously indulge in the warmth of classical and jazz music. I also enjoy drawing and capturing cinematic moments. I continuously immerse myself in the texts of literature in my spare time as well!",
     quote:
-      '"If you can’t explain it to a six-year-old, you don’t understand it yourself." - Albert Einstein',
+      '"Everyone who is seriously committed to the cultivation of science becomes convinced that in all the laws of the universe is manifest a spirit vastly superior to man, and to which we with our powers must feel humble." - Albert Einstein',
   },
   {
     name: "Reina Yoo",
