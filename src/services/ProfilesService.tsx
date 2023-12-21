@@ -55,7 +55,7 @@ const getProfiles = () => [
       "“The more we know, the more we realize there is to know.” - Dr. Jennifer Doudna",
   },
   {
-    name: "Kyara Lynne",
+    name: "Kyara Salanga",
     image: Kyara,
     position: "Communications Team Lead",
     bio: "Hi everyone! My name is Kyara and I am a 2nd-year student majoring in Health Sciences at Simon Fraser University. I am the new Communications Lead with duties including a variety of tasks! These include—but are not limited to— increasing social media engagement for JitJots, making exciting graphic designs, making entertaining yet informative TikToks, and delegating tasks to my fellow Communication Volunteers. I am a music enthusiast with a love for singing, and playing various instruments (i.e. piano), and I continuously indulge in the warmth of classical and jazz music. I also enjoy drawing and capturing cinematic moments. I continuously immerse myself in the texts of literature in my spare time as well!",
