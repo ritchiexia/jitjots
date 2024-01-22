@@ -10,10 +10,3 @@
   src: local("IBM Plex Mono"),
     url(./fonts/IBMPlexMono-Bold.ttf) format("truetype");
 }
-
-main {
-  width: min(1280px, 100% - 4rem);
-  height: 100%;
-  margin-inline: auto;
-  border: 1px blue solid; // TODO REMOVE
-}

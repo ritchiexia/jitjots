@@ -74,6 +74,7 @@
 
   .image-frame {
     position: relative;
+    display: inline-flex;
   }
   .image {
     width: min(50ch, 50vw);
@@ -87,16 +88,14 @@
     &__decoration {
       position: absolute;
       bottom: 0;
-      width: 50%;
+      height: 50%;
 
       &--left {
         left: 0;
-        transform: translate(-40%, 20%);
       }
 
       &--right {
         right: 0;
-        transform: translate(30%, 20%);
       }
     }
   }

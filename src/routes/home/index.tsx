@@ -19,7 +19,7 @@ function HomePage() {
       </p>
 
       <span className="homepage__section">
-        <div style={{ position: "relative" }}>
+        <div className="image-frame">
           <img src={OurGoalImage} className="image" />
           <img src={JJ} className="image__decoration image__decoration--left" />
         </div>
@@ -39,7 +39,7 @@ function HomePage() {
 
       <div className="separator separator--before" />
       <span className="homepage__section homepage__section--reverse">
-        <div style={{ position: "relative" }}>
+        <div className="image-frame">
           <img src={Workshops1} className="image" />
           <img
             src={JJ_labcoat_L}
@@ -67,7 +67,7 @@ function HomePage() {
       <div className="separator separator--after" />
 
       <span className="homepage__section">
-        <div style={{ position: "relative" }}>
+        <div className="image-frame">
           <img src={Worksheets} className="image" />
           <img
             src={JJ_spacesuit}
