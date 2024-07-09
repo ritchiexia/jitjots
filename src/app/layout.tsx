@@ -3,6 +3,7 @@ import { Rubik } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
+import { cn } from "@/lib/utils";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -21,7 +22,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/jitjots.svg" sizes="any" />
       </head>
-      <body className={rubik.className}>
+      <body className={cn(rubik.className, "overflow-x-hidden")}>
         <NavBar />
         {children}
         <Footer />
