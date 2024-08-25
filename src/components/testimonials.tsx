@@ -12,6 +12,11 @@ import {
 const testimonials = [
   {
     quote:
+      "The Jit Jots team came well-prepared, full of enthusiasm and excitement. They had lots to show and share with the audience, and we loved how the content was both educational and fun. The audience had fun interacting with the team. The finale was the best!",
+    name: "False Creek Community Center - [Summer Kick-Off]",
+  },
+  {
+    quote:
       "The families LOVE the workshops with Jit Jots! The young children are engaged and learning whilst having so much fun. The activities were well planned for the early years age group and the team was so great interacting with the children and adapting to the group. The parents and caregivers are so appreciative of the workshops for their kids and are already asking if they can come again! Big thank you to the Jit Jots team and looking forward to booking another session.",
     name: "South Vancouver Neighbourhood House",
   },

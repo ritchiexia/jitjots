@@ -61,7 +61,7 @@ export default function NavBar() {
         <Sheet>
           <SheetTrigger asChild>
             <Button variant="ghost" size="icon">
-              <MenuIcon className="h-6 w-6" color="hsl(139.32 62.11% 81.37%)" />
+              <MenuIcon className="h-6 w-6" color="white" />
               <span className="sr-only">Toggle navigation menu</span>
             </Button>
           </SheetTrigger>

@@ -4,7 +4,9 @@ import {
   ChevronRight,
   CircleDollarSign,
   FlaskConical,
+  Lightbulb,
   Palette,
+  Settings2,
   Timer,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -17,7 +19,7 @@ const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
 
 export default function Workshops() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 lg:px-32 gap-20">
+    <main className="flex min-h-screen flex-col items-center lg:px-32 gap-20">
       <div className="container pt-10 sm:pt-16 space-y-24">
         <div className="space-y-16">
           <div className="grid md:grid-cols-2 md:items-center gap-8">
@@ -52,22 +54,30 @@ export default function Workshops() {
           <div className="grid gap-8 md:grid-cols-2 p-6 text-secondary rounded-3xl bg-primary">
             <span className="flex gap-3 items-center">
               <Timer strokeWidth={2} className="shrink-0 w-10 h-10" />
-              <h4 className="text-xl">~1 hour, or longer upon request</h4>
+              <h4 className="text-xl">1 hour of educational fun</h4>
+            </span>
+            <span className="flex gap-3 items-center">
+              <Settings2 strokeWidth={2} className="shrink-0 w-10 h-10" />
+              <h4 className="text-xl">Customized to specific age groups</h4>
             </span>
             <span className="flex gap-3 items-center">
               <CircleDollarSign
                 strokeWidth={2}
                 className="shrink-0 w-10 h-10"
               />
-              <h4 className="text-xl">By donation</h4>
+              <h4 className="text-xl">Budget-friendly</h4>
             </span>
             <span className="flex gap-3 items-center">
               <FlaskConical strokeWidth={2} className="shrink-0 w-10 h-10" />
-              <h4 className="text-xl">10+ different experiments</h4>
+              <h4 className="text-xl">Hands on experiments</h4>
             </span>
             <span className="flex gap-3 items-center">
               <Palette strokeWidth={2} className="shrink-0 w-10 h-10" />
-              <h4 className="text-xl">Themed workshops</h4>
+              <h4 className="text-xl">Broad range of science themes</h4>
+            </span>
+            <span className="flex gap-3 items-center">
+              <Lightbulb strokeWidth={2} className="shrink-0 w-10 h-10" />
+              <h4 className="text-xl">Encourages critical thinking</h4>
             </span>
           </div>
         </div>

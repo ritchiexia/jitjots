@@ -21,13 +21,13 @@ export default function Home() {
           <div className="my-auto">
             <h2
               className={cn(
-                "text-4xl font-extrabold scroll-m-20 tracking-tight lg:text-5xl",
+                "text-4xl font-extrabold scroll-m-20 tracking-tight text-center sm:text-start lg:text-5xl",
                 kalam.className
               )}
             >
               Instilling curiosity and wonder in scientists of the future ✨
             </h2>
-            <div className="flex flex-wrap gap-2 mt-6">
+            <div className="flex flex-wrap gap-2 mt-6 justify-center sm:justify-start">
               <Link href="/about">
                 <Button
                   className={cn(

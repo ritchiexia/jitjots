@@ -16,7 +16,7 @@ const profiles = [
     img: "/images/headshots/Sean.png",
     fallback: "SD",
     description:
-      "Hey everyone! I’m Sean and I am in my 4th year of studying Microbiology and Immunology at UBC! I’m fascinated by how our immune systems work to fight off sickness and disease. During my studies, I work at the hospital to answer interesting research questions about patient treatment. My hobbies include playing sports, video games, and reading!",
+      "Sean is a recent graduate of science in Microbiology and Immunology at UBC. He is interested in the immune system and cancer research. During his studies, he volunteers at the hospital and plays sports.",
   },
   {
     name: "Dean Yoo",
@@ -24,7 +24,7 @@ const profiles = [
     img: "/images/headshots/Dean.png",
     fallback: "DY",
     description:
-      "Hi! My name is Dean and I graduated with a degree in Biology from UBC! I love anything biology related, from learning about the complexities of organisms to studying the environment around us. I am excited to spread my passion for science to a new generation of bright scientists. When I’m not doing science, I like to listen to music, draw, and practice magic.",
+      "Dean recently graduated with a degree in Biology from UBC. He loves anything biology related, from learning about the complexities of organisms to studying the environment. When Dean is not doing science, he enjoys listening to music, drawing, and watching movies.",
   },
   {
     name: "Trinity Truong",
@@ -32,7 +32,7 @@ const profiles = [
     img: "/images/headshots/Trinity.png",
     fallback: "TT",
     description:
-      "Hi! I'm Trinity, and I am currently finishing up my undergraduate degree in Cell and Developmental Biology at UBC. As the Administrative Director I have the pleasure of meeting all our volunteers and being a person that they can turn to regarding conflict, or requests needed for school. Besides volunteering with Jit Jots, I am currently a Clinical Research Assistant in different studies at UBC's Department of Emergency Medicine, and am a huge foodie that loves trying food around our city.",
+      "Trinity is a recent graduate from UBC with a B.Sc in Cell and Developmental Biology. As the Administrative Director, she oversees volunteer intake and management. Outside of Jit Jots, she enjoys getting involved with the community and is learning how to golf.",
   },
   {
     name: "Hannah Dalagan",
@@ -48,7 +48,7 @@ const profiles = [
     img: "/images/headshots/Brian.png",
     fallback: "BT",
     description:
-      "Hello everyone! My name is Brian and I am a 5th year student studying biology at UBC and I am the design lead for Jit Jots. My job involves designing the workshops for Jit Jots which involves finding interesting science experiments to present, creating lesson plans and designing powerpoints for our learners! Outside of Jit Jots, I am a researcher for two clinical studies at VGH and I also volunteer for other organisations in the lower mainland.",
+      "Brian is a design lead for Jit Jots and recently graduated from UBC with a degree in biology. Brian’s job involves designing workshops for Jit Jots, which involves researching science topics to present to learners and drafting lesson plans and planning activities that fit the topic. Outside of Jit Jots, Brian is a researcher for different clinical studies at VGH and UBCH involving emergency medicine and anaesthesia.",
   },
   {
     name: "Breanna Harada",
@@ -56,23 +56,31 @@ const profiles = [
     img: "/images/headshots/Breanna.png",
     fallback: "BH",
     description:
-      "Hi! My name is Breanna and I am one of the Design Lead’s at Jit Jots. As a Design Lead, I get the chance to create interesting and informative material for young scientists! I am currently studying Biology at UBC, and my scientific interests include cell biology and developmental biology. In my free time, I like to play guitar, watch sitcoms, and go hiking with friends.",
+      "Breanna is one of the Design Lead’s at Jit Jots. As a Design Lead, she creates interesting and informative material for young scientists! In her free time, she likes to play guitar and go birdwatching.",
   },
   {
-    name: "Kyara Salanga",
+    name: "Dain Choi",
     position: "Communications Team Lead",
-    img: "/images/headshots/Kyara.png",
-    fallback: "KS",
+    img: "/images/headshots/Dain.png",
+    fallback: "DC",
     description:
-      "Kyara is a third year student at Simon Fraser University and is the current president of the Canadian Cancer Society at school. She is an optometric intern, but she also has a variety of hobbies as well. She likes to play musical instruments, bake, cook, paint, read, and sing. She also likes video editing, as well as photography.",
+      "Dain is studying neuroscience and immunology at UBC. She finds it fascinating to learn about how different systems in our body work together to keep us alive. In her spare time, she enjoys listening to music, and is currently learning to play tennis.",
+  },
+  {
+    name: "Sharon Park",
+    position: "Communications Team Lead",
+    img: "/images/headshots/Sharon.png",
+    fallback: "SP",
+    description:
+      "Sharon graduated with a Biology degree from UBC She is interested in studying humans and animals, though plants aren’t really her thing. In her free time, she likes hanging out with friends over a meal, going to the gym, and playing video games.",
   },
   {
     name: "Reina Yoo",
-    position: "Outreach Team Lead",
+    position: "Marketing Team Lead",
     img: "/images/headshots/Reina.png",
     fallback: "RY",
     description:
-      "Hello! My name is Reina and I am the Outreach Team Lead for Jit Jots. My role includes reaching out to sponsors, recruiting volunteers, and planning fundraising events! I am currently a 3rd year student studying Immunology and Public Health at UBC. I am particularly interested in how public health systems worldwide take different approaches to the spread of infectious diseases. In my spare time, I love going on hikes, playing tennis, and bullet journaling!",
+      "Reina is a fourth year student at UBC majoring in Integrated Sciences, integrating Immunology and Public Health. Outside of school, she has an interest in hiking, playing tennis, bullet journaling, making jewelry, and anything crafty!",
   },
   {
     name: "Ritchie Xia",
@@ -106,7 +114,7 @@ function ProfileCard({ name, position, img, fallback, description }: Profile) {
 
 export default function About() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 lg:px-32 gap-20">
+    <main className="flex min-h-screen flex-col items-center lg:px-32 gap-20">
       <div className="container pt-10 sm:pt-16 space-y-24">
         <div className="space-y-4">
           <h2 className="text-4xl font-extrabold scroll-m-20 tracking-tight lg:text-6xl">

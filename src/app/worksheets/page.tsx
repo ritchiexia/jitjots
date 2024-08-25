@@ -158,7 +158,7 @@ function PreviewGrid() {
 
 export default function Worksheets() {
   return (
-    <main className="flex min-h-screen flex-col items-center px-4 lg:px-32 gap-20">
+    <main className="flex min-h-screen flex-col items-center lg:px-32 gap-20">
       <div className="container pt-10 sm:pt-16 space-y-8">
         <div className="space-y-4">
           <h2 className="text-4xl font-extrabold scroll-m-20 tracking-tight lg:text-6xl">
