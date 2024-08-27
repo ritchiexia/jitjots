@@ -40,7 +40,7 @@ const profiles = [
     img: "/images/headshots/Hannah.png",
     fallback: "HD",
     description:
-      "Hello there! I’m a recent B.Sc. Biochemistry graduate from UBC. As Outreach Lead, I schedule our Jit Jot workshops with youth programs and day camps in several community centers around Metro Vancouver. I’m also in charge of finding sponsors to keep Jit Jots going. Besides volunteering for Jit Jots, I also volunteer as a first aid responder and crisis responder and work as a lab technician in Richmond. During my down time, I love playing video games with my friends and crocheting stuffed toys.",
+      "Hannah is a recent UBC graduate with a B.Sc. in Biochemistry. As the Co-Outreach Lead, she schedules Jit Jot workshops with youth programs and day camps in several community centers around Metro Vancouver. During her down time, she volunteers as a first responder.",
   },
   {
     name: "Brian Tang",
