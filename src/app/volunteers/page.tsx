@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SquarePen } from "lucide-react";
@@ -9,6 +10,23 @@ import CommunicationsTeamGraphic from "public/images/communications-team-graphic
 import OutreachTeamGraphic from "public/images/outreach-team-graphic.svg";
 
 const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
+
+const volunteers = {
+  design: [
+    "Isabel Chu",
+    "Katelynn Chen",
+    "Steven Salas",
+    "Rachel Chan",
+    "William Truong",
+  ],
+  communications: [
+    "Lily Nguyen",
+    "Rizzie Brilliantes",
+    "Sarah Dalagan",
+    "Zahra Rezaie",
+  ],
+  outreach: ["Neha Varma", "Shayne Dang", "Clarice Subrata"],
+};
 
 export default function Volunteers() {
   return (
@@ -52,6 +70,10 @@ export default function Volunteers() {
                 <li>Create slide decks for upcoming workshops</li>
               </ul>
             </div>
+            <div>
+              <span className="font-medium">Current volunteers:</span>{" "}
+              <span>{volunteers.design.join(", ")}</span>
+            </div>
           </div>
           <Image
             src={DesignTeamGraphic}
@@ -84,6 +106,10 @@ export default function Volunteers() {
                 <li>Log volunteer hours</li>
               </ul>
             </div>
+            <div>
+              <span className="font-medium">Current volunteers:</span>{" "}
+              <span>{volunteers.communications.join(", ")}</span>
+            </div>
           </div>
         </div>
         <div className="flex flex-col md:flex-row gap-8">
@@ -103,6 +129,10 @@ export default function Volunteers() {
                 <li>Continue scheduling with previous partners</li>
                 <li>Find new sponsors and host fundraisers</li>
               </ul>
+            </div>
+            <div>
+              <span className="font-medium">Current volunteers:</span>{" "}
+              <span>{volunteers.outreach.join(", ")}</span>
             </div>
           </div>
           <Image
