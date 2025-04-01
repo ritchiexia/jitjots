@@ -35,14 +35,6 @@ const profiles = [
       "Trinity is a recent graduate from UBC with a B.Sc in Cell and Developmental Biology. As the Administrative Director, she oversees volunteer intake and management. Outside of Jit Jots, she enjoys getting involved with the community and is learning how to golf.",
   },
   {
-    name: "Hannah Dalagan",
-    position: "Outreach Team Lead",
-    img: "/images/headshots/Hannah.png",
-    fallback: "HD",
-    description:
-      "Hannah is a recent UBC graduate with a B.Sc. in Biochemistry. As the Co-Outreach Lead, she schedules Jit Jot workshops with youth programs and day camps in several community centers around Metro Vancouver. During her down time, she volunteers as a first responder.",
-  },
-  {
     name: "Brian Tang",
     position: "Design Team Lead",
     img: "/images/headshots/Brian.png",
@@ -51,12 +43,12 @@ const profiles = [
       "Brian is a design lead for Jit Jots and recently graduated from UBC with a degree in biology. Brian’s job involves designing workshops for Jit Jots, which involves researching science topics to present to learners and drafting lesson plans and planning activities that fit the topic. Outside of Jit Jots, Brian is a researcher for different clinical studies at VGH and UBCH involving emergency medicine and anaesthesia.",
   },
   {
-    name: "Breanna Harada",
+    name: "James Gao",
     position: "Design Team Lead",
-    img: "/images/headshots/Breanna.png",
-    fallback: "BH",
+    img: "/images/headshots/James.png",
+    fallback: "JG",
     description:
-      "Breanna is one of the Design Lead’s at Jit Jots. As a Design Lead, she creates interesting and informative material for young scientists! In her free time, she likes to play guitar and go birdwatching.",
+      "James is currently studying Kinesiology at UBC. He’s interested in understanding how the body moves and why it sometimes feels like it has a mind of its own. When he’s not buried in Anki flashcards, he enjoys swimming, playing video games, and spending time with friends.",
   },
   {
     name: "Dain Choi",

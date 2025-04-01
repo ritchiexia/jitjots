@@ -11,7 +11,13 @@ import OutreachTeamGraphic from "public/images/outreach-team-graphic.svg";
 
 const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
 
-const volunteers = {
+type VolunteerTeams = {
+  design: string[];
+  communications: string[];
+  outreach: string[];
+};
+
+const volunteers: VolunteerTeams = {
   design: [
     "Isabel Chu",
     "Katelynn Chen",
@@ -28,7 +34,7 @@ const volunteers = {
   outreach: ["Neha Varma", "Shayne Dang", "Clarice Subrata"],
 };
 
-export default function Volunteers() {
+export default function Volunteers(): JSX.Element {
   return (
     <main className="flex min-h-screen flex-col items-center lg:px-32 gap-20">
       <div className="container pt-10 sm:pt-16 space-y-24">
