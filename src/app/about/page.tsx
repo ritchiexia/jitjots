@@ -59,6 +59,14 @@ const profiles = [
       "Dain is studying neuroscience and immunology at UBC. She finds it fascinating to learn about how different systems in our body work together to keep us alive. In her spare time, she enjoys listening to music, and is currently learning to play tennis.",
   },
   {
+    name: "Sheridan Dang",
+    position: "Marketing Team Lead",
+    img: "/images/headshots/Sheridan.jpg",
+    fallback: "SD",
+    description:
+      "Sheridan is currently studying psychology at UBC. She is curious about how the human mind is unified with the body. Studying human behaviours, thought processes, and biological responses are all up Sheridan’s alley! In her free time, she loves to play badminton with her friends, learn how to knit, and dabbles with video editing!",
+  },
+  {
     name: "Ritchie Xia",
     position: "Tech Guy",
     img: "/images/headshots/Ritchie.png",
