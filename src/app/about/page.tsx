@@ -59,22 +59,6 @@ const profiles = [
       "Dain is studying neuroscience and immunology at UBC. She finds it fascinating to learn about how different systems in our body work together to keep us alive. In her spare time, she enjoys listening to music, and is currently learning to play tennis.",
   },
   {
-    name: "Sharon Park",
-    position: "Communications Team Lead",
-    img: "/images/headshots/Sharon.png",
-    fallback: "SP",
-    description:
-      "Sharon graduated with a Biology degree from UBC She is interested in studying humans and animals, though plants aren’t really her thing. In her free time, she likes hanging out with friends over a meal, going to the gym, and playing video games.",
-  },
-  {
-    name: "Reina Yoo",
-    position: "Marketing Team Lead",
-    img: "/images/headshots/Reina.png",
-    fallback: "RY",
-    description:
-      "Reina is a fourth year student at UBC majoring in Integrated Sciences, integrating Immunology and Public Health. Outside of school, she has an interest in hiking, playing tennis, bullet journaling, making jewelry, and anything crafty!",
-  },
-  {
     name: "Ritchie Xia",
     position: "Tech Guy",
     img: "/images/headshots/Ritchie.png",

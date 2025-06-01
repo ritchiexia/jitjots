@@ -30,6 +30,11 @@ const testimonials = [
       "Great job engaging our kids! We look forward to seeing you again this summer for our summer camps.",
     name: "False Creek Community Centre - [Preteen Program]",
   },
+  {
+    quote:
+      "I have jitjots come in our Preschool in February. Children truly enjoyed the workshop. The content was age appropriate (3 to 5 years old children). Children remain engaged throughout the presentation. Dry ice activity was everyone's favourite including teachers. I will definitely recommend Jitjots to other centers in our organization. Keep inspiring children and adults!",
+    name: "Reunka Bhardwaj from Collingwood Neighbourhood House",
+  },
 ];
 
 export default function Testimonials() {
