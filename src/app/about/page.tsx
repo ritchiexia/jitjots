@@ -67,6 +67,14 @@ const profiles = [
       "Sheridan is currently studying psychology at UBC. She is curious about how the human mind is unified with the body. Studying human behaviours, thought processes, and biological responses are all up Sheridan’s alley! In her free time, she loves to play badminton with her friends, learn how to knit, and dabbles with video editing!",
   },
   {
+    name: "Danny Liu",
+    position: "Outreach Team Lead",
+    img: "/images/headshots/Danny.jpg",
+    fallback: "DL",
+    description:
+      "Danny is a recent graduate of science from UBC and is one of the outreach team leads. Currently, he is assisting with the fundraisers and registering Jit Jots as an official non-profit organization with the government. In his free time, he loves playing volleyball and practicing Muay Thai.",
+  },
+  {
     name: "Ritchie Xia",
     position: "Tech Guy",
     img: "/images/headshots/Ritchie.png",
