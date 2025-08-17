@@ -33,6 +33,11 @@ export default function Workshops() {
                 to extracting DNA from strawberries, children can expect to
                 participate in a variety of experiments!
               </p>
+              <p className="text-xl text-muted-foreground">
+                We recommend booking <b>at least one month ahead</b> to secure your date 
+                and allow time for workshop preparation. We may not be able to accommodate
+                workshops booked on short notice.
+              </p>
               <Link href="https://forms.gle/aJbnMDKzNFnuWeDB6">
                 <Button
                   className={cn(

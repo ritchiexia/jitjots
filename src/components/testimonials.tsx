@@ -35,6 +35,11 @@ const testimonials = [
       "I have jitjots come in our Preschool in February. Children truly enjoyed the workshop. The content was age appropriate (3 to 5 years old children). Children remain engaged throughout the presentation. Dry ice activity was everyone's favourite including teachers. I will definitely recommend Jitjots to other centers in our organization. Keep inspiring children and adults!",
     name: "Reunka Bhardwaj from Collingwood Neighbourhood House",
   },
+  {
+    quote:
+      "The team is so energetic and truly engaging!😀 They know how to effectively relate to very young children. Their activities really spark curiosity and wonder!😀 We can’t wait to have them at our centre again!😀",
+    name: "Duke Street Early Learning & Care Centre (Collingwood Neighbourhood House)",
+  }
 ];
 
 export default function Testimonials() {

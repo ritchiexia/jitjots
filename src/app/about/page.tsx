@@ -82,6 +82,14 @@ const profiles = [
     description:
       "Ritchie is a recent computer engineering graduate from UBC. The website you are on right now was designed and coded up by him!",
   },
+  {
+    name: "Derek Cheng",
+    position: "Secondary Tech Guy",
+    img: "/images/headshots/Derek.jpg",
+    fallback: "DC",
+    description:
+      "Derek is studying computer science at SFU. In his free time, he enjoys playing video games and exploring the outdoors."
+  }
 ];
 
 function ProfileCard({ name, position, img, fallback, description }: Profile) {
