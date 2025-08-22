@@ -84,7 +84,7 @@ const profiles = [
   },
   {
     name: "Derek Cheng",
-    position: "Secondary Tech Guy",
+    position: "Tech Guy",
     img: "/images/headshots/Derek.jpg",
     fallback: "DC",
     description:
