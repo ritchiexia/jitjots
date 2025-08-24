@@ -41,6 +41,10 @@ const routes = [
     title: "VOLUNTEERS",
     path: "/volunteers",
   },
+  {
+    title: "JOT YOUR PATH",
+    path: "/jot-your-path",
+  }
 ];
 
 export default function NavBar() {
