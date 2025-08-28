@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
-import NavBar from "@/components/navbar";
+// import NavBar from "@/components/navbar";
+import NewNavBar from "@/components/navbar-new";
 import Footer from "@/components/footer";
 import { cn } from "@/lib/utils";
 
@@ -23,7 +24,8 @@ export default function RootLayout({
         <link rel="icon" href="/jitjots.svg" sizes="any" />
       </head>
       <body className={cn(rubik.className, "overflow-x-hidden")}>
-        <NavBar />
+        {/* <NavBar /> */}
+        <NewNavBar />
         {children}
         <Footer />
       </body>
