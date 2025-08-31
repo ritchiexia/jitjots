@@ -40,15 +40,15 @@ export default function NewNavBar() {
                 <NavigationMenu>
                     <NavigationMenuList>
                         <NavigationMenuItem>
-                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "!text-lg")}>
-                                <Link href="/" className={cn(ibmPlexMono.className, "font-bold")}>Home</Link>
+                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle())}>
+                                <Link href="/" className={cn(ibmPlexMono.className, "text-lg font-extrabold")}>HOME</Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
                             <NavigationMenuTrigger className={cn(
                                                   ibmPlexMono.className,
                                                   "flex w-full items-center py-2 text-lg font-bold"
-                                                )}>About</NavigationMenuTrigger>
+                                                )}>ABOUT</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-6">
                                     <li>
@@ -78,7 +78,7 @@ export default function NewNavBar() {
                             <NavigationMenuTrigger className={cn(
                                                   ibmPlexMono.className,
                                                   "flex w-full items-center py-2 text-lg font-bold"
-                                                )}>Events</NavigationMenuTrigger>
+                                                )}>EVENTS</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-6">
                                     <li>
@@ -105,8 +105,8 @@ export default function NewNavBar() {
                             </NavigationMenuContent>
                         </NavigationMenuItem>
                         <NavigationMenuItem>
-                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), "!text-lg")}>
-                                <Link href="/worksheets" className={cn(ibmPlexMono.className, "font-bold")}>Worksheets</Link>
+                            <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle())}>
+                                <Link href="/worksheets" className={cn(ibmPlexMono.className, "text-lg font-bold")}>WORKSHEETS</Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                     </NavigationMenuList>

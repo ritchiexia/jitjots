@@ -82,7 +82,7 @@ const panelGuests: PanelGuest[] = [
 export default function JotYourPath() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-20">
-      <div className="container pt-10 sm:pt-16 space-y-24 px-4 lg:px-32">
+      <div className="container pt-10 sm:pt-16 space-y-24 lg:px-32">
         <div className="space-y-16">
           <div className="grid md:grid-cols-2 md:items-center gap-8">
             <div className="space-y-10">
@@ -121,7 +121,7 @@ export default function JotYourPath() {
         </div>
       </div>
       <div className="bg-gray-200 py-16 w-full">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:px-32">
           <h3 className="text-4xl font-bold text-center mb-12">
             Takeaways
           </h3>
@@ -151,7 +151,7 @@ export default function JotYourPath() {
         </div>
       </div>
       <div className="py-16 w-full">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 lg:px-32">
           <h3 className="text-4xl font-bold text-center mb-12">
             Meet Our Panel Guests
           </h3>
