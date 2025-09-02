@@ -24,7 +24,7 @@ type InfoCard = {
 
 function InfoCard({ icon: Icon, label, value }: InfoCard) {
   return (
-    <div className="relative h-full rounded-md border-2 bg-gray-50 px-6 pt-12 pb-5 text-center">
+    <div className="relative h-full rounded-md border-2 bg-gray-50 px-6 pt-9 pb-5 text-center">
       <div className="absolute -top-6 left-1/2 -translate-x-1/2">
         <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gray-300 ring-4 ring-gray-50 shadow">
           <Icon className="h-6 w-6 text-black" aria-hidden="true" />
@@ -82,7 +82,7 @@ const panelGuests: PanelGuest[] = [
 export default function JotYourPath() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-20">
-      <div className="container pt-10 sm:pt-16 space-y-24 lg:px-32">
+      <div className="container pt-10 sm:pt-16 space-y-24">
         <div className="space-y-16">
           <div className="grid md:grid-cols-2 md:items-center gap-8">
             <div className="space-y-10">
@@ -97,8 +97,8 @@ export default function JotYourPath() {
 
               <div>
                 <div className="grid gap-4 md:grid-cols-3 md:items-stretch">
-                  <InfoCard icon={Calendar} label="Date" value="April 3, 2025" />
-                  <InfoCard icon={Clock} label="Time" value="6:30 PM – 8:30 PM" />
+                  <InfoCard icon={Calendar} label="Date" value="TBA" />
+                  <InfoCard icon={Clock} label="Time" value="TBA" />
                   <InfoCard icon={MapPin} label="Location" value="Zoom (Virtual)" />
                 </div>
               </div>
@@ -121,7 +121,7 @@ export default function JotYourPath() {
         </div>
       </div>
       <div className="bg-gray-200 py-16 w-full">
-        <div className="container mx-auto px-4 lg:px-32">
+        <div className="container space-y-16">
           <h3 className="text-4xl font-bold text-center mb-12">
             Takeaways
           </h3>
@@ -151,7 +151,7 @@ export default function JotYourPath() {
         </div>
       </div>
       <div className="py-16 w-full">
-        <div className="container mx-auto px-4 lg:px-32">
+        <div className="container space-y-16">
           <h3 className="text-4xl font-bold text-center mb-12">
             Meet Our Panel Guests
           </h3>
@@ -170,7 +170,7 @@ export default function JotYourPath() {
         </div>
       </div>
       <div className="py-16 w-full">
-        <div className="container mx-auto px-4">
+        <div className="container space-y-16">
           <h3 className="text-4xl font-bold text-center mb-12">
             FAQ
           </h3>
@@ -180,12 +180,10 @@ export default function JotYourPath() {
                 <AccordionTrigger className="no-underline font-bold text-base hover:no-underline">
                   PlaceHolder Question?
                 </AccordionTrigger>
-                <AccordionContent className="text-gray-500">
+                <AccordionContent>
                   PlaceHolder Answer.
                 </AccordionContent>
               </AccordionItem>
-            </Accordion>
-            <Accordion type="single" collapsible>
               <AccordionItem value="question-2">
                 <AccordionTrigger className="no-underline font-bold text-base hover:no-underline">
                   PlaceHolder Question 2?
