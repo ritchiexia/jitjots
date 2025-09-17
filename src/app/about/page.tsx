@@ -132,8 +132,8 @@ export default function About() {
               community.
             </p>
             <p>
-              We strive to make learning fun through weekly activity sheets and
-              online workshops where we will guide kids through exciting
+              We strive to make learning fun through <b className="font-medium">monthly</b> activity sheets
+              and <b className="font-medium">in-person</b> workshops where we will guide kids through exciting
               experiments they can do at home!
             </p>
           </div>
