@@ -39,7 +39,17 @@ const testimonials = [
     quote:
       "The team is so energetic and truly engaging!😀 They know how to effectively relate to very young children. Their activities really spark curiosity and wonder!😀 We can’t wait to have them at our centre again!😀",
     name: "Duke Street Early Learning & Care Centre (Collingwood Neighbourhood House)",
-  }
+  },
+  {
+    quote:
+      "Super engaging presenters who were great with the kids and came really prepared! The cool experiments kept everyone excited and curious about science. The experiments were really interactive and the team was always willing to assist the kids! Truly a great group to bring in and very organized! The kids have not stopped talking about Jijots! Highly recommend inviting them for day camps, especially for a science week!",
+    name: "Strathcona Community Centre Association - Day Camp",
+  },
+  {
+    quote:
+      "Though I didn't get to watch the activities myself, I heard from staff that the children had a wonderful time! They appreciated the mix of learning and hands-on experience.",
+    name: "Strathcona Community Centre Association",
+  },
 ];
 
 export default function Testimonials() {

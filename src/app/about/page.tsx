@@ -16,7 +16,7 @@ const profiles = [
     img: "/images/headshots/Sean.png",
     fallback: "SD",
     description:
-      "Sean is a recent graduate of science in Microbiology and Immunology at UBC. He is interested in the immune system and cancer research. During his studies, he volunteers at the hospital and plays sports.",
+      "Sean holds a Bachelor of Science in Microbiology and Immunology and is currently pursuing his medical degree at the University of British Columbia. His academic and clinical interests span surgery disciplines, anesthesiology, and respirology, and he is actively engaged in research across these areas. Outside of his studies and Jit Jots, Sean enjoys volleyball, soccer, and reading fantasy fiction!",
   },
   {
     name: "Dean Yoo",
