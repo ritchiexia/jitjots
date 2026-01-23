@@ -50,13 +50,13 @@ const panelGuests: PanelGuest[] = [
   {
     name: "Wesley Huang",
     role: "Senior Project Embedded Engineer",
-    img: "/images/headshots/Wesley.png",
+    img: "/images/panel_headshots/WesleyHuang.png",
     fallback: "WH",
   },
   {
     name: "Daniel Yu",
     role: "UofT PhD Student Sick Kids",
-    img: "/images/headshots/Daniel.png",
+    img: "/images/panel_headshots/DanielYu.png",
     fallback: "DY",
   },
   {
@@ -68,13 +68,13 @@ const panelGuests: PanelGuest[] = [
   {
     name: "Alyssa Kong",
     role: "UBC Medical Student",
-    img: "/images/headshots/Alyssa.png",
+    img: "/images/panel_headshots/AlyssaKong.png",
     fallback: "AK",
   },
   {
     name: "Chris Fang",
     role: "UBC Geology Undergraduate",
-    img: "/images/headshots/Chris.png",
+    img: "/images/panel_headshots/ChrisFang.png",
     fallback: "CF",
   }
 ];
@@ -82,8 +82,8 @@ const panelGuests: PanelGuest[] = [
 export default function JotYourPath() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-20">
-      <div className="container pt-10 sm:pt-16 space-y-24">
-        <div className="space-y-16">
+      <div className="container max-w-7xl pt-10 px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="space-y-12">
           <div className="grid md:grid-cols-2 md:items-center gap-8">
             <div className="space-y-10">
               <h2 className="text-4xl font-extrabold scroll-m-20 tracking-tight lg:text-6xl">
@@ -96,7 +96,7 @@ export default function JotYourPath() {
               </p>
 
               <div>
-                <div className="grid gap-4 md:grid-cols-3 md:items-stretch">
+                <div className="grid gap-6 sm:grid-cols-3 md:items-stretch">
                   <InfoCard icon={Calendar} label="Date" value="TBA" />
                   <InfoCard icon={Clock} label="Time" value="TBA" />
                   <InfoCard icon={MapPin} label="Location" value="Zoom (Virtual)" />
@@ -121,8 +121,8 @@ export default function JotYourPath() {
         </div>
       </div>
       <div className="bg-gray-200 py-16 w-full">
-        <div className="container space-y-16">
-          <h3 className="text-4xl font-bold text-center mb-12">
+        <div className="container space-y-12">
+          <h3 className="text-4xl font-bold text-center">
             Takeaways
           </h3>
           <div className="grid md:grid-cols-3 gap-8">
@@ -151,11 +151,11 @@ export default function JotYourPath() {
         </div>
       </div>
       <div className="py-16 w-full">
-        <div className="container space-y-16">
-          <h3 className="text-4xl font-bold text-center mb-12">
+        <div className="container space-y-12">
+          <h3 className="text-4xl font-bold text-center">
             Meet Our Panel Guests
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
             {panelGuests.map((guest) => (
               <div key={guest.name} className="text-center">
                 <Avatar className="w-32 h-32 mx-auto mb-4">
@@ -170,26 +170,42 @@ export default function JotYourPath() {
         </div>
       </div>
       <div className="py-16 w-full">
-        <div className="container space-y-16">
-          <h3 className="text-4xl font-bold text-center mb-12">
+        <div className="container space-y-12">
+          <h3 className="text-4xl font-bold text-center">
             FAQ
           </h3>
           <div className="space-y-4">
             <Accordion type="single" collapsible>
               <AccordionItem value="question-1">
                 <AccordionTrigger className="no-underline font-bold text-base hover:no-underline">
-                  PlaceHolder Question?
+                  Where is the event being held?
                 </AccordionTrigger>
                 <AccordionContent>
-                  PlaceHolder Answer.
+                  The event is being held over Zoom. A zoom link will be sent to those registered to the event 1 week prior.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="question-2">
                 <AccordionTrigger className="no-underline font-bold text-base hover:no-underline">
-                  PlaceHolder Question 2?
+                  How should I prepare for the event?
                 </AccordionTrigger>
                 <AccordionContent>
-                  PlaceHolder Answer 2.
+                  We encourage you to come prepared with questions about the listed industry or investigate who our panel guests are to ask more detailed questions about their journey.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="question-3">
+                <AccordionTrigger className="no-underline font-bold text-base hover:no-underline">
+                  How long is the event?
+                </AccordionTrigger>
+                <AccordionContent>
+                  The event will run for 2 hours.
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="question-4">
+                <AccordionTrigger className="no-underline font-bold text-base hover:no-underline">
+                  What if I don't have time to ask all my questions during the event or have follow-up questions?
+                </AccordionTrigger>
+                <AccordionContent>
+                  [TBD with panelist] Panelists will include emails on their presentation slides for any further contact. If you are interested in their professions or reaching out further, <b>we highly encourage you to note their email addresses</b>
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
