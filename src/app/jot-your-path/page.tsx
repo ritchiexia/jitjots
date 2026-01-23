@@ -81,8 +81,8 @@ const panelGuests: PanelGuest[] = [
 
 export default function JotYourPath() {
   return (
-    <main className="flex min-h-screen flex-col items-center gap-20">
-      <div className="container max-w-7xl pt-10 px-4 sm:px-6 lg:px-8 space-y-12">
+    <main className="flex min-h-screen flex-col items-center lg:px-32 gap-20">
+      <div className="container pt-10 sm:pt-16 space-y-8">
         <div className="space-y-12">
           <div className="grid md:grid-cols-2 md:items-center gap-8">
             <div className="space-y-10">
