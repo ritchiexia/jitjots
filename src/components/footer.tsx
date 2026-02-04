@@ -22,7 +22,7 @@ export default function Footer() {
             <Facebook />
           </Link>
         </div>
-        <p className="text-sm">Jit Jots 2024</p>
+        <p className="text-sm">Jit Jots Science Education Society 2024</p>
       </div>
     </div>
   );

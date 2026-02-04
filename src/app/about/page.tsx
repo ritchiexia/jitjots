@@ -59,6 +59,14 @@ const profiles = [
       "Dain is studying neuroscience and immunology at UBC. She finds it fascinating to learn about how different systems in our body work together to keep us alive. In her spare time, she enjoys listening to music, and is currently learning to play tennis.",
   },
   {
+    name: "Kiki Gao",
+    position: "Communications Team Lead",
+    img: "/images/headshots/Kiki.png",
+    fallback: "KG",
+    description:
+      "Kiki is currently studying marketing at KPU. She loves socializing and creating compelling stories through marketing. On her days off, she loves to play badminton, create content, and play video games!",
+  },
+  {
     name: "Sheridan Dang",
     position: "Marketing Team Lead",
     img: "/images/headshots/Sheridan.jpg",
@@ -73,6 +81,14 @@ const profiles = [
     fallback: "DL",
     description:
       "Danny is a recent graduate of science from UBC and is one of the outreach team leads. Currently, he is assisting with the fundraisers and registering Jit Jots as an official non-profit organization with the government. In his free time, he loves playing volleyball and practicing Muay Thai.",
+  },
+  {
+    name: "Angela Yang",
+    position: "Workshop Lead" , 
+    img: "/images/headshots/Angela.png",
+    fallback: "AY",
+    description:
+      "Angela is a fifth year student in Microbiology and Immunology at UBC with interests in biomedical research and healthcare. Through her tutoring experiences, she has developed a strong foundation in working with children of all ages and is passionate about making learning fun! Outside of school, she enjoys playing video games and snowboarding.",
   },
   {
     name: "Ritchie Xia",
