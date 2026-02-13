@@ -19,19 +19,26 @@ type VolunteerTeams = {
 
 const volunteers: VolunteerTeams = {
   design: [
-    "Isabel Chu",
-    "Katelynn Chen",
-    "Steven Salas",
-    "Rachel Chan",
-    "William Truong",
+    // "Isabel Chu",
+    // "Katelynn Chen",
+    // "Steven Salas",
+    // "Rachel Chan",
+    // "William Truong",
+    "",
   ],
   communications: [
-    "Lily Nguyen",
-    "Rizzie Brilliantes",
-    "Sarah Dalagan",
-    "Zahra Rezaie",
+    // "Lily Nguyen",
+    // "Rizzie Brilliantes",
+    // "Sarah Dalagan",
+    // "Zahra Rezaie",
+    "",
   ],
-  outreach: ["Neha Varma", "Shayne Dang", "Clarice Subrata"],
+  outreach: [
+    // "Neha Varma", 
+    // "Shayne Dang", 
+    // "Clarice Subrata",
+    "",
+  ],
 };
 
 export default function Volunteers(): JSX.Element {
@@ -77,7 +84,7 @@ export default function Volunteers(): JSX.Element {
               </ul>
             </div>
             <div>
-              <span className="font-medium">Current volunteers:</span>{" "}
+              {/* <span className="font-medium">Current volunteers:</span>{" "} */}
               <span>{volunteers.design.join(", ")}</span>
             </div>
           </div>
@@ -113,7 +120,7 @@ export default function Volunteers(): JSX.Element {
               </ul>
             </div>
             <div>
-              <span className="font-medium">Current volunteers:</span>{" "}
+              {/* <span className="font-medium">Current volunteers:</span>{" "} */}
               <span>{volunteers.communications.join(", ")}</span>
             </div>
           </div>
@@ -137,7 +144,7 @@ export default function Volunteers(): JSX.Element {
               </ul>
             </div>
             <div>
-              <span className="font-medium">Current volunteers:</span>{" "}
+              {/* <span className="font-medium">Current volunteers:</span>{" "} */}
               <span>{volunteers.outreach.join(", ")}</span>
             </div>
           </div>
