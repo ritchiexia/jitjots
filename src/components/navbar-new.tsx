@@ -78,26 +78,28 @@ export default function NewNavBar() {
                                         "no-underline font-bold text-base hover:no-underline"
                                     )}>ABOUT</AccordionTrigger>
                                     <AccordionContent>
-                                        <SheetClose asChild>
-                                            <Link href="/about" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                                                About Us
-                                            </Link>
-                                        </SheetClose>
+
+                                        {/* TODO: Uncomment when mission page live */}
                                         {/* <SheetClose asChild>
                                             <Link href="/mission" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                                 Our Mission
                                             </Link>
-                                        </SheetClose>
+                                        </SheetClose>*/}
+
+                                        {/* Meet the Team nav */}
+                                        {/* NOTE: change about page to team? */}
                                         <SheetClose asChild>
-                                            <Link href="/meet-the-team" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                            <Link href="/about" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                                 Meet the Team
                                             </Link>
                                         </SheetClose>
-                                        <SheetClose asChild>
+                                        
+                                        {/* TODO: Uncomment when partners page live */}
+                                        {/* <SheetClose asChild>
                                             <Link href="/partners" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                                 Our Partners
                                             </Link>
-                                        </SheetClose> */}
+                                        </SheetClose>  */}
                                     </AccordionContent>
                                 </AccordionItem>
 
@@ -108,21 +110,27 @@ export default function NewNavBar() {
                                         "no-underline font-bold text-base hover:no-underline"
                                     )}>EVENTS</AccordionTrigger>
                                     <AccordionContent>
+
+                                        {/* Workshops nav */}
                                         <SheetClose asChild>
                                             <Link href="/workshops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                                 Workshops
                                             </Link>
                                         </SheetClose>
+
+                                        {/* Worksheets nav */}
                                         <SheetClose asChild>
                                             <Link href="/worksheets" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                                 Worksheets
                                             </Link>
                                         </SheetClose>
-                                        <SheetClose asChild>
+
+                                        {/* TODO: Uncomment when Jot Your Path page live */}
+                                        {/* <SheetClose asChild>
                                             <Link href="/jot-your-path" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                                 Jot Your Path
                                             </Link>
-                                        </SheetClose>
+                                        </SheetClose> */}
                                     </AccordionContent>
                                 </AccordionItem>
 
@@ -133,16 +141,20 @@ export default function NewNavBar() {
                                         "no-underline font-bold text-base hover:no-underline"
                                     )}>GET INVOLVED</AccordionTrigger>
                                     <AccordionContent>
+
+                                        {/* Volunteers nav */}
                                         <SheetClose asChild>
                                             <Link href="/volunteers" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                                 Volunteers
                                             </Link>
                                         </SheetClose>
-                                        <SheetClose asChild>
+
+                                        {/* TODO: Uncomment when contact-us page live */}
+                                        {/* <SheetClose asChild>
                                             <Link href="/contact-us" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                                 Contact Us
                                             </Link>
-                                        </SheetClose>
+                                        </SheetClose> */}
                                     </AccordionContent>
                                 </AccordionItem>
                             </Accordion>
@@ -181,6 +193,22 @@ export default function NewNavBar() {
                             )}>ABOUT</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-6">
+
+                                    {/* TODO: Uncomment when mission page is live */}
+                                    {/* <li>
+                                        <NavigationMenuLink asChild>
+                                            <Link href="/mission" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                                <div className="text-sm font-medium leading-none">Our Mission</div>
+                                                 <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                                    Our values.
+                                                </p> 
+                                            </Link>
+
+                                        </NavigationMenuLink>
+                                    </li> */}
+
+                                    {/* Meet the Team Nav */}
+                                    {/* NOTE: change about page to team? */}
                                     <li>
                                         <NavigationMenuLink asChild>
                                             <Link href="/about" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
@@ -191,16 +219,18 @@ export default function NewNavBar() {
                                             </Link>
                                         </NavigationMenuLink>
                                     </li>
-                                    <li>
+
+                                    {/* TODO: Uncomment when partners page is live */}
+                                    {/* <li>
                                         <NavigationMenuLink asChild>
-                                            <Link href="/volunteers" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                                                <div className="text-sm font-medium leading-none">Volunteer</div>
-                                                {/* <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                            <Link href="/partners" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                                <div className="text-sm font-medium leading-none">Our Partners</div>
+                                                <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                                                     Join our team and make a difference.
-                                                </p> */}
+                                                </p>
                                             </Link>
                                         </NavigationMenuLink>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </NavigationMenuContent>
                         </NavigationMenuItem>
@@ -213,6 +243,8 @@ export default function NewNavBar() {
                             )}>EVENTS</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-6">
+
+                                    {/* Workshop Nav */}
                                     <li>
                                         <NavigationMenuLink asChild>
                                             <Link href="/workshops" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
@@ -223,16 +255,20 @@ export default function NewNavBar() {
                                             </Link>
                                         </NavigationMenuLink>
                                     </li>
-                                    <li>
+
+                                    {/* TODO: Uncomment when Jot Your Path page live */}
+                                    {/* <li>
                                         <NavigationMenuLink asChild>
                                             <Link href="/jot-your-path" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
                                                 <div className="text-sm font-medium leading-none">Jot Your Path</div>
-                                                {/* <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                                <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                                                     Join our career panel event.
-                                                </p> */}
+                                                </p>
                                             </Link>
                                         </NavigationMenuLink>
-                                    </li>
+                                    </li> */}
+
+                                    {/* Worksheets Nav */}
                                     <li>
                                         <NavigationMenuLink asChild>
                                             <Link href="/worksheets" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
@@ -255,26 +291,30 @@ export default function NewNavBar() {
                             )}>GET INVOLVED</NavigationMenuTrigger>
                             <NavigationMenuContent>
                                 <ul className="grid w-[400px] gap-3 p-6">
-                                    <li>
-                                        <NavigationMenuLink asChild>
-                                            <Link href="/about" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                                                <div className="text-sm font-medium leading-none">Volunteers</div>
-                                                {/* <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                                    Meet Our Team.
-                                                </p> */}
-                                            </Link>
-                                        </NavigationMenuLink>
-                                    </li>
+
+                                    {/* Volunteer Nav */}
                                     <li>
                                         <NavigationMenuLink asChild>
                                             <Link href="/volunteers" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                                                <div className="text-sm font-medium leading-none">Contact Us</div>
+                                                <div className="text-sm font-medium leading-none">Volunteers</div>
                                                 {/* <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                                                    Join our team and make a difference.
+                                                    Join our community of volunteers.
                                                 </p> */}
                                             </Link>
                                         </NavigationMenuLink>
                                     </li>
+
+                                    {/* TODO: Uncomment when Contact Us Page */}
+                                    {/* <li>
+                                        <NavigationMenuLink asChild>
+                                            <Link href="/contact" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                                                <div className="text-sm font-medium leading-none">Contact Us</div>
+                                                <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                                                    Have questions or feedback? Get in touch with us.
+                                                </p>
+                                            </Link>
+                                        </NavigationMenuLink>
+                                    </li> */}
                                 </ul>
                             </NavigationMenuContent>
                         </NavigationMenuItem>
