@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/navbar";
-import Footer from "@/components/footer";
+import Footer from "@/components/new-footer";
 import { cn } from "@/lib/utils";
 
 const rubik = Rubik({ subsets: ["latin"] });
