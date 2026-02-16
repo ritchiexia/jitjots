@@ -8,6 +8,7 @@ import Link from "next/link";
 import DesignTeamGraphic from "public/images/design-team-graphic.svg";
 import CommunicationsTeamGraphic from "public/images/communications-team-graphic.svg";
 import OutreachTeamGraphic from "public/images/outreach-team-graphic.svg";
+import WorkshopTeamGraphic from "public/images/workshop-team-graphic.svg";
 
 const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
 
@@ -15,30 +16,14 @@ type VolunteerTeams = {
   design: string[];
   communications: string[];
   outreach: string[];
+  workshop: string[];
 };
 
 const volunteers: VolunteerTeams = {
-  design: [
-    // "Isabel Chu",
-    // "Katelynn Chen",
-    // "Steven Salas",
-    // "Rachel Chan",
-    // "William Truong",
-    "",
-  ],
-  communications: [
-    // "Lily Nguyen",
-    // "Rizzie Brilliantes",
-    // "Sarah Dalagan",
-    // "Zahra Rezaie",
-    "",
-  ],
-  outreach: [
-    // "Neha Varma", 
-    // "Shayne Dang", 
-    // "Clarice Subrata",
-    "",
-  ],
+  design: [],
+  communications: [],
+  outreach: [],
+  workshop: [],
 };
 
 export default function Volunteers(): JSX.Element {
@@ -153,6 +138,34 @@ export default function Volunteers(): JSX.Element {
             alt="Outreach Team Graphic"
             className="md:w-1/2 lg:w-1/3"
           />
+        </div>
+        <div className="flex flex-col-reverse md:flex-row gap-8">
+          <Image
+            src={WorkshopTeamGraphic}
+            alt="Workshop Team Graphic"
+            className="md:w-1/2 lg:w-1/3"
+          />
+          <div className="space-y-4">
+            <h3 className="text-3xl font-bold">WORKSHOP TEAM</h3>
+            <p className="text-lg">
+              The workshop team is responsible for regularly attending workshop seminars and aims to equip volunteers with the skills to lead and present their own workshops.
+            </p>
+
+            <div className="border-2 rounded-md p-4 bg-gray-50 lg:px-6">
+              <h4 className="font-semibold text-gray-800">Responsibilities</h4>
+              <ul className="list-disc ml-4 text-gray-500">
+                <li>
+                  Attend workshops and learn how to lead them
+                </li>
+                <li>Prepare and present workshop materials</li>
+                <li>Develop and maintain workshop content</li>
+              </ul>
+            </div>
+            <div>
+              {/* <span className="font-medium">Current volunteers:</span>{" "} */}
+              <span>{volunteers.workshop.join(", ")}</span>
+            </div>
+          </div>
         </div>
       </div>
     </main>
