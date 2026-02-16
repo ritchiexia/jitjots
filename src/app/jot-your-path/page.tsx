@@ -199,7 +199,7 @@ export default function JotYourPath() {
               </AccordionItem>
               <AccordionItem value="question-4">
                 <AccordionTrigger className="no-underline font-bold text-base hover:no-underline">
-                  What if I don't have time to ask all my questions during the event or have follow-up questions?
+                  What if I don&apos;t have time to ask all my questions during the event or have follow-up questions?
                 </AccordionTrigger>
                 <AccordionContent>
                   [TBD with panelist] Panelists will include emails on their presentation slides for any further contact. If you are interested in their professions or reaching out further, <b>we highly encourage you to note their email addresses</b>
