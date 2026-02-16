@@ -103,14 +103,11 @@ export default function JotYourPath() {
                 </div>
               </div>
 
-              <Button
-                className={cn(
-                  ibmPlexMono.className,
-                  "mt-4 h-12 w-full text-lg bg-yellow-400 hover:bg-yellow-500 text-black [word-spacing:-0.5ch]"
-                )}
-              >
-                RSVP
-              </Button>
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <Button className={cn(ibmPlexMono.className, "mt-4 h-12 w-full text-lg bg-yellow-400 hover:bg-yellow-500 text-black [word-spacing:-0.5ch]")}>
+                  RSVP
+                </Button>
+              </a>
             </div>
             <Image
               src={jotyourpathHeroPic}
