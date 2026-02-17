@@ -155,9 +155,9 @@ export default function About() {
           </div>
         </div>
         <div className="space-y-4">
-          <h2 className="text-4xl font-extrabold scroll-m-20 tracking-tight lg:text-6xl">
+          <h3 className="text-4xl font-bold scroll-m-20 tracking-tight">
             Meet the Team
-          </h2>
+          </h3>
           <div className="grid sm:grid-cols-2 2xl:grid-cols-3 gap-6 w-full">
             {profiles.map((profile) => (
               <ProfileCard

@@ -23,6 +23,7 @@ export default function RootLayout({
         <link rel="icon" href="/jitjots.svg" sizes="any" />
       </head>
       <body className={cn(rubik.className, "overflow-x-hidden")}>
+        {/* <NavBar /> */}
         <NavBar />
         {children}
         <Footer />

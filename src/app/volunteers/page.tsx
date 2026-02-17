@@ -53,7 +53,7 @@ export default function Volunteers(): JSX.Element {
         </div>
         <div className="flex flex-col md:flex-row gap-8">
           <div className="space-y-4">
-            <h3 className="text-3xl font-bold">DESIGN TEAM</h3>
+            <h3 className="text-4xl font-bold">Design Team</h3>
             <p className="text-lg">
               The design team is responsible for designing the structure of
               science workshops, including activities, slideshows, videos, and
@@ -86,7 +86,7 @@ export default function Volunteers(): JSX.Element {
             className="md:w-1/2 lg:w-1/3"
           />
           <div className="space-y-4">
-            <h3 className="text-3xl font-bold">COMMUNICATIONS TEAM</h3>
+            <h3 className="text-4xl font-bold">Communications Team</h3>
             <p className="text-lg">
               The communications team&apos;s role is to enhance the presence of
               Jit Jots across various social media platforms as well as market
@@ -112,7 +112,7 @@ export default function Volunteers(): JSX.Element {
         </div>
         <div className="flex flex-col md:flex-row gap-8">
           <div className="space-y-4">
-            <h3 className="text-3xl font-bold">OUTREACH TEAM</h3>
+            <h3 className="text-4xl font-bold">Outreach Team</h3>
             <p className="text-lg">
               The community outreach team is responsible for developing and
               maintaining Jit Jots relationships with other organizations,
