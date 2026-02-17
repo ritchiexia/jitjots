@@ -27,7 +27,7 @@ export default function ContactPage() {
       <div className="mb-8">
         <h2 className="text-4xl font-extrabold tracking-tight lg:text-5xl">Contact Us</h2>
         <p className="mt-2 text-lg text-muted-foreground">
-          For any inquiries, fill out the form and we'll be in touch shortly.
+          For any inquiries, fill out the form and we&apos;ll be in touch shortly.
         </p>
       </div>
       <div className="grid lg:grid-cols-[1fr_320px] gap-6 items-start">
