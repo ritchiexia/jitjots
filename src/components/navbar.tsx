@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import path from "path";
 
 const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
 const kalam = Kalam({ weight: "700", subsets: ["latin"] });
@@ -41,6 +42,10 @@ const routes = [
     title: "VOLUNTEERS",
     path: "/volunteers",
   },
+  {
+    title: "CONTACT",
+    path: "/contact",
+  }
 ];
 
 export default function NavBar() {
