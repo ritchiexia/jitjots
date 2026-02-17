@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function Footer() {
     return (
-        <div className="bg-primary text-gray-50 py-8 mt-8">
-            <div className="container mx-auto px-4 md:px-6">
-                <div className="flex flex-col gap-4 md:flex-row items-center justify-between">
+        <footer className="bg-primary text-gray-50 w-full">
+            <div className="w-full py-12 px-8 md:px-16 lg:px-32">
+                <div className="flex flex-col gap-4 md:flex-row md:flex-wrap items-center justify-between">
                     <nav className="flex gap-10">
                         <Link href="/" className="hover:underline">
                             About Us
@@ -30,15 +30,15 @@ export default function Footer() {
                             />
                             <button
                                 type="submit"
-                                className="bg-secondary text-white px-4 py-2 rounded-md hover:bg-blue-600 transition-colors"
+                                className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-slate-300 hover:text-black transition-colors whitespace-nowrap"
                             >
                                 Subscribe
                             </button>
                         </form>
                     </div>
                 </div>
-                <hr className="border-white-400 border-t-2 my-8" />
-                <div className="flex flex-col gap-4 md:flex-row items-center justify-between">
+                <hr className="border-white/20 border-t my-8" />
+                <div className="flex flex-col gap-4 md:flex-row md:flex-wrap items-center justify-between">
                     <div className="flex items-center space-x-4">
                         <Link href="https://www.youtube.com/@JitJotsEducation">
                             <Youtube />
@@ -60,9 +60,9 @@ export default function Footer() {
                         <p>Business Number: 78523 8037 BC0001</p>
                         <p>Registered under SOCIETIES ACT [SBC 2015] C.18</p>
                     </div>
-                    <p className="text-sm">© Jit Jots Science Education Society {new Date().getFullYear()}</p>
+                    <p className="text-sm text-center">© Jit Jots Science Education Society {new Date().getFullYear()}</p>
                 </div>
             </div>
-        </div>
+        </footer>
     );
 }
