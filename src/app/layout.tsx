@@ -25,7 +25,9 @@ export default function RootLayout({
       <body className={cn(rubik.className, "overflow-x-hidden")}>
         <NavBar />
         {children}
-        <Footer />
+        <div className="mt-16">
+          <Footer />
+        </div>
       </body>
     </html>
   );
