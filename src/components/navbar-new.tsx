@@ -5,7 +5,6 @@ import Link from "next/link"
 import Image from "next/image"
 import { Kalam, IBM_Plex_Mono } from "next/font/google"
 import { MenuIcon, ChevronDown } from "lucide-react"
-import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
 
 import { cn } from "@/lib/utils"
 import {
@@ -21,38 +20,10 @@ import {
     AccordionItem,
     AccordionTrigger,
 } from "@/components/ui/accordion"
-
 const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] })
 const kalam = Kalam({ weight: "700", subsets: ["latin"] })
 
 export default function NewNavBar() {
-    const [activeMenu, setActiveMenu] = React.useState<
-        "about" | "events" | "involved" | null
-    >(null)
-
-    const closeTimer = React.useRef<NodeJS.Timeout | null>(null)
-
-    const cancelClose = () => {
-        if (closeTimer.current) clearTimeout(closeTimer.current)
-        closeTimer.current = null
-    }
-
-    const scheduleClose = () => {
-        cancelClose()
-        closeTimer.current = setTimeout(() => setActiveMenu(null), 150)
-    }
-
-    const createHoverHandlers = (menu: "about" | "events" | "involved") => ({
-        onPointerEnter: () => {
-            cancelClose()
-            setActiveMenu(menu)
-        },
-        onPointerLeave: (e: React.PointerEvent<HTMLDivElement>) => {
-            const next = e.relatedTarget as Node | null
-            if (e.currentTarget.contains(next)) return
-            scheduleClose()
-        },
-    })
     return (
         <header className="w-full sticky top-0 z-50 bg-white shadow-sm">
 
@@ -197,142 +168,51 @@ export default function NewNavBar() {
                             </h1>
                         </Link>
 
-                        <nav className="flex items-center gap-2">
+                        <nav className="flex items-center gap-1">
 
                             {/* HOME */}
-                            <Link
-                                href="/"
-                                className="px-4 py-2 text-base font-semibold text-white hover:bg-white hover:text-primary transition-colors rounded-md"
-                            >
+                            <Link href="/" className="px-4 py-2 text-base font-semibold text-white hover:bg-white/20 transition-colors rounded-md">
                                 Home
                             </Link>
 
                             {/* ABOUT */}
-                            <div {...createHoverHandlers("about")}>
-                                <DropdownMenu.Root
-                                    open={activeMenu === "about"}
-                                    modal={false}
-                                >
-                                    <DropdownMenu.Trigger asChild>
-                                        <button className="flex items-center gap-1 px-4 py-2 text-base font-semibold text-white hover:bg-white hover:text-primary transition-colors rounded-md">
-                                            About <ChevronDown className="h-4 w-4" />
-                                        </button>
-                                    </DropdownMenu.Trigger>
-
-                                    <DropdownMenu.Portal>
-                                        <DropdownMenu.Content
-                                            forceMount
-                                            side="bottom"
-                                            align="start"
-                                            sideOffset={4}
-                                            className="min-w-[220px] bg-white rounded-md border shadow-lg p-2 z-[100]"
-                                        >
-                                            {/* Mission */}
-                                            {/* <DropdownMenu.Item asChild>
-                                                <Link href="/about/mission" className="block px-3 py-2 text-sm hover:bg-slate-100 rounded-md">
-                                                    Mission / Purpose
-                                                </Link>
-                                            </DropdownMenu.Item> */}
-
-                                            {/* Meet the Team */}
-                                            <DropdownMenu.Item asChild>
-                                                <Link href="/about/team" className="block px-3 py-2 text-sm hover:bg-slate-100 rounded-md">
-                                                    Meet the Team
-                                                </Link>
-                                            </DropdownMenu.Item>
-
-                                            {/* Partners */}
-                                            {/* <DropdownMenu.Item asChild>
-                                                <Link href="/about/partners" className="block px-3 py-2 text-sm hover:bg-slate-100 rounded-md">
-                                                    Our Partners
-                                                </Link>
-                                            </DropdownMenu.Item> */}
-                                        </DropdownMenu.Content>
-                                    </DropdownMenu.Portal>
-                                </DropdownMenu.Root>
+                            <div className="relative group/about">
+                                <button className="flex items-center gap-1 px-4 py-2 text-base font-semibold text-white group-hover/about:bg-white/20 transition-colors rounded-md">
+                                    About <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover/about:rotate-180" />
+                                </button>
+                                <div className="absolute top-full left-0 pt-1 hidden group-hover/about:block z-50">
+                                    <div className="bg-white rounded-md border shadow-lg p-2 min-w-[200px]">
+                                        {/* <Link href="/about/mission" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Mission / Purpose</Link> */}
+                                        <Link href="/about/team" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Meet the Team</Link>
+                                    </div>
+                                </div>
                             </div>
 
                             {/* EVENTS */}
-                            <div {...createHoverHandlers("events")}>
-                                <DropdownMenu.Root
-                                    open={activeMenu === "events"}
-                                    modal={false}
-                                >
-                                    <DropdownMenu.Trigger asChild>
-                                        <button className="flex items-center gap-1 px-4 py-2 text-base font-semibold text-white hover:bg-white hover:text-primary transition-colors rounded-md">
-                                            Events <ChevronDown className="h-4 w-4" />
-                                        </button>
-                                    </DropdownMenu.Trigger>
-
-                                    <DropdownMenu.Portal>
-                                        <DropdownMenu.Content
-                                            forceMount
-                                            side="bottom"
-                                            align="start"
-                                            sideOffset={4}
-                                            className="min-w-[220px] bg-white rounded-md border shadow-lg p-2 z-[100]"
-                                        >
-                                            {/* Workshops */}
-                                            <DropdownMenu.Item asChild>
-                                                <Link href="/events/workshops" className="block px-3 py-2 text-sm hover:bg-slate-100 rounded-md">
-                                                    Workshops
-                                                </Link>
-                                            </DropdownMenu.Item>
-
-                                            {/* Worksheets */}
-                                            <DropdownMenu.Item asChild>
-                                                <Link href="/events/worksheets" className="block px-3 py-2 text-sm hover:bg-slate-100 rounded-md">
-                                                    Worksheets
-                                                </Link>
-                                            </DropdownMenu.Item>
-
-                                            {/* Jot your path */}
-                                            {/* <DropdownMenu.Item asChild>
-                                                <Link href="/events/jotyourpath" className="block px-3 py-2 text-sm hover:bg-slate-100 rounded-md">
-                                                    Jot Your Path
-                                                </Link>
-                                            </DropdownMenu.Item> */}
-                                        </DropdownMenu.Content>
-                                    </DropdownMenu.Portal>
-                                </DropdownMenu.Root>
+                            <div className="relative group/events">
+                                <button className="flex items-center gap-1 px-4 py-2 text-base font-semibold text-white group-hover/events:bg-white/20 transition-colors rounded-md">
+                                    Events <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover/events:rotate-180" />
+                                </button>
+                                <div className="absolute top-full left-0 pt-1 hidden group-hover/events:block z-50">
+                                    <div className="bg-white rounded-md border shadow-lg p-2 min-w-[200px]">
+                                        <Link href="/events/workshops" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Workshops</Link>
+                                        <Link href="/events/worksheets" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Worksheets</Link>
+                                        {/* <Link href="/events/jotyourpath" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Jot Your Path</Link> */}
+                                    </div>
+                                </div>
                             </div>
 
                             {/* GET INVOLVED */}
-                            <div {...createHoverHandlers("involved")}>
-                                <DropdownMenu.Root
-                                    open={activeMenu === "involved"}
-                                    modal={false}
-                                >
-                                    <DropdownMenu.Trigger asChild>
-                                        <button className="flex items-center gap-1 px-4 py-2 text-base font-semibold text-white hover:bg-white hover:text-primary transition-colors rounded-md">
-                                            Get Involved <ChevronDown className="h-4 w-4" />
-                                        </button>
-                                    </DropdownMenu.Trigger>
-
-                                    <DropdownMenu.Portal>
-                                        <DropdownMenu.Content
-                                            forceMount
-                                            side="bottom"
-                                            align="start"
-                                            sideOffset={4}
-                                            className="min-w-[220px] bg-white rounded-md border shadow-lg p-2 z-[100]"
-                                        >
-                                            {/* Volunteers */}
-                                            <DropdownMenu.Item asChild>
-                                                <Link href="/get-involved/volunteers" className="block px-3 py-2 text-sm hover:bg-slate-100 rounded-md">
-                                                    Volunteers
-                                                </Link>
-                                            </DropdownMenu.Item>
-
-                                            {/* Contact Us */}
-                                            {/* <DropdownMenu.Item asChild>
-                                                <Link href="/get-involved/contact" className="block px-3 py-2 text-sm hover:bg-slate-100 rounded-md">
-                                                    Contact Us
-                                                </Link>
-                                            </DropdownMenu.Item> */}
-                                        </DropdownMenu.Content>
-                                    </DropdownMenu.Portal>
-                                </DropdownMenu.Root>
+                            <div className="relative group/involved">
+                                <button className="flex items-center gap-1 px-4 py-2 text-base font-semibold text-white group-hover/involved:bg-white/20 transition-colors rounded-md">
+                                    Get Involved <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover/involved:rotate-180" />
+                                </button>
+                                <div className="absolute top-full left-0 pt-1 hidden group-hover/involved:block z-50">
+                                    <div className="bg-white rounded-md border shadow-lg p-2 min-w-[200px]">
+                                        <Link href="/get-involved/volunteers" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Volunteers</Link>
+                                        {/* <Link href="/get-involved/contact" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Contact Us</Link> */}
+                                    </div>
+                                </div>
                             </div>
 
                         </nav>
