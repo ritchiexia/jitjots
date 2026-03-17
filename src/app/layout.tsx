@@ -4,6 +4,7 @@ import "./globals.css";
 import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 import { cn } from "@/lib/utils";
+import { Toaster } from "@/components/ui/sonner";
 
 const rubik = Rubik({ subsets: ["latin"] });
 
@@ -22,12 +23,18 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/jitjots.svg" sizes="any" />
       </head>
-      <body className={cn(rubik.className, "overflow-x-hidden min-h-screen flex flex-col")}>
+      <body
+        className={cn(
+          rubik.className,
+          "overflow-x-hidden min-h-screen flex flex-col",
+        )}
+      >
         <NavBar />
         {children}
         <div className="mt-16">
           <Footer />
         </div>
+        <Toaster />
       </body>
     </html>
   );
