@@ -14,7 +14,7 @@ export default function Footer() {
               Events
             </Link>
             <Link
-              href="mailto:jitjotsactivities@gmail.com"
+              href="/contact"
               className="hover:underline"
             >
               Contact Us
