@@ -2,21 +2,25 @@ import { Facebook, Instagram, Mailbox, Music2, Youtube } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
-    return (
-        <footer className="bg-primary text-gray-50 w-full">
-            <div className="w-full py-12 px-8 md:px-16 lg:px-32">
-                <div className="flex flex-col gap-6 md:flex-row md:items-start justify-between">
-                    <nav className="flex gap-10">
-                        <Link href="/about" className="hover:underline">
-                            About Us
-                        </Link>
-                        <Link href="/workshops" className="hover:underline">
-                            Events
-                        </Link>
-                        <Link href="mailto:jitjotsactivities@gmail.com" className="hover:underline">
-                            Contact Us
-                        </Link>
-                    </nav>
+  return (
+    <footer className="bg-primary text-gray-50 w-full">
+      <div className="w-full py-12 px-8 md:px-16 lg:px-32">
+        <div className="flex flex-col gap-6 md:flex-row md:items-start justify-between">
+          <nav className="flex gap-10">
+            <Link href="/about" className="hover:underline">
+              About Us
+            </Link>
+            <Link href="/workshops" className="hover:underline">
+              Events
+            </Link>
+            <Link
+              href="mailto:jitjotsactivities@gmail.com"
+              className="hover:underline"
+            >
+              Contact Us
+            </Link>
+          </nav>
+          {/* Newsletter subscription
                     <div>
                         <p className="text-base font-semibold mb-3">Subscribe to our newsletter</p>
                         <form className="flex gap-2">
@@ -37,33 +41,51 @@ export default function Footer() {
                             </button>
                         </form>
                     </div>
-                </div>
-                <hr className="border-white/20 border-t my-8" />
-                <div className="flex flex-col gap-4 md:flex-row md:flex-wrap items-center justify-between">
-                    <div className="flex items-center space-x-5">
-                        <Link href="https://www.youtube.com/@JitJotsEducation" className="hover:opacity-70 transition-opacity">
-                            <Youtube size={22} />
-                        </Link>
-                        <Link href="https://www.tiktok.com/@jitjotsofficial" className="hover:opacity-70 transition-opacity">
-                            <Music2 size={22} />
-                        </Link>
-                        <Link href="https://www.instagram.com/jitjotsofficial/" className="hover:opacity-70 transition-opacity">
-                            <Instagram size={22} />
-                        </Link>
-                        <Link href="mailto:jitjotsactivities@gmail.com" className="hover:opacity-70 transition-opacity">
-                            <Mailbox size={22} />
-                        </Link>
-                        <Link href="https://www.facebook.com/jitjotsactivities/" className="hover:opacity-70 transition-opacity">
-                            <Facebook size={22} />
-                        </Link>
-                    </div>
-                    <div className="text-center text-white text-sm">
-                        <p>Business Number: 78523 8037 BC0001</p>
-                        <p>Registered under SOCIETIES ACT [SBC 2015] C.18</p>
-                    </div>
-                    <p className="text-sm text-center">© Jit Jots Science Education Society {new Date().getFullYear()}</p>
-                </div>
-            </div>
-        </footer>
-    );
+                    */}
+        </div>
+        <hr className="border-white/20 border-t my-8" />
+        <div className="flex flex-col gap-4 md:flex-row md:flex-wrap items-center justify-between">
+          <div className="flex items-center space-x-5">
+            <Link
+              href="https://www.youtube.com/@JitJotsEducation"
+              className="hover:opacity-70 transition-opacity"
+            >
+              <Youtube size={22} />
+            </Link>
+            <Link
+              href="https://www.tiktok.com/@jitjotsofficial"
+              className="hover:opacity-70 transition-opacity"
+            >
+              <Music2 size={22} />
+            </Link>
+            <Link
+              href="https://www.instagram.com/jitjotsofficial/"
+              className="hover:opacity-70 transition-opacity"
+            >
+              <Instagram size={22} />
+            </Link>
+            <Link
+              href="mailto:jitjotsactivities@gmail.com"
+              className="hover:opacity-70 transition-opacity"
+            >
+              <Mailbox size={22} />
+            </Link>
+            <Link
+              href="https://www.facebook.com/jitjotsactivities/"
+              className="hover:opacity-70 transition-opacity"
+            >
+              <Facebook size={22} />
+            </Link>
+          </div>
+          <div className="text-center text-white text-sm">
+            <p>Business Number: 78523 8037 BC0001</p>
+            <p>Registered under SOCIETIES ACT [SBC 2015] C.18</p>
+          </div>
+          <p className="text-sm text-center">
+            © Jit Jots Science Education Society {new Date().getFullYear()}
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
 }
