@@ -7,11 +7,11 @@ export default function Footer() {
       <div className="w-full py-12 px-8 md:px-16 lg:px-32">
         <div className="flex flex-col gap-6 md:flex-row md:items-start justify-between">
           <nav className="flex gap-10">
-            <Link href="/about" className="hover:underline">
-              About Us
+            <Link href="/about/team" className="hover:underline">
+              Team
             </Link>
-            <Link href="/workshops" className="hover:underline">
-              Events
+            <Link href="/events/workshops" className="hover:underline">
+              Workshops
             </Link>
             <Link
               href="mailto:jitjotsactivities@gmail.com"
