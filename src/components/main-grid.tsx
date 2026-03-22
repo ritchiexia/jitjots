@@ -12,7 +12,7 @@ export default function MainGrid() {
     <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3 w-full z-30">
       <Card className="bg-transparent text-background border-4">
         <CardHeader>
-          <Link className="flex gap-2 underline" href="/workshops">
+          <Link className="flex gap-2 underline" href="/events/workshops">
             <Microscope className="h-9 shrink-0" strokeWidth={3} />
             <h3 className="text-3xl font-bold">WORKSHOPS</h3>
           </Link>
@@ -32,7 +32,7 @@ export default function MainGrid() {
       </Card>
       <Card className="bg-transparent text-background border-4">
         <CardHeader>
-          <Link className="flex gap-2 underline" href="/worksheets">
+          <Link className="flex gap-2 underline" href="/events/worksheets">
             <NotebookText className="h-9 shrink-0" strokeWidth={3} />
             <h3 className="text-3xl font-bold">WORKSHEETS</h3>
           </Link>
@@ -55,7 +55,7 @@ export default function MainGrid() {
       </Card>
       <Card className="bg-transparent text-background border-4">
         <CardHeader>
-          <Link className="flex gap-2 underline" href="/volunteers">
+          <Link className="flex gap-2 underline" href="/get-involved/volunteers">
             <Handshake className="h-9 shrink-0" strokeWidth={3} />
             <h3 className="text-3xl font-bold">VOLUNTEERING</h3>
           </Link>
