@@ -76,3 +76,18 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Leaflet popup overrides */
+.leaflet-popup-close-button {
+  display: none !important;
+}
+.leaflet-popup-content-wrapper {
+  padding: 0 !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15) !important;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: 240px !important;
+}
