@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -15,7 +15,7 @@ const partners = [
     totalWorkshops: 10,
     ages: "TBD",
     maxAttendees: "TBD",
-    grade: "TBD",
+    yearsTogether: "TBD",
     duration: "TBD",
   },
   {
@@ -27,7 +27,7 @@ const partners = [
     totalWorkshops: 10,
     ages: "TBD",
     maxAttendees: "TBD",
-    grade: "TBD",
+    yearsTogether: "TBD",
     duration: "TBD",
   },
   {
@@ -39,7 +39,7 @@ const partners = [
     totalWorkshops: 10,
     ages: "TBD",
     maxAttendees: "TBD",
-    grade: "TBD",
+    yearsTogether: "TBD",
     duration: "TBD",
   },
   {
@@ -51,7 +51,7 @@ const partners = [
     totalWorkshops: 10,
     ages: "TBD",
     maxAttendees: "TBD",
-    grade: "TBD",
+    yearsTogether: "TBD",
     duration: "TBD",
   },
   {
@@ -63,7 +63,7 @@ const partners = [
     totalWorkshops: 10,
     ages: "TBD",
     maxAttendees: "TBD",
-    grade: "TBD",
+    yearsTogether: "TBD",
     duration: "TBD",
   },
   {
@@ -75,7 +75,7 @@ const partners = [
     totalWorkshops: 10,
     ages: "TBD",
     maxAttendees: "TBD",
-    grade: "TBD",
+    yearsTogether: "TBD",
     duration: "TBD",
   },
 ];
@@ -92,12 +92,22 @@ const redPin = L.divIcon({
 });
 
 export default function WorkshopsMap() {
+  const mapRef = useRef<L.Map | null>(null);
+
   useEffect(() => {
-    // No default icon setup needed — using custom divIcon
+    return () => {
+      // Properly destroy the map on unmount so React StrictMode's
+      // double-mount doesn't throw "Map container is already initialized"
+      if (mapRef.current) {
+        mapRef.current.remove();
+        mapRef.current = null;
+      }
+    };
   }, []);
 
   return (
     <MapContainer
+      ref={mapRef}
       center={[49.2488, -123.0600]}
       zoom={12}
       scrollWheelZoom={false}
@@ -136,7 +146,7 @@ export default function WorkshopsMap() {
               {[
                 { label: "Ages", value: p.ages },
                 { label: "Max Attendees", value: p.maxAttendees },
-                { label: "Grade", value: p.grade },
+                { label: "Partnership", value: p.yearsTogether },
                 { label: "Duration", value: p.duration },
               ].map(({ label, value }, i) => (
                 <div
