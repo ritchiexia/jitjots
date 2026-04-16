@@ -121,6 +121,13 @@ export default function NewNavBar() {
                                                     </Link>
                                                 </SheetClose>
 
+                                                {/* Gallery (Mobile) */}
+                                                <SheetClose asChild>
+                                                    <Link href="/events/gallery" className="block py-2 text-sm text-gray-700 hover:text-primary">
+                                                        Gallery
+                                                    </Link>
+                                                </SheetClose>
+
                                                 {/* Jot your path (Mobile) */}
                                                 {/* <SheetClose asChild>
                                                     <Link href="/events/jotyourpath" className="block py-2 text-sm text-gray-700 hover:text-primary">
@@ -197,6 +204,7 @@ export default function NewNavBar() {
                                     <div className="bg-white rounded-md border shadow-lg p-2 min-w-[200px]">
                                         <Link href="/events/workshops" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Workshops</Link>
                                         <Link href="/events/worksheets" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Worksheets</Link>
+                                        <Link href="/events/gallery" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Gallery</Link>
                                         {/* <Link href="/events/jotyourpath" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Jot Your Path</Link> */}
                                     </div>
                                 </div>
