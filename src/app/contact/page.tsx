@@ -1,57 +1,57 @@
-"use client";
+'use client';
 
-import { Facebook, Instagram, Music2, Youtube, Send, Mail } from "lucide-react";
-import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { IBM_Plex_Mono } from "next/font/google";
-import { useGoogleForm } from "@/hooks/use-google-form";
-import { toast } from "sonner";
+import { Facebook, Instagram, Music2, Youtube, Send, Mail } from 'lucide-react';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
+import { IBM_Plex_Mono } from 'next/font/google';
+import { useGoogleForm } from '@/hooks/use-google-form';
+import { toast } from 'sonner';
 
-const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
+const ibmPlexMono = IBM_Plex_Mono({ weight: '700', subsets: ['latin'] });
 
 const CONTACT_US_GOOGLE_FORM_CONFIG = {
-  formId: "1vye2_70H5Hv6rX93E91zN48grt79U1fxdkaZP_-Hhf8",
+  formId: '1vye2_70H5Hv6rX93E91zN48grt79U1fxdkaZP_-Hhf8',
   entryIds: {
-    name: "entry.1626104225",
-    email: "entry.1989905361",
-    subject: "entry.1693708265",
-    message: "entry.1750643174",
+    name: 'entry.1626104225',
+    email: 'entry.1989905361',
+    subject: 'entry.1693708265',
+    message: 'entry.1750643174',
   },
 };
 
 const inputClass =
-  "w-full rounded-lg border border-input bg-background px-4 py-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
+  'w-full rounded-lg border border-input bg-background px-4 py-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring';
 
 const socialLinks = [
   {
     icon: Facebook,
-    label: "Facebook",
-    href: "https://www.facebook.com/jitjotsactivities/",
+    label: 'Facebook',
+    href: 'https://www.facebook.com/jitjotsactivities/',
   },
   {
     icon: Instagram,
-    label: "Instagram",
-    href: "https://www.instagram.com/jitjotsofficial/",
+    label: 'Instagram',
+    href: 'https://www.instagram.com/jitjotsofficial/',
   },
   {
     icon: Music2,
-    label: "TikTok",
-    href: "https://www.tiktok.com/@jitjotsofficial",
+    label: 'TikTok',
+    href: 'https://www.tiktok.com/@jitjotsofficial',
   },
   {
     icon: Youtube,
-    label: "YouTube",
-    href: "https://www.youtube.com/@JitJotsEducation",
+    label: 'YouTube',
+    href: 'https://www.youtube.com/@JitJotsEducation',
   },
 ];
 
 const contacts = [
-  { name: "Sean Dang", role: "Co-President", note: "For general inquiries" },
-  { name: "Dean Yoo", role: "Co-President", note: "For general inquiries" },
+  { name: 'Sean Dang', role: 'Co-President', note: 'For general inquiries' },
+  { name: 'Dean Yoo', role: 'Co-President', note: 'For general inquiries' },
   {
-    name: "Sheridan Dang",
-    role: "Marketing Team Lead",
-    note: "For workshop inquiries",
+    name: 'Sheridan Dang',
+    role: 'Marketing Team Lead',
+    note: 'For workshop inquiries',
   },
 ];
 
@@ -64,17 +64,17 @@ export default function ContactPage() {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = {
-      name: formData.get("name") as string,
-      email: formData.get("email") as string,
-      subject: formData.get("subject") as string,
-      message: formData.get("message") as string,
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      subject: formData.get('subject') as string,
+      message: formData.get('message') as string,
     };
 
     try {
       await submitForm(data);
       (e.target as HTMLFormElement).reset();
     } catch (error) {
-      toast.error("Failed to send message. Please try again later.");
+      toast.error('Failed to send message. Please try again later.');
     }
   };
 
@@ -177,7 +177,7 @@ export default function ContactPage() {
                 className={`${ibmPlexMono.className} h-11 px-8 gap-2 w-fit`}
               >
                 <Send className="w-4 h-4" strokeWidth={2.5} />
-                {isSubmitting ? "SENDING..." : "SEND MESSAGE"}
+                {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
               </Button>
             </form>
           )}
@@ -193,7 +193,7 @@ export default function ContactPage() {
                 <div
                   key={name}
                   className={
-                    i > 0 ? "border-t border-primary-foreground/20 pt-4" : ""
+                    i > 0 ? 'border-t border-primary-foreground/20 pt-4' : ''
                   }
                 >
                   <p className="font-bold text-sm">{name}</p>

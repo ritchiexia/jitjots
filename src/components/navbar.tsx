@@ -1,27 +1,27 @@
-"use client";
+'use client';
 
-import * as React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { Kalam, IBM_Plex_Mono } from "next/font/google";
-import { MenuIcon, ChevronDown } from "lucide-react";
+import * as React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Kalam, IBM_Plex_Mono } from 'next/font/google';
+import { MenuIcon, ChevronDown } from 'lucide-react';
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 import {
   Sheet,
   SheetClose,
   SheetContent,
   SheetTrigger,
-} from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
+} from '@/components/ui/sheet';
+import { Button } from '@/components/ui/button';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
-} from "@/components/ui/accordion";
-const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
-const kalam = Kalam({ weight: "700", subsets: ["latin"] });
+} from '@/components/ui/accordion';
+const ibmPlexMono = IBM_Plex_Mono({ weight: '700', subsets: ['latin'] });
+const kalam = Kalam({ weight: '700', subsets: ['latin'] });
 
 export default function NewNavBar() {
   return (
@@ -39,7 +39,7 @@ export default function NewNavBar() {
                 alt="Jit Jots logo"
                 priority
               />
-              <h1 className={cn("text-white text-xl", kalam.className)}>
+              <h1 className={cn('text-white text-xl', kalam.className)}>
                 JIT JOTS
               </h1>
             </Link>
@@ -60,7 +60,7 @@ export default function NewNavBar() {
                           href="/"
                           className={cn(
                             ibmPlexMono.className,
-                            "block text-base font-bold text-gray-900 hover:text-primary transition-colors",
+                            'block text-base font-bold text-gray-900 hover:text-primary transition-colors',
                           )}
                         >
                           HOME
@@ -73,7 +73,7 @@ export default function NewNavBar() {
                       <AccordionTrigger
                         className={cn(
                           ibmPlexMono.className,
-                          "text-base font-bold text-gray-900 hover:text-primary no-underline hover:no-underline",
+                          'text-base font-bold text-gray-900 hover:text-primary no-underline hover:no-underline',
                         )}
                       >
                         ABOUT
@@ -110,7 +110,7 @@ export default function NewNavBar() {
                       <AccordionTrigger
                         className={cn(
                           ibmPlexMono.className,
-                          "text-base font-bold text-gray-900 hover:text-primary no-underline hover:no-underline",
+                          'text-base font-bold text-gray-900 hover:text-primary no-underline hover:no-underline',
                         )}
                       >
                         EVENTS
@@ -150,7 +150,7 @@ export default function NewNavBar() {
                       <AccordionTrigger
                         className={cn(
                           ibmPlexMono.className,
-                          "text-base font-bold text-gray-900 hover:text-primary no-underline hover:no-underline",
+                          'text-base font-bold text-gray-900 hover:text-primary no-underline hover:no-underline',
                         )}
                       >
                         GET INVOLVED
@@ -190,7 +190,7 @@ export default function NewNavBar() {
                 alt="Jit Jots logo"
                 priority
               />
-              <h1 className={cn("text-white text-3xl", kalam.className)}>
+              <h1 className={cn('text-white text-3xl', kalam.className)}>
                 JIT JOTS
               </h1>
             </Link>
@@ -207,7 +207,7 @@ export default function NewNavBar() {
               {/* ABOUT */}
               <div className="relative group/about">
                 <button className="flex items-center gap-1 px-4 py-2 text-base font-semibold text-white group-hover/about:bg-white/20 transition-colors rounded-md">
-                  About{" "}
+                  About{' '}
                   <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover/about:rotate-180" />
                 </button>
                 <div className="absolute top-full left-0 pt-1 hidden group-hover/about:block z-50">
@@ -226,7 +226,7 @@ export default function NewNavBar() {
               {/* EVENTS */}
               <div className="relative group/events">
                 <button className="flex items-center gap-1 px-4 py-2 text-base font-semibold text-white group-hover/events:bg-white/20 transition-colors rounded-md">
-                  Events{" "}
+                  Events{' '}
                   <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover/events:rotate-180" />
                 </button>
                 <div className="absolute top-full left-0 pt-1 hidden group-hover/events:block z-50">
@@ -251,7 +251,7 @@ export default function NewNavBar() {
               {/* GET INVOLVED */}
               <div className="relative group/involved">
                 <button className="flex items-center gap-1 px-4 py-2 text-base font-semibold text-white group-hover/involved:bg-white/20 transition-colors rounded-md">
-                  Get Involved{" "}
+                  Get Involved{' '}
                   <ChevronDown className="h-4 w-4 transition-transform duration-200 group-hover/involved:rotate-180" />
                 </button>
                 <div className="absolute top-full left-0 pt-1 hidden group-hover/involved:block z-50">

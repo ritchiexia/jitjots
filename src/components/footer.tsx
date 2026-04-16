@@ -1,14 +1,14 @@
-"use client";
+'use client';
 
-import { Facebook, Instagram, Mailbox, Music2, Youtube } from "lucide-react";
-import Link from "next/link";
-import { useGoogleForm } from "@/hooks/use-google-form";
-import { toast } from "sonner";
+import { Facebook, Instagram, Mailbox, Music2, Youtube } from 'lucide-react';
+import Link from 'next/link';
+import { useGoogleForm } from '@/hooks/use-google-form';
+import { toast } from 'sonner';
 
 const NEWSLETTER_SIGNUP_GOOGLE_FORM_CONFIG = {
-  formId: "1gnom2BmmLB0dWQAmV80kQJ_DrqIj3zKKj_S5kMzzO68",
+  formId: '1gnom2BmmLB0dWQAmV80kQJ_DrqIj3zKKj_S5kMzzO68',
   entryIds: {
-    email: "entry.2133646784",
+    email: 'entry.2133646784',
   },
 };
 
@@ -20,15 +20,15 @@ export default function Footer() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const email = formData.get("email") as string;
+    const email = formData.get('email') as string;
 
     try {
       await submitForm({ email });
-      toast.success("Subscribed to newsletter!");
+      toast.success('Subscribed to newsletter!');
       (e.target as HTMLFormElement).reset();
       resetForm();
     } catch (error) {
-      toast.error("Failed to subscribe to newsletter.");
+      toast.error('Failed to subscribe to newsletter.');
     }
   };
 
