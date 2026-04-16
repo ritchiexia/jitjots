@@ -201,26 +201,414 @@ const themes: Theme[] = [
     ],
   },
   {
-    id: 'template',
-    label: 'Theme Name',
-    subtitle: 'Short description of the theme',
-    outcomeHeadline: 'What students will achieve by the end',
+    id: '3d-printing',
+    label: '3D Printing',
+    subtitle: 'Design, build & test layer-by-layer creations',
+    outcomeHeadline: 'Design, Build & Test Your Own 3D-Printed Object',
     snapshot: {
       duration: '1 hour',
-      format: 'Format',
+      format: 'Hands-On Build',
     },
-    steps: ['Step 1', 'Step 2', 'Step 3'],
+    steps: [
+      'Introduction to 3D printing',
+      'Model how a 3D printer works',
+      'Design your object on paper',
+      'Build it layer by layer',
+      'Test and iterate your creation',
+      'Showcase and take it home',
+    ],
     activities: [
       {
-        name: 'Ages X–Y',
-        summary: 'Short focus line for this age group',
+        name: 'Ages 7–11',
+        summary: 'Creative design & hands-on construction',
         status: 'present',
-        preamble: [{ duration: 'X mins', label: 'Introduction' }],
+        preamble: [
+          { duration: '5 mins', label: 'Introduction' },
+          { duration: '5 mins', label: 'How 3D Printers Work' },
+        ],
         stations: [
           {
-            duration: 'X mins',
-            label: 'Activity name',
-            description: 'One-line description of what students do',
+            duration: '15 mins',
+            label: 'Paper Design Activity',
+            description:
+              'Draw the pieces needed to make a simple object — cube, sphere, or figure',
+          },
+          {
+            duration: '25 mins',
+            label: 'Become the 3D Printer',
+            description:
+              'Physically construct a 3D object using craft materials, building one layer at a time',
+          },
+          {
+            duration: '5 mins',
+            label: 'Testing & Iteration',
+            description:
+              'Test whether your creation carries out its intended function and make improvements',
+          },
+          {
+            duration: '5 mins',
+            label: 'Showcase & Reflection',
+            description:
+              'Present your creation to other learners — and take it home!',
+          },
+        ],
+      },
+      {
+        name: 'Ages 12+',
+        summary: 'CAD thinking & engineering iteration',
+        status: 'present',
+        preamble: [
+          { duration: '5 mins', label: 'Introduction' },
+          { duration: '5 mins', label: 'How 3D Printers Work' },
+        ],
+        stations: [
+          {
+            duration: '15 mins',
+            label: 'Paper CAD Design Activity',
+            description:
+              'Use isometric grid paper and index cards to design a 3D object in layers — understanding how slicing works',
+          },
+          {
+            duration: '25 mins',
+            label: 'Become the 3D Printer',
+            description:
+              'Physically construct a 3D object using craft materials, building one layer at a time',
+          },
+          {
+            duration: '5 mins',
+            label: 'Testing & Iteration',
+            description:
+              'Test whether your creation carries out its intended function and make improvements',
+          },
+          {
+            duration: '5 mins',
+            label: 'Showcase & Reflection',
+            description:
+              'Present your creation to other learners — and take it home!',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'space',
+    label: 'Space',
+    subtitle: 'Gravity, rockets & the physics of the universe',
+    outcomeHeadline: 'Explore the Physics of Space Through Live Experiments',
+    snapshot: {
+      duration: '1 hour',
+      format: 'Guided Demonstration',
+    },
+    steps: [
+      'Introduction by Jit Jots team member',
+      'Watch live demonstrations',
+      'Participate in hands-on activities',
+      'Create a take-home project',
+    ],
+    activities: [
+      {
+        name: 'Ages 3–6',
+        summary: 'Sensory science & creative space crafts',
+        status: 'present',
+        preamble: [{ duration: '5 mins', label: 'Introduction' }],
+        stations: [
+          {
+            duration: '5 mins',
+            label: 'Phone Book Drop',
+            description:
+              'See how gravity pulls different objects at the same constant force',
+          },
+          {
+            duration: '10 mins',
+            label: 'Dry Ice Demonstration',
+            description:
+              'Interact with dry ice and watch it make fog and bubbles',
+          },
+          {
+            duration: '5–10 mins',
+            label: 'Rocket Balloon Blast',
+            description:
+              "Watch balloons fly across the room and learn about Newton's Third Law of Motion",
+          },
+          {
+            duration: '10 mins',
+            label: 'Constellations with Pipe Cleaners',
+            description:
+              'Shape your own constellation with pipe cleaners — take it home after the workshop!',
+          },
+          {
+            duration: '15 mins',
+            label: 'Glow in the Dark Slime',
+            description:
+              'Make your own glow-in-the-dark slime to play with and keep',
+          },
+        ],
+      },
+      {
+        name: 'Ages 7–11',
+        summary: 'Reactions, optics & UV science',
+        status: 'present',
+        preamble: [{ duration: '5 mins', label: 'Introduction' }],
+        stations: [
+          {
+            duration: '5 mins',
+            label: 'Phone Book Drop',
+            description:
+              'See how gravity pulls different objects at the same constant force',
+          },
+          {
+            duration: '10 mins',
+            label: 'Dry Ice Demonstration',
+            description:
+              'Interact with dry ice and watch it make fog and bubbles',
+          },
+          {
+            duration: '10 mins',
+            label: 'Rocket Balloon Blast',
+            description:
+              "Use chemical reactions to launch a makeshift rocket and learn about Newton's Third Law",
+          },
+          {
+            duration: '15 mins',
+            label: 'Constellation Flashlight Viewer',
+            description: 'Build your own mini constellation projector',
+          },
+          {
+            duration: '15 mins',
+            label: 'UV Bead Sun Detector',
+            description:
+              'Make a UV bead bracelet that changes colour when exposed to sunlight',
+          },
+        ],
+      },
+      {
+        name: 'Ages 12+',
+        summary: 'Engineering design & real-world space challenges',
+        status: 'present',
+        preamble: [{ duration: '5 mins', label: 'Introduction' }],
+        stations: [
+          {
+            duration: '5 mins',
+            label: 'Phone Book Drop',
+            description:
+              'See how gravity pulls different objects at the same constant force',
+          },
+          {
+            duration: '10 mins',
+            label: 'Dry Ice Demonstration',
+            description:
+              'Interact with dry ice and watch it make fog and bubbles',
+          },
+          {
+            duration: '40 mins',
+            label: 'Egg Drop — Mars Landing Challenge',
+            description:
+              'Design and build a lander that protects your astronaut (egg) touching down on Mars',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'reactions',
+    label: 'Reactions',
+    subtitle: 'Volcanoes, potions & explosive chemistry',
+    outcomeHeadline: 'Witness & Participate in Real Chemical Reactions Live',
+    snapshot: {
+      duration: '1 hour',
+      format: 'Live Demonstration',
+    },
+    steps: [
+      'Introduction by Jit Jots team member',
+      'Watch each experiment demonstrated live',
+      'Participate alongside the team',
+      'Observe and discuss what happened',
+    ],
+    activities: [
+      {
+        name: 'Ages 3–6',
+        summary: 'Colourful, sensory chemistry experiments',
+        status: 'present',
+        preamble: [{ duration: '5 mins', label: 'Introduction' }],
+        stations: [
+          {
+            duration: '10 mins',
+            label: 'Dry Ice Demonstration',
+            description:
+              'Interact with dry ice and see how it can be used to make fog and bubbles',
+          },
+          {
+            duration: '10 mins',
+            label: 'Lemon Volcanoes',
+            description:
+              'Turn an ordinary lemon into a bubbling, fizzing, overflowing volcano',
+          },
+          {
+            duration: '10 mins',
+            label: 'Gaviscon Worms',
+            description:
+              'Watch colourful, jelly-like worms form right before your eyes through polymerization',
+          },
+          {
+            duration: '10 mins',
+            label: 'Apple Oxidation Experiment',
+            description:
+              'Watch apples change colour when exposed to air and learn how reactions can be slowed down',
+          },
+          {
+            duration: '10 mins',
+            label: 'pH Potion',
+            description:
+              'Pour in a mystery liquid and watch your potion instantly change colour',
+          },
+          {
+            duration: '5 mins',
+            label: 'Whoosh Bottle',
+            description: 'Learn about combustion in this explosive experiment',
+          },
+        ],
+      },
+      {
+        name: 'Ages 7–11',
+        summary: 'Acid-base reactions & secret chemistry',
+        status: 'present',
+        preamble: [{ duration: '5 mins', label: 'Introduction' }],
+        stations: [
+          {
+            duration: '10 mins',
+            label: 'Dry Ice Demonstration',
+            description:
+              'Interact with dry ice and see how it can be used to make fog and bubbles',
+          },
+          {
+            duration: '15 mins',
+            label: 'Lemon Volcano',
+            description:
+              'Create a fizzy volcano with an acid-base reaction using a real fruit',
+          },
+          {
+            duration: '15 mins',
+            label: 'Invisible Ink',
+            description:
+              'Write secret messages and reveal them using different types of chemical reactions',
+          },
+          {
+            duration: '10 mins',
+            label: 'pH Potion',
+            description:
+              'Pour in a mystery liquid and watch your potion instantly change colour',
+          },
+          {
+            duration: '5 mins',
+            label: 'Whoosh Bottle',
+            description: 'Learn about combustion in this explosive experiment',
+          },
+        ],
+      },
+      {
+        name: 'Ages 12+',
+        summary: 'Catalysts, carbon dioxide & combustion',
+        status: 'present',
+        preamble: [{ duration: '5 mins', label: 'Introduction' }],
+        stations: [
+          {
+            duration: '10 mins',
+            label: 'Dry Ice Demonstration',
+            description:
+              'Interact with dry ice and see how it can be used to make fog and bubbles',
+          },
+          {
+            duration: '15 mins',
+            label: 'Elephant Toothpaste',
+            description:
+              'Create a rapid foam eruption using a catalyst to speed up a chemical reaction',
+          },
+          {
+            duration: '15 mins',
+            label: 'Mentos & Soda',
+            description:
+              'Drop Mentos into soda to trigger a rapid CO₂ release and launch a geyser of spray',
+          },
+          {
+            duration: '10 mins',
+            label: 'pH Potion',
+            description:
+              'Pour in a mystery liquid and watch your potion instantly change colour',
+          },
+          {
+            duration: '5 mins',
+            label: 'Whoosh Bottle',
+            description: 'Learn about combustion in this explosive experiment',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'inventors-engineers',
+    label: 'Inventors & Engineers',
+    subtitle: 'Design challenges & team build competitions',
+    outcomeHeadline: 'Compete to Build the Best Objects!',
+    snapshot: {
+      duration: '1 hour',
+      format: 'Team Competition',
+    },
+    steps: [
+      'Introduction',
+      'Form groups and receive briefing',
+      'Design your approach',
+      'Build and test your creation',
+      'Present and compare results',
+    ],
+    activities: [
+      {
+        name: 'Ages 3–6',
+        summary: 'Creative building & simple engineering challenges',
+        status: 'present',
+        preamble: [
+          { duration: '1 min', label: 'Introduction' },
+          { duration: '4 mins', label: 'Group formation & briefing' },
+        ],
+        stations: [
+          {
+            duration: '15 mins',
+            label: 'Paper Airplane Design',
+            description:
+              'Design on paper then fold your own airplane — whose flies furthest?',
+          },
+          {
+            duration: '15 mins',
+            label: 'DIY Projector',
+            description: 'Design and build your own simple projector',
+          },
+          {
+            duration: '30 mins',
+            label: 'Tallest Tower',
+            description:
+              'Build the tallest tower possible using only spaghetti and marshmallows',
+          },
+        ],
+      },
+      {
+        name: 'Ages 7–12+',
+        summary: 'Engineering design & competitive building',
+        status: 'present',
+        preamble: [
+          { duration: '1 min', label: 'Introduction' },
+          { duration: '4 mins', label: 'Group formation & briefing' },
+        ],
+        stations: [
+          {
+            duration: '30 mins',
+            label: 'Egg Drop Contest',
+            description:
+              'Design and build a parachute that protects an egg from cracking when dropped from height',
+          },
+          {
+            duration: '30 mins',
+            label: 'Tallest Tower',
+            description:
+              'Build the tallest tower possible using only spaghetti and marshmallows',
           },
         ],
       },
@@ -352,6 +740,155 @@ function ActivitiesPanel({ activities }: { activities: Activity[] }) {
   );
 }
 
+type RequestForm = {
+  ageGroups: string[];
+  duration: string;
+  theme: string;
+  style: string;
+  notes: string;
+};
+
+const AGE_GROUP_OPTIONS = ['3–6', '7–11', '12+'];
+const DURATION_OPTIONS = ['30 mins', '1 hour', '1 hour 30 mins'];
+const STYLE_OPTIONS = ['Presentation', 'Hands-on'];
+
+function WorkshopRequestForm() {
+  const [form, setForm] = useState<RequestForm>({
+    ageGroups: [],
+    duration: '',
+    theme: '',
+    style: '',
+    notes: '',
+  });
+  const toggleAge = (age: string) =>
+    setForm((f) => ({
+      ...f,
+      ageGroups: f.ageGroups.includes(age)
+        ? f.ageGroups.filter((a) => a !== age)
+        : [...f.ageGroups, age],
+    }));
+
+  return (
+    <div className="rounded-3xl border border-border bg-muted/10 p-6 space-y-6">
+      {/* Age group */}
+      <div className="space-y-2">
+        <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
+          Audience age group
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {AGE_GROUP_OPTIONS.map((age) => {
+            const selected = form.ageGroups.includes(age);
+            return (
+              <button
+                key={age}
+                type="button"
+                onClick={() => toggleAge(age)}
+                className={cn(
+                  'px-4 py-2 rounded-2xl text-sm font-medium border transition-colors',
+                  selected
+                    ? 'bg-primary text-primary-foreground border-primary'
+                    : 'bg-background border-border text-muted-foreground hover:bg-muted hover:text-foreground',
+                )}
+              >
+                Ages {age}
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Duration */}
+      <div className="space-y-2">
+        <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
+          Workshop duration
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {DURATION_OPTIONS.map((d) => (
+            <button
+              key={d}
+              type="button"
+              onClick={() => setForm((f) => ({ ...f, duration: d }))}
+              className={cn(
+                'px-4 py-2 rounded-2xl text-sm font-medium border transition-colors',
+                form.duration === d
+                  ? 'bg-primary text-primary-foreground border-primary'
+                  : 'bg-background border-border text-muted-foreground hover:bg-muted hover:text-foreground',
+              )}
+            >
+              {d}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Theme */}
+      <div className="space-y-2">
+        <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
+          Science theme
+        </p>
+        <input
+          type="text"
+          placeholder="e.g. Biology, Robotics, Chemistry…"
+          value={form.theme}
+          onChange={(e) => setForm((f) => ({ ...f, theme: e.target.value }))}
+          className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
+        />
+      </div>
+
+      {/* Style */}
+      <div className="space-y-2">
+        <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
+          Workshop style
+        </p>
+        <div className="flex flex-wrap gap-2">
+          {STYLE_OPTIONS.map((s) => (
+            <button
+              key={s}
+              type="button"
+              onClick={() => setForm((f) => ({ ...f, style: s }))}
+              className={cn(
+                'px-4 py-2 rounded-2xl text-sm font-medium border transition-colors',
+                form.style === s
+                  ? 'bg-primary text-primary-foreground border-primary'
+                  : 'bg-background border-border text-muted-foreground hover:bg-muted hover:text-foreground',
+              )}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Special considerations */}
+      <div className="space-y-2">
+        <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
+          Special considerations{' '}
+          <span className="normal-case font-normal text-muted-foreground/60">
+            (optional)
+          </span>
+        </p>
+        <textarea
+          rows={3}
+          placeholder="Allergies, accessibility needs, preferred dates, group size…"
+          value={form.notes}
+          onChange={(e) => setForm((f) => ({ ...f, notes: e.target.value }))}
+          className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none"
+        />
+      </div>
+
+      <Button
+        className={cn(
+          ibmPlexMono.className,
+          'text-base h-11 [word-spacing:-0.5ch]',
+        )}
+      >
+        <ChevronRight className="-ml-2" strokeWidth={3} />
+        SEND REQUEST
+      </Button>
+    </div>
+  );
+}
+
 export default function Workshops() {
   const [activeThemeId, setActiveThemeId] = useState(themes[0].id);
   const activeTheme = themes.find((t) => t.id === activeThemeId)!;
@@ -468,22 +1005,20 @@ export default function Workshops() {
                 </span>
               </div>
 
-              {/* Outcome headline */}
-              <div className="rounded-2xl bg-primary/5 border border-primary/15 px-4 py-3">
-                <p className="text-base font-bold">
-                  {activeTheme.outcomeHeadline}
-                </p>
-              </div>
-
-              {/* Snapshot */}
-              <div className="flex flex-wrap gap-3">
+              {/* Outcome headline + Snapshot */}
+              <div className="flex items-stretch gap-3">
+                <div className="rounded-2xl bg-primary/5 border border-primary/15 px-4 py-3 flex-1 flex items-center">
+                  <p className="text-base font-bold">
+                    {activeTheme.outcomeHeadline}
+                  </p>
+                </div>
                 {[
                   { label: 'Duration', value: activeTheme.snapshot.duration },
                   { label: 'Format', value: activeTheme.snapshot.format },
                 ].map(({ label, value }) => (
                   <div
                     key={label}
-                    className="rounded-xl bg-muted px-3 py-2 min-w-[100px]"
+                    className="rounded-2xl bg-primary/5 border border-primary/15 px-3 py-2 shrink-0"
                   >
                     <p className="text-xs text-muted-foreground">{label}</p>
                     <p className="text-sm font-semibold">{value}</p>
@@ -512,6 +1047,20 @@ export default function Workshops() {
               <ActivitiesPanel activities={activeTheme.activities} />
             </div>
           </div>
+        </div>
+
+        {/* Request a Workshop */}
+        <div className="space-y-6">
+          <div>
+            <h2 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
+              Request a Workshop
+            </h2>
+            <p className="text-muted-foreground mt-2 text-sm">
+              Tell us what you&apos;re looking for and we&apos;ll get back to
+              you with a custom proposal.
+            </p>
+          </div>
+          <WorkshopRequestForm />
         </div>
 
         {/* Where We Run */}
