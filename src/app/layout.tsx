@@ -1,15 +1,16 @@
-import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
-import "./globals.css";
-import NavBar from "@/components/navbar";
-import Footer from "@/components/footer";
-import { cn } from "@/lib/utils";
+import type { Metadata } from 'next';
+import { Rubik } from 'next/font/google';
+import './globals.css';
+import NavBar from '@/components/navbar';
+import Footer from '@/components/footer';
+import { cn } from '@/lib/utils';
+import { Toaster } from '@/components/ui/sonner';
 
-const rubik = Rubik({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Jit Jots",
-  description: "Instilling curiosity and wonder in scientists of the future",
+  title: 'Jit Jots',
+  description: 'Instilling curiosity and wonder in scientists of the future',
 };
 
 export default function RootLayout({
@@ -22,12 +23,18 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/jitjots.svg" sizes="any" />
       </head>
-      <body className={cn(rubik.className, "overflow-x-hidden")}>
+      <body
+        className={cn(
+          rubik.className,
+          'overflow-x-hidden min-h-screen flex flex-col',
+        )}
+      >
         <NavBar />
         {children}
         <div className="mt-16">
           <Footer />
         </div>
+        <Toaster />
       </body>
     </html>
   );
