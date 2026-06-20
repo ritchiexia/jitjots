@@ -175,7 +175,7 @@ export default function Mission() {
       </div>
 
       {/* CTA */}
-      <div className="w-full bg-[#4a4153] py-20 px-6 text-center">
+      <div className="w-full bg-[#4a4153] py-20 px-6 text-center -mb-16">
         <p className={cn(kalam.className, 'text-4xl text-white mb-8')}>
           Come jot with us.
         </p>
