@@ -180,7 +180,7 @@ export default function Mission() {
           Come jot with us.
         </p>
         <div className="flex flex-wrap gap-4 justify-center items-center">
-          <Link href="/volunteers">
+          <Link href="/get-involved/volunteers">
             <Button
               className={cn(
                 ibmPlexMono.className,

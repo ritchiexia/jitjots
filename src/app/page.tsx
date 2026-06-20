@@ -28,7 +28,7 @@ export default function Home() {
               Instilling curiosity and wonder in scientists of the future ✨
             </h2>
             <div className="flex flex-wrap gap-2 mt-6 justify-center sm:justify-start">
-              <Link href="/about">
+              <Link href="/about/team">
                 <Button
                   className={cn(
                     ibmPlexMono.className,
@@ -39,7 +39,7 @@ export default function Home() {
                   ABOUT US
                 </Button>
               </Link>
-              <Link href="/workshops">
+              <Link href="/events/workshops">
                 <Button
                   variant="secondary"
                   className={cn(
