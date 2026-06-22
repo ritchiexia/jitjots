@@ -80,11 +80,14 @@ export default function NewNavBar() {
                       </AccordionTrigger>
                       <AccordionContent className="pl-4 flex flex-col gap-2">
                         {/* Mission (Mobile) */}
-                        {/* <SheetClose asChild>
-                                                    <Link href="/about/mission" className="block py-2 text-sm text-gray-700 hover:text-primary">
-                                                        Mission / Purpose
-                                                    </Link>
-                                                </SheetClose> */}
+                        <SheetClose asChild>
+                          <Link
+                            href="/about/mission"
+                            className="block py-2 text-sm text-gray-700 hover:text-primary"
+                          >
+                            Mission
+                          </Link>
+                        </SheetClose>
 
                         {/* Meet the Team (Mobile) */}
                         <SheetClose asChild>
@@ -212,7 +215,12 @@ export default function NewNavBar() {
                 </button>
                 <div className="absolute top-full left-0 pt-1 hidden group-hover/about:block z-50">
                   <div className="bg-white rounded-md border shadow-lg p-2 min-w-[200px]">
-                    {/* <Link href="/about/mission" className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md">Mission / Purpose</Link> */}
+                    <Link
+                      href="/about/mission"
+                      className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md"
+                    >
+                      Mission
+                    </Link>
                     <Link
                       href="/about/team"
                       className="block px-3 py-2 text-sm text-gray-800 hover:bg-slate-100 rounded-md"

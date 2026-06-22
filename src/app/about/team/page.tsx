@@ -40,7 +40,7 @@ const profiles = [
     img: "/images/headshots/Brian.png",
     fallback: "BT",
     description:
-      "Brian is a design lead for Jit Jots and recently graduated from UBC with a degree in biology. Brian’s job involves designing workshops for Jit Jots, which involves researching science topics to present to learners and drafting lesson plans and planning activities that fit the topic. Outside of Jit Jots, Brian is a researcher for different clinical studies at VGH and UBCH involving emergency medicine and anaesthesia.",
+      "Brian is a design lead for Jit Jots and recently graduated from UBC with a degree in biology. Brian's job involves designing workshops for Jit Jots, which involves researching science topics to present to learners and drafting lesson plans and planning activities that fit the topic. Outside of Jit Jots, Brian is a researcher for different clinical studies at VGH and UBCH involving emergency medicine and anaesthesia.",
   },
   {
     name: "James Gao",
@@ -48,7 +48,7 @@ const profiles = [
     img: "/images/headshots/James.png",
     fallback: "JG",
     description:
-      "James is currently studying Kinesiology at UBC. He’s interested in understanding how the body moves and why it sometimes feels like it has a mind of its own. When he’s not buried in Anki flashcards, he enjoys swimming, playing video games, and spending time with friends.",
+      "James is currently studying Kinesiology at UBC. He's interested in understanding how the body moves and why it sometimes feels like it has a mind of its own. When he's not buried in Anki flashcards, he enjoys swimming, playing video games, and spending time with friends.",
   },
   {
     name: "Dain Choi",
@@ -72,7 +72,7 @@ const profiles = [
     img: "/images/headshots/Sheridan.jpg",
     fallback: "SD",
     description:
-      "Sheridan is currently studying psychology at UBC. She is curious about how the human mind is unified with the body. Studying human behaviours, thought processes, and biological responses are all up Sheridan’s alley! In her free time, she loves to play badminton with her friends, learn how to knit, and dabbles with video editing!",
+      "Sheridan is currently studying psychology at UBC. She is curious about how the human mind is unified with the body. Studying human behaviours, thought processes, and biological responses are all up Sheridan's alley! In her free time, she loves to play badminton with her friends, learn how to knit, and dabbles with video editing!",
   },
   {
     name: "Danny Liu",
@@ -84,7 +84,7 @@ const profiles = [
   },
   {
     name: "Angela Yang",
-    position: "Workshop Lead" , 
+    position: "Workshop Lead",
     img: "/images/headshots/Angela.png",
     fallback: "AY",
     description:
@@ -104,8 +104,8 @@ const profiles = [
     img: "/images/headshots/Derek.jpg",
     fallback: "DC",
     description:
-      "Derek is studying computer science at SFU. In his free time, he enjoys playing video games and exploring the outdoors."
-  }
+      "Derek is studying computer science at SFU. In his free time, he enjoys playing video games and exploring the outdoors.",
+  },
 ];
 
 function ProfileCard({ name, position, img, fallback, description }: Profile) {
@@ -128,32 +128,10 @@ function ProfileCard({ name, position, img, fallback, description }: Profile) {
   );
 }
 
-export default function About() {
+export default function MeetTheTeam() {
   return (
     <main className="flex min-h-screen flex-col items-center lg:px-32 gap-20">
       <div className="container pt-10 sm:pt-16 space-y-24">
-        <div className="space-y-4">
-          <h2 className="text-4xl font-extrabold scroll-m-20 tracking-tight lg:text-6xl">
-            About Us
-          </h2>
-          <div className="text-xl text-muted-foreground space-y-2">
-            <p>
-              Jit Jots is a{" "}
-              <b className="font-medium">non-profit organization</b> founded by
-              a group of UBC students in the faculty of science.
-            </p>
-            <p>
-              Our mission is to share our passion for the subject, and hope to
-              inspire a positive learning environment for the youth in our
-              community.
-            </p>
-            <p>
-              We strive to make learning fun through <b className="font-medium">monthly</b> activity sheets
-              and <b className="font-medium">in-person</b> workshops where we will guide kids through exciting
-              experiments they can do at home!
-            </p>
-          </div>
-        </div>
         <div className="space-y-4">
           <h2 className="text-4xl font-extrabold scroll-m-20 tracking-tight lg:text-6xl">
             Meet the Team
