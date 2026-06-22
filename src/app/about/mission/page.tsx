@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ChevronRight, ArrowRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const ibmPlexMono = IBM_Plex_Mono({ weight: '700', subsets: ['latin'] });
 const kalam = Kalam({ weight: '700', subsets: ['latin'] });
@@ -32,26 +32,6 @@ export default function Mission() {
               A non-profit making science fun, hands-on, and accessible for kids
               across the Lower Mainland.
             </p>
-            <div className="flex flex-wrap items-center gap-6">
-              <a href="#about">
-                <Button
-                  className={cn(
-                    ibmPlexMono.className,
-                    'text-lg h-12 [word-spacing:-0.5ch]',
-                  )}
-                >
-                  <ChevronRight className="-ml-2" strokeWidth={3} />
-                  OUR STORY
-                </Button>
-              </a>
-              <a
-                href="#mission"
-                className="inline-flex items-center gap-1.5 text-base font-semibold text-muted-foreground hover:text-foreground transition-colors"
-              >
-                What drives us
-                <ArrowRight size={16} strokeWidth={2.5} />
-              </a>
-            </div>
           </div>
 
           <div className="relative hidden md:block">
