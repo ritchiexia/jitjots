@@ -1,7 +1,6 @@
 import workshopsHeroPic from "public/images/workshops-hero.png";
 import Image from "next/image";
 import {
-  ChevronRight,
   CircleDollarSign,
   FlaskConical,
   Lightbulb,
@@ -9,13 +8,8 @@ import {
   Settings2,
   Timer,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { IBM_Plex_Mono } from "next/font/google";
-import Link from "next/link";
 import PhotoGallery from "@/components/photo-gallery";
-
-const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
+import BookingForm from "@/components/booking-form";
 
 export default function Workshops() {
   return (
@@ -38,17 +32,7 @@ export default function Workshops() {
                 and allow time for workshop preparation. We may not be able to accommodate
                 workshops booked on short notice.
               </p>
-              <Link href="https://forms.gle/aJbnMDKzNFnuWeDB6">
-                <Button
-                  className={cn(
-                    ibmPlexMono.className,
-                    "mt-4 text-lg h-12 [word-spacing:-0.5ch]"
-                  )}
-                >
-                  <ChevronRight className="-ml-2" strokeWidth={3} />
-                  BOOK NOW
-                </Button>
-              </Link>
+              <BookingForm />
             </div>
             <Image
               src={workshopsHeroPic}

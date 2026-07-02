@@ -1,11 +1,10 @@
-import { IBM_Plex_Mono, Kalam } from 'next/font/google';
+import { Kalam } from 'next/font/google';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 
-const ibmPlexMono = IBM_Plex_Mono({ weight: '700', subsets: ['latin'] });
 const kalam = Kalam({ weight: '700', subsets: ['latin'] });
 
 const communityPhotos = [
@@ -163,8 +162,8 @@ export default function Mission() {
           <Link href="/get-involved/volunteers">
             <Button
               className={cn(
-                ibmPlexMono.className,
-                'text-lg h-12 [word-spacing:-0.5ch] bg-[#f5d02e] text-[#221d28] hover:bg-[#f5d02e]/90',
+                'font-mono',
+                'text-lg h-12 tracking-wide bg-[#f5d02e] text-[#221d28] hover:bg-[#f5d02e]/90',
               )}
             >
               <ChevronRight className="-ml-2" strokeWidth={3} />
@@ -175,8 +174,8 @@ export default function Mission() {
             <Button
               variant="outline"
               className={cn(
-                ibmPlexMono.className,
-                'text-lg h-12 [word-spacing:-0.5ch] bg-transparent border-white/40 text-white hover:bg-white/10 hover:text-white',
+                'font-mono',
+                'text-lg h-12 tracking-wide bg-transparent border-white/40 text-white hover:bg-white/10 hover:text-white',
               )}
             >
               <ChevronRight className="-ml-2" strokeWidth={3} />

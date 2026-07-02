@@ -3,11 +3,8 @@
 import { Facebook, Instagram, Music2, Youtube, Send, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { IBM_Plex_Mono } from 'next/font/google';
 import { useGoogleForm } from '@/hooks/use-google-form';
 import { toast } from 'sonner';
-
-const ibmPlexMono = IBM_Plex_Mono({ weight: '700', subsets: ['latin'] });
 
 const CONTACT_US_GOOGLE_FORM_CONFIG = {
   formId: '1vye2_70H5Hv6rX93E91zN48grt79U1fxdkaZP_-Hhf8',
@@ -107,7 +104,7 @@ export default function ContactPage() {
               <Button
                 onClick={resetForm}
                 variant="outline"
-                className={ibmPlexMono.className}
+                className={'font-mono'}
               >
                 Send another message
               </Button>
@@ -174,7 +171,7 @@ export default function ContactPage() {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className={`${ibmPlexMono.className} h-11 px-8 gap-2 w-fit`}
+                className={`${'font-mono'} h-11 px-8 gap-2 w-fit`}
               >
                 <Send className="w-4 h-4" strokeWidth={2.5} />
                 {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}

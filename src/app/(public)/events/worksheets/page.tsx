@@ -7,7 +7,6 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { ExternalLink } from "lucide-react";
-import { IBM_Plex_Mono } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -103,8 +102,6 @@ const worksheets = [
   },
 ];
 
-const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
-
 function PreviewGrid() {
   return (
     <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2">
@@ -132,7 +129,7 @@ function PreviewGrid() {
                   <Link href={worksheet.downloadLink}>
                     <Button
                       className={cn(
-                        ibmPlexMono.className,
+                        'font-mono',
                         "text-lg h-12 gap-1"
                       )}
                     >

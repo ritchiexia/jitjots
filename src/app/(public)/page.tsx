@@ -1,6 +1,6 @@
 "use client";
 
-import { IBM_Plex_Mono, Kalam } from "next/font/google";
+import { Kalam } from "next/font/google";
 
 import Testimonials from "@/components/testimonials";
 import { cn } from "@/lib/utils";
@@ -11,7 +11,6 @@ import MainGrid from "@/components/main-grid";
 import { ChevronRight } from "lucide-react";
 
 const kalam = Kalam({ weight: "700", subsets: ["latin"] });
-const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
 
 export default function Home() {
   return (
@@ -31,8 +30,8 @@ export default function Home() {
               <Link href="/about/team">
                 <Button
                   className={cn(
-                    ibmPlexMono.className,
-                    "text-lg h-12 [word-spacing:-0.5ch]"
+                    'font-mono',
+                    "text-lg h-12 tracking-wide"
                   )}
                 >
                   <ChevronRight className="-ml-2" strokeWidth={3} />
@@ -43,8 +42,8 @@ export default function Home() {
                 <Button
                   variant="secondary"
                   className={cn(
-                    ibmPlexMono.className,
-                    "text-lg h-12 [word-spacing:-0.5ch]"
+                    'font-mono',
+                    "text-lg h-12 tracking-wide"
                   )}
                 >
                   <ChevronRight className="-ml-2" strokeWidth={3} />

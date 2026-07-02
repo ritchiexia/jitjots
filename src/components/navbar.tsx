@@ -59,7 +59,7 @@ export default function NewNavBar() {
                         <Link
                           href="/"
                           className={cn(
-                            ibmPlexMono.className,
+                            'font-mono',
                             'block text-base font-bold text-gray-900 hover:text-primary transition-colors',
                           )}
                         >
@@ -72,7 +72,7 @@ export default function NewNavBar() {
                     <AccordionItem value="item-2" className="border-b">
                       <AccordionTrigger
                         className={cn(
-                          ibmPlexMono.className,
+                          'font-mono',
                           'text-base font-bold text-gray-900 hover:text-primary no-underline hover:no-underline',
                         )}
                       >
@@ -112,7 +112,7 @@ export default function NewNavBar() {
                     <AccordionItem value="item-3" className="border-b">
                       <AccordionTrigger
                         className={cn(
-                          ibmPlexMono.className,
+                          'font-mono',
                           'text-base font-bold text-gray-900 hover:text-primary no-underline hover:no-underline',
                         )}
                       >
@@ -152,7 +152,7 @@ export default function NewNavBar() {
                     <AccordionItem value="item-4" className="border-b">
                       <AccordionTrigger
                         className={cn(
-                          ibmPlexMono.className,
+                          'font-mono',
                           'text-base font-bold text-gray-900 hover:text-primary no-underline hover:no-underline',
                         )}
                       >

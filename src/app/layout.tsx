@@ -1,12 +1,15 @@
 import type { Metadata } from 'next';
-import { Rubik } from 'next/font/google';
+import { Rubik, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
-import NavBar from '@/components/navbar';
-import Footer from '@/components/footer';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/sonner';
 
 const rubik = Rubik({ subsets: ['latin'] });
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: '700',
+  subsets: ['latin'],
+  variable: '--font-ibm-plex-mono',
+});
 
 export const metadata: Metadata = {
   title: 'Jit Jots',
@@ -23,17 +26,8 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/jitjots.svg" sizes="any" />
       </head>
-      <body
-        className={cn(
-          rubik.className,
-          'overflow-x-hidden min-h-screen flex flex-col',
-        )}
-      >
-        <NavBar />
+      <body className={cn(rubik.className, ibmPlexMono.variable, 'overflow-x-hidden min-h-screen flex flex-col')}>
         {children}
-        <div className="mt-16">
-          <Footer />
-        </div>
         <Toaster />
       </body>
     </html>
