@@ -2,15 +2,12 @@ import { Fragment } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SquarePen } from "lucide-react";
-import { IBM_Plex_Mono } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import DesignTeamGraphic from "public/images/design-team-graphic.svg";
 import CommunicationsTeamGraphic from "public/images/communications-team-graphic.svg";
 import OutreachTeamGraphic from "public/images/outreach-team-graphic.svg";
 import WorkshopTeamGraphic from "public/images/workshop-team-graphic.svg";
-
-const ibmPlexMono = IBM_Plex_Mono({ weight: "700", subsets: ["latin"] });
 
 type VolunteerTeams = {
   design: string[];
@@ -43,7 +40,7 @@ export default function Volunteers(): JSX.Element {
           <div>
             <Link href="https://forms.gle/Qc821h1itrYqp5RG6">
               <Button
-                className={cn(ibmPlexMono.className, "text-lg h-12 gap-2")}
+                className={cn('font-mono', "text-lg h-12 gap-2")}
               >
                 <SquarePen className="-ml-1" strokeWidth={3} />
                 APPLY
