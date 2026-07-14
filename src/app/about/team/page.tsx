@@ -51,12 +51,12 @@ const profiles = [
       "James is currently studying Kinesiology at UBC. He's interested in understanding how the body moves and why it sometimes feels like it has a mind of its own. When he's not buried in Anki flashcards, he enjoys swimming, playing video games, and spending time with friends.",
   },
   {
-    name: "Dain Choi",
+    name: "Justin Dang",
     position: "Communications Team Lead",
-    img: "/images/headshots/Dain.png",
-    fallback: "DC",
+    img: "/images/headshots/Justin.png",
+    fallback: "JD",
     description:
-      "Dain is studying neuroscience and immunology at UBC. She finds it fascinating to learn about how different systems in our body work together to keep us alive. In her spare time, she enjoys listening to music, and is currently learning to play tennis.",
+      "Justin is currently studying Computer Science at UBC. He finds it fun to use science to understand why and how certain things happen in everyday life (e.g. why he feels better after sleeping for 3 hours rather than 10). In his free time, he enjoys ultimate frisbee, video games, drawing, and procrastinating on assignments.",
   },
   {
     name: "Kiki Gao",
