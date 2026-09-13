@@ -3,6 +3,7 @@ import { Rubik, IBM_Plex_Mono } from 'next/font/google';
 import './globals.css';
 import { cn } from '@/lib/utils';
 import { Toaster } from '@/components/ui/sonner';
+import AuthHashRedirect from '@/components/auth-hash-redirect';
 
 const rubik = Rubik({ subsets: ['latin'] });
 const ibmPlexMono = IBM_Plex_Mono({
@@ -27,6 +28,7 @@ export default function RootLayout({
         <link rel="icon" href="/jitjots.svg" sizes="any" />
       </head>
       <body className={cn(rubik.className, ibmPlexMono.variable, 'overflow-x-hidden min-h-screen flex flex-col')}>
+        <AuthHashRedirect />
         {children}
         <Toaster />
       </body>

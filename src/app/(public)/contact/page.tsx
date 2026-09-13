@@ -3,18 +3,9 @@
 import { Facebook, Instagram, Music2, Youtube, Send, Mail } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { useGoogleForm } from '@/hooks/use-google-form';
+import { useState } from 'react';
 import { toast } from 'sonner';
-
-const CONTACT_US_GOOGLE_FORM_CONFIG = {
-  formId: '1vye2_70H5Hv6rX93E91zN48grt79U1fxdkaZP_-Hhf8',
-  entryIds: {
-    name: 'entry.1626104225',
-    email: 'entry.1989905361',
-    subject: 'entry.1693708265',
-    message: 'entry.1750643174',
-  },
-};
+import { supabase } from '@/lib/supabase';
 
 const inputClass =
   'w-full rounded-lg border border-input bg-background px-4 py-3 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring';
@@ -53,26 +44,33 @@ const contacts = [
 ];
 
 export default function ContactPage() {
-  const { isSubmitting, isSubmitted, submitForm, resetForm } = useGoogleForm(
-    CONTACT_US_GOOGLE_FORM_CONFIG,
-  );
+  // contact form. saves to supabase so it shows in the portal's messages tab.
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const resetForm = () => setIsSubmitted(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name') as string,
-      email: formData.get('email') as string,
-      subject: formData.get('subject') as string,
-      message: formData.get('message') as string,
-    };
+    const form = e.currentTarget;
+    const formData = new FormData(form);
 
-    try {
-      await submitForm(data);
-      (e.target as HTMLFormElement).reset();
-    } catch (error) {
+    setIsSubmitting(true);
+    const { error } = await supabase.from('messages').insert({
+      name: String(formData.get('name')).trim(),
+      email: String(formData.get('email')).trim(),
+      subject: String(formData.get('subject') ?? '').trim(),
+      message: String(formData.get('message')).trim(),
+      status: 'Pending', // must match the public insert policy
+    });
+    setIsSubmitting(false);
+
+    if (error) {
       toast.error('Failed to send message. Please try again later.');
+      return;
     }
+
+    form.reset();
+    setIsSubmitted(true);
   };
 
   return (

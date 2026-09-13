@@ -1,5 +1,6 @@
 import { Nunito, Public_Sans } from 'next/font/google';
 import AdminShell from '@/components/admin/AdminShell';
+import './portal.css';
 
 const nunito = Nunito({
   subsets: ['latin'],
