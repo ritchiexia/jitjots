@@ -79,9 +79,29 @@ export async function POST(req: Request) {
 
   // where the invite link goes
   const origin = new URL(req.url).origin;
+  const redirectTo = `${origin}/portal/set-password`;
+
+  // already invited? resend the link and keep their role and lead
+  const { data: existing } = await admin
+    .from('profiles')
+    .select('id, role, lead_id')
+    .eq('email', email)
+    .maybeSingle();
+
+  if (existing) {
+    const { data: account } = await admin.auth.admin.getUserById(existing.id);
+    if (account?.user?.email_confirmed_at) {
+      return Response.json({ error: `${email} already has an account` }, { status: 409 });
+    }
+    const { error: resendError } = await admin.auth.admin.inviteUserByEmail(email, { redirectTo });
+    if (resendError) {
+      return Response.json({ error: resendError.message }, { status: 502 });
+    }
+    return Response.json({ invited: email, role: existing.role, lead_id: existing.lead_id, resent: true });
+  }
 
   const { data: invited, error: inviteError } = await admin.auth.admin.inviteUserByEmail(email, {
-    redirectTo: `${origin}/portal/set-password`,
+    redirectTo,
   });
 
   if (inviteError || !invited?.user) {

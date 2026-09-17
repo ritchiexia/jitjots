@@ -281,10 +281,17 @@ export default function TeamPage() {
       return;
     }
 
-    const team = people.find(p => p.id === leadId);
-    toast.success(`Invite sent to ${email}`, {
-      description: team ? `They join ${team.full_name || team.email}'s team.` : undefined,
-    });
+    if (json.resent) {
+      // they were invited before and haven't set a password yet
+      toast.success(`Invite resent to ${email}`, {
+        description: 'Their team and role were left as they were.',
+      });
+    } else {
+      const team = people.find(p => p.id === leadId);
+      toast.success(`Invite sent to ${email}`, {
+        description: team ? `They join ${team.full_name || team.email}'s team.` : undefined,
+      });
+    }
     setEmail('');
     setLeadId('');
     load();

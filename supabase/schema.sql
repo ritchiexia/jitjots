@@ -237,6 +237,13 @@ do $$ begin
 exception when duplicate_object then null;
 end $$;
 
+-- the three statuses the portal knows about. matches src/app/admin/bookings/page.tsx.
+do $$ begin
+  alter table public.bookings add constraint bookings_status
+    check (status in ('Pending', 'Confirmed', 'Declined'));
+exception when duplicate_object then null;
+end $$;
+
 -- roles that can see bookings. matches 'view:bookings' in src/lib/roles.ts.
 create or replace function public.can_manage_bookings()
 returns boolean
@@ -675,6 +682,8 @@ grant execute on function public.get_staff_blocks(date, date) to anon, authentic
 
 -- true if a booking can be made: the date is free and enough staff cover the whole time.
 -- every 30 kids needs 2 staff, and 1 of them must be able to lead. max 100 kids.
+-- times match src/lib/booking-times.ts: 8 AM to 9 PM, last start 7 PM, up to 2 hours,
+-- and no further ahead than 2 months, like the form's calendar.
 create or replace function public.booking_is_staffed(d date, s time, e time, kids int)
 returns boolean
 language sql
@@ -686,6 +695,12 @@ as $$
     and s is not null
     and e is not null
     and e > s
+    and s >= time '08:00'
+    and s <= time '19:00'
+    and e <= time '21:00'
+    and e - s <= interval '2 hours'
+    and d >= current_date
+    and d <= (current_date + interval '2 months')::date
     and not exists (
       select 1 from public.bookings b
       where b.requested_date = d and b.status in ('Pending', 'Confirmed')
