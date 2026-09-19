@@ -2,34 +2,45 @@
 
 import { Facebook, Instagram, Mailbox, Music2, Youtube } from 'lucide-react';
 import Link from 'next/link';
-import { useGoogleForm } from '@/hooks/use-google-form';
+import { useState } from 'react';
 import { toast } from 'sonner';
-
-const NEWSLETTER_SIGNUP_GOOGLE_FORM_CONFIG = {
-  formId: '1gnom2BmmLB0dWQAmV80kQJ_DrqIj3zKKj_S5kMzzO68',
-  entryIds: {
-    email: 'entry.2133646784',
-  },
-};
+import { supabase } from '@/lib/supabase';
 
 export default function Footer() {
-  const { isSubmitting, submitForm, resetForm } = useGoogleForm(
-    NEWSLETTER_SIGNUP_GOOGLE_FORM_CONFIG,
-  );
+  // newsletter signup form. saves to supabase so it shows in the portal's newsletter tab.
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const email = formData.get('email') as string;
+    const form = e.currentTarget;
+    const email = String(new FormData(form).get('email')).trim();
 
-    try {
-      await submitForm({ email });
-      toast.success('Subscribed to newsletter!');
-      (e.target as HTMLFormElement).reset();
-      resetForm();
-    } catch (error) {
-      toast.error('Failed to subscribe to newsletter.');
+    setIsSubmitting(true);
+    const { error } = await supabase.from('newsletter_subscribers').insert({
+      email,
+      // must match the public insert policy
+      status: 'subscribed',
+      source: 'website',
+    });
+    setIsSubmitting(false);
+
+    // 23505 means the email is already on the list. the message doesn't say
+    // whether they are subscribed or unsubscribed.
+    if (error?.code === '23505') {
+      toast.success('That address is already on our list.', {
+        description: 'If you unsubscribed before and want back in, email us and we’ll re-add you.',
+      });
+      form.reset();
+      return;
     }
+
+    if (error) {
+      toast.error('Could not subscribe. Please try again later.');
+      return;
+    }
+
+    toast.success('Subscribed to newsletter!');
+    form.reset();
   };
 
   return (

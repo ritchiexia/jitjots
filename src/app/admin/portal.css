@@ -1,0 +1,58 @@
+/* Portal layout: desktop first, tighten and scroll on small screens. */
+
+.portal-main table {
+  min-width: 720px;
+}
+
+.portal-main table.portal-team-table {
+  min-width: 1180px;
+}
+
+.portal-cal-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.portal-cal {
+  min-width: 580px;
+}
+
+@media (max-width: 860px) {
+  .portal-head,
+  .portal-toolbar,
+  .portal-body,
+  .portal-preview {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  .portal-head {
+    padding-top: 14px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .portal-toolbar {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .portal-body {
+    padding-top: 12px !important;
+    padding-bottom: 12px !important;
+  }
+
+  .portal-preview {
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12.5px;
+  }
+
+  .portal-drawer {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .portal-search {
+    width: 100% !important;
+  }
+}
