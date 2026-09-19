@@ -46,6 +46,9 @@ const fieldClass =
 // workshop topics. "Other" shows a text box.
 const TOPICS = ['Forensics', '3D Printing', 'Space', 'Reactions', 'Inventors and Engineers', 'Other'];
 
+// how the workshop runs
+const STYLES = ['Presentation', 'Hands-on'];
+
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 // date as YYYY-MM-DD in local time
@@ -92,6 +95,7 @@ export default function BookingForm({
   const [endTime, setEndTime] = useState('');
   const [topic, setTopic] = useState('');
   const [topicOther, setTopicOther] = useState('');
+  const [style, setStyle] = useState('');
   const [attempted, setAttempted] = useState(false);
 
   // booked dates, disabled in the picker
@@ -116,6 +120,7 @@ export default function BookingForm({
     setEndTime('');
     setTopic('');
     setTopicOther('');
+    setStyle('');
     setAttempted(false);
     supabase.rpc('get_booked_dates').then(({ data }) => {
       setBookedDates(new Set((data ?? []).map((r: { requested_date: string }) => r.requested_date)));
@@ -157,6 +162,7 @@ export default function BookingForm({
     kids: !kidsCount || !Number.isFinite(kids) || kids < 1,
     date: !date,
     topic: !topicValue,
+    style: !style,
     startTime: !startTime,
     endTime: !endTime,
   };
@@ -231,6 +237,7 @@ export default function BookingForm({
       ages: ages.trim(),
       kids_count: kids,
       topic: topicValue,
+      style,
       requested_date: date,
       start_time: startTime,
       end_time: endTime,
@@ -421,6 +428,29 @@ export default function BookingForm({
                 className={cn(boxClass(missing.topic), 'mt-1.5')}
               />
             )}
+          </div>
+
+          <div className="grid gap-1.5">
+            <span className="text-sm font-medium">Workshop style<Star /></span>
+            <div className="flex flex-wrap gap-2">
+              {STYLES.map(s => (
+                <button
+                  key={s}
+                  type="button"
+                  onClick={() => setStyle(s)}
+                  aria-pressed={style === s}
+                  className={cn(
+                    'rounded-full border px-4 py-1.5 text-sm font-medium transition-colors',
+                    style === s
+                      ? 'border-primary bg-primary text-primary-foreground'
+                      : 'border-input bg-background text-muted-foreground hover:bg-muted hover:text-foreground',
+                    attempted && missing.style && 'border-red-500 ring-2 ring-red-200',
+                  )}
+                >
+                  {s}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div className="grid gap-1.5">

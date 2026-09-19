@@ -38,7 +38,7 @@ export async function POST(req: Request) {
   const [{ data: booking, error }, { data: signerProfile }] = await Promise.all([
     supabase
       .from('bookings')
-      .select('id, contact_name, org, email, topic, requested_date, start_time, end_time, ages, age_group, kids_count, requester_notes, source')
+      .select('id, contact_name, org, email, topic, style, requested_date, start_time, end_time, ages, age_group, kids_count, requester_notes, source')
       .eq('id', id)
       .single(),
     // the email is signed by the admin who sent it

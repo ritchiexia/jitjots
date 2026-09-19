@@ -29,7 +29,7 @@ export async function POST(req: Request) {
 
   const { data: booking } = await db
     .from('bookings')
-    .select('id, contact_name, org, email, topic, requested_date, start_time, end_time, ages, age_group, kids_count, requester_notes, source, created_at, ack_sent_at')
+    .select('id, contact_name, org, email, topic, style, requested_date, start_time, end_time, ages, age_group, kids_count, requester_notes, source, created_at, ack_sent_at')
     .eq('id', body.id)
     .maybeSingle();
 

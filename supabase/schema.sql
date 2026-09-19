@@ -6,10 +6,13 @@
 do $$ begin
   create type public.user_role as enum (
     'volunteer', 'workshop_lead', 'outreach_lead',
-    'comms_lead', 'president', 'admin'
+    'comms_lead', 'design_lead', 'president', 'admin'
   );
 exception when duplicate_object then null;
 end $$;
+
+-- roles added after the enum was first created. safe to re-run.
+alter type public.user_role add value if not exists 'design_lead';
 
 create table if not exists public.profiles (
   id         uuid primary key references auth.users on delete cascade,
@@ -41,7 +44,7 @@ set search_path = public
 as $$
   select coalesce(
     (select role from public.profiles where id = auth.uid())
-      in ('workshop_lead', 'outreach_lead', 'comms_lead', 'president', 'admin'),
+      in ('workshop_lead', 'outreach_lead', 'comms_lead', 'design_lead', 'president', 'admin'),
     false
   )
 $$;
@@ -651,6 +654,8 @@ create policy "leads write months" on public.availability_months
 -- ages and notes typed on the public form. admin notes stay in `notes`.
 alter table public.bookings add column if not exists ages text;
 alter table public.bookings add column if not exists requester_notes text;
+-- 'Presentation' or 'Hands-on'. empty on older bookings.
+alter table public.bookings add column if not exists style text;
 
 -- STAFF BASED BOOKING
 

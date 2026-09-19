@@ -49,7 +49,7 @@ export default function AdminLogin() {
     setLoading(true);
     setError('');
     // clean up the email so autofill spaces or capitals don't fail login
-    const { error } = await supabase.auth.signInWithPassword({
+    const { data, error } = await supabase.auth.signInWithPassword({
       email: email.trim().toLowerCase(),
       password,
     });
@@ -58,6 +58,10 @@ export default function AdminLogin() {
       // show the real error message
       setError(error.message);
     } else {
+      // older accounts are missing the flag the invite route checks
+      if (!data.user?.user_metadata?.password_set) {
+        await supabase.auth.updateUser({ data: { password_set: true } });
+      }
       router.push('/admin/bookings');
     }
   }

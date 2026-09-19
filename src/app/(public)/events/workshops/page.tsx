@@ -12,7 +12,6 @@ const WorkshopsMap = dynamic(() => import('@/components/workshops-map'), {
   ),
 });
 import {
-  ChevronRight,
   ChevronDown,
   CircleDollarSign,
   FlaskConical,
@@ -21,12 +20,8 @@ import {
   Settings2,
   Timer,
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import { IBM_Plex_Mono } from 'next/font/google';
 import BookingForm from '@/components/booking-form';
-
-const ibmPlexMono = IBM_Plex_Mono({ weight: '700', subsets: ['latin'] });
 
 type Station = {
   duration: string;
@@ -740,155 +735,6 @@ function ActivitiesPanel({ activities }: { activities: Activity[] }) {
   );
 }
 
-type RequestForm = {
-  ageGroups: string[];
-  duration: string;
-  theme: string;
-  style: string;
-  notes: string;
-};
-
-const AGE_GROUP_OPTIONS = ['3–6', '7–11', '12+'];
-const DURATION_OPTIONS = ['30 mins', '1 hour', '1 hour 30 mins'];
-const STYLE_OPTIONS = ['Presentation', 'Hands-on'];
-
-function WorkshopRequestForm() {
-  const [form, setForm] = useState<RequestForm>({
-    ageGroups: [],
-    duration: '',
-    theme: '',
-    style: '',
-    notes: '',
-  });
-  const toggleAge = (age: string) =>
-    setForm((f) => ({
-      ...f,
-      ageGroups: f.ageGroups.includes(age)
-        ? f.ageGroups.filter((a) => a !== age)
-        : [...f.ageGroups, age],
-    }));
-
-  return (
-    <div className="rounded-3xl border border-border bg-muted/10 p-6 space-y-6">
-      {/* Age group */}
-      <div className="space-y-2">
-        <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
-          Audience age group
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {AGE_GROUP_OPTIONS.map((age) => {
-            const selected = form.ageGroups.includes(age);
-            return (
-              <button
-                key={age}
-                type="button"
-                onClick={() => toggleAge(age)}
-                className={cn(
-                  'px-4 py-2 rounded-2xl text-sm font-medium border transition-colors',
-                  selected
-                    ? 'bg-primary text-primary-foreground border-primary'
-                    : 'bg-background border-border text-muted-foreground hover:bg-muted hover:text-foreground',
-                )}
-              >
-                Ages {age}
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
-      {/* Duration */}
-      <div className="space-y-2">
-        <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
-          Workshop duration
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {DURATION_OPTIONS.map((d) => (
-            <button
-              key={d}
-              type="button"
-              onClick={() => setForm((f) => ({ ...f, duration: d }))}
-              className={cn(
-                'px-4 py-2 rounded-2xl text-sm font-medium border transition-colors',
-                form.duration === d
-                  ? 'bg-primary text-primary-foreground border-primary'
-                  : 'bg-background border-border text-muted-foreground hover:bg-muted hover:text-foreground',
-              )}
-            >
-              {d}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Theme */}
-      <div className="space-y-2">
-        <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
-          Science theme
-        </p>
-        <input
-          type="text"
-          placeholder="e.g. Biology, Robotics, Chemistry…"
-          value={form.theme}
-          onChange={(e) => setForm((f) => ({ ...f, theme: e.target.value }))}
-          className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
-        />
-      </div>
-
-      {/* Style */}
-      <div className="space-y-2">
-        <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
-          Workshop style
-        </p>
-        <div className="flex flex-wrap gap-2">
-          {STYLE_OPTIONS.map((s) => (
-            <button
-              key={s}
-              type="button"
-              onClick={() => setForm((f) => ({ ...f, style: s }))}
-              className={cn(
-                'px-4 py-2 rounded-2xl text-sm font-medium border transition-colors',
-                form.style === s
-                  ? 'bg-primary text-primary-foreground border-primary'
-                  : 'bg-background border-border text-muted-foreground hover:bg-muted hover:text-foreground',
-              )}
-            >
-              {s}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Special considerations */}
-      <div className="space-y-2">
-        <p className="text-xs font-semibold tracking-widest uppercase text-muted-foreground">
-          Special considerations{' '}
-          <span className="normal-case font-normal text-muted-foreground/60">
-            (optional)
-          </span>
-        </p>
-        <textarea
-          rows={3}
-          placeholder="Allergies, accessibility needs, preferred dates, group size…"
-          value={form.notes}
-          onChange={(e) => setForm((f) => ({ ...f, notes: e.target.value }))}
-          className="w-full rounded-2xl border border-border bg-background px-4 py-2.5 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none"
-        />
-      </div>
-
-      <Button
-        className={cn(
-          ibmPlexMono.className,
-          'text-base h-11 [word-spacing:-0.5ch]',
-        )}
-      >
-        <ChevronRight className="-ml-2" strokeWidth={3} />
-        SEND REQUEST
-      </Button>
-    </div>
-  );
-}
-
 export default function Workshops() {
   const [activeThemeId, setActiveThemeId] = useState(themes[0].id);
   const activeTheme = themes.find((t) => t.id === activeThemeId)!;
@@ -1037,20 +883,6 @@ export default function Workshops() {
               <ActivitiesPanel activities={activeTheme.activities} />
             </div>
           </div>
-        </div>
-
-        {/* Request a Workshop */}
-        <div className="space-y-6">
-          <div>
-            <h2 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
-              Request a Workshop
-            </h2>
-            <p className="text-muted-foreground mt-2 text-sm">
-              Tell us what you&apos;re looking for and we&apos;ll get back to
-              you with a custom proposal.
-            </p>
-          </div>
-          <WorkshopRequestForm />
         </div>
 
         {/* Where We Run */}

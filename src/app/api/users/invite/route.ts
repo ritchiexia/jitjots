@@ -7,9 +7,9 @@ export const runtime = 'nodejs';
 // new users always start as volunteers. admins can promote them later.
 const STARTING_ROLE: Role = 'volunteer';
 
-/** Body: `{ email, lead_id }`. Needs the `manage:users` permission. */
+/** Body: `{ email, lead_id, resend }`. `resend` confirms resending to someone who never set a password. Needs the `manage:users` permission. */
 export async function POST(req: Request) {
-  let body: { email?: string; lead_id?: string | null };
+  let body: { email?: string; lead_id?: string | null; resend?: boolean };
   try {
     body = await req.json();
   } catch {
@@ -84,16 +84,33 @@ export async function POST(req: Request) {
   // already invited? resend the link and keep their role and lead
   const { data: existing } = await admin
     .from('profiles')
-    .select('id, role, lead_id')
+    .select('id, role, lead_id, full_name')
     .eq('email', email)
     .maybeSingle();
 
   if (existing) {
     const { data: account } = await admin.auth.admin.getUserById(existing.id);
-    if (account?.user?.email_confirmed_at) {
-      return Response.json({ error: `${email} already has an account` }, { status: 409 });
+    const authUser = account?.user;
+
+    // set on the set password page and at sign in. a name means they got in before the flag existed.
+    const hasPassword = authUser?.user_metadata?.password_set === true || !!existing.full_name;
+    if (hasPassword) {
+      return Response.json(
+        { error: `${email} already has an account. Nothing was changed. They can use "Forgot password" on the sign in page.` },
+        { status: 409 },
+      );
     }
-    const { error: resendError } = await admin.auth.admin.inviteUserByEmail(email, { redirectTo });
+
+    // ask the admin first, since resending kills the old link
+    if (!body.resend) {
+      return Response.json({ pending: true }, { status: 409 });
+    }
+
+    // clicking an invite link confirms the email, and supabase won't re-invite a confirmed user.
+    // a recovery link lands on the same set password page.
+    const { error: resendError } = authUser?.email_confirmed_at
+      ? await admin.auth.resetPasswordForEmail(email, { redirectTo })
+      : await admin.auth.admin.inviteUserByEmail(email, { redirectTo });
     if (resendError) {
       return Response.json({ error: resendError.message }, { status: 502 });
     }

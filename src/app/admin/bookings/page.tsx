@@ -35,6 +35,8 @@ type Booking = {
   ages: string | null;
   kids_count: number;
   topic: string;
+  // 'Presentation' or 'Hands-on'. empty on older or manual bookings
+  style: string | null;
   status: Status;
   created_at: string;
   notes: string | null;
@@ -1142,6 +1144,7 @@ export default function BookingsPage() {
                 ['# of kids', String(selected.kids_count)],
                 ['Their notes', selected.requester_notes || 'None'],
                 ['Topic', selected.topic],
+                ['Style', selected.style || 'Not given'],
                 [
                   'Source',
                   selected.source === 'manual'

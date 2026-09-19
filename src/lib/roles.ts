@@ -6,6 +6,7 @@ export type Role =
   | 'workshop_lead'
   | 'outreach_lead'
   | 'comms_lead'
+  | 'design_lead'
   | 'president'
   | 'admin';
 
@@ -51,6 +52,8 @@ const PERMISSIONS: Record<Role, Permission[]> = {
   outreach_lead: [...EXEC, 'view:bookings', 'manage:bookings', 'view:messages', 'view:volunteers', 'manage:graduation'],
   // comms handles newsletters, not bookings. they can graduate their own volunteers.
   comms_lead: [...EXEC, 'view:newsletter', 'view:volunteers', 'manage:graduation'],
+  // design makes worksheets and graphics. no bookings or newsletter, but they can graduate their own volunteers.
+  design_lead: [...EXEC, 'view:volunteers', 'manage:graduation'],
   president: EVERYTHING,
   admin: EVERYTHING,
 };
@@ -67,6 +70,7 @@ export const ROLE_LABEL: Record<Role, string> = {
   workshop_lead: 'Workshop Team Lead',
   outreach_lead: 'Outreach Lead',
   comms_lead: 'Communications Lead',
+  design_lead: 'Design Lead',
   president: 'President',
   admin: 'Admin',
 };

@@ -56,7 +56,8 @@ export default function SetPasswordPage() {
     }
 
     setSaving(true);
-    const { error } = await supabase.auth.updateUser({ password });
+    // the flag tells the invite route they have an account now
+    const { error } = await supabase.auth.updateUser({ password, data: { password_set: true } });
 
     if (error) {
       setSaving(false);

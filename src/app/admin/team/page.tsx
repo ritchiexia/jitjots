@@ -267,13 +267,26 @@ export default function TeamPage() {
       return;
     }
 
-    const res = await fetch('/api/users/invite', {
+    // only the email and lead are sent. new people start as volunteers.
+    const send = (resend: boolean) => fetch('/api/users/invite', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-      // only the email and lead are sent. new people start as volunteers.
-      body: JSON.stringify({ email, lead_id: leadId || null }),
+      body: JSON.stringify({ email, lead_id: leadId || null, resend }),
     });
-    const json = await res.json().catch(() => ({}));
+
+    let res = await send(false);
+    let json = await res.json().catch(() => ({}));
+
+    // invited before but never set a password
+    if (json.pending) {
+      const ok = window.confirm(
+        `${email} was already invited but hasn't set a password yet.\n\n` +
+        'Send them a new link? Their old link will stop working, and their team and role stay the same.',
+      );
+      if (!ok) { setInviting(false); return; }
+      res = await send(true);
+      json = await res.json().catch(() => ({}));
+    }
     setInviting(false);
 
     if (!res.ok) {

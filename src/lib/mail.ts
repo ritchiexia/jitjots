@@ -146,6 +146,8 @@ export type BookingDetails = BookingEmailInput & {
   /** Older ages field, used if `ages` is empty. */
   age_group?: string | null;
   kids_count?: number | null;
+  /** `"Presentation"` or `"Hands-on"`, if they picked one. */
+  style?: string | null;
   /** Notes they wrote, if any. */
   requester_notes?: string | null;
   /** `"website"` or `"manual"`. */
@@ -164,6 +166,7 @@ export function bookingSummary(b: BookingDetails): string {
     `Contact: ${b.contact_name}`,
     b.email ? `Email: ${b.email}` : null,
     `Topic: ${b.topic}`,
+    b.style ? `Style: ${b.style}` : null,
     `Date: ${longDate(b.requested_date)}`,
     start && end ? `Time: ${start} to ${end}` : null,
     age ? `Age: ${age}` : null,
