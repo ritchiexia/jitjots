@@ -54,6 +54,54 @@ const TOPICS = [
   'Inventors and Engineers',
 ];
 
+// how the workshop runs. matches the public form.
+const STYLES = ['Presentation', 'Hands-on'];
+
+// the details staff can change on an existing booking, as form strings
+type EditInfo = {
+  org: string;
+  contact_name: string;
+  email: string;
+  ages: string;
+  kids_count: string;
+  topic: string;
+  style: string;
+};
+
+const EMPTY_INFO: EditInfo = {
+  org: '',
+  contact_name: '',
+  email: '',
+  ages: '',
+  kids_count: '',
+  topic: '',
+  style: '',
+};
+
+// what the form shows for a booking
+function infoOf(b: Booking): EditInfo {
+  return {
+    org: b.org,
+    contact_name: b.contact_name,
+    email: b.email ?? '',
+    ages: b.ages || b.age_group || '',
+    kids_count: String(b.kids_count),
+    topic: b.topic,
+    style: b.style ?? '',
+  };
+}
+
+// readable names for the change log
+const INFO_LABEL: Record<keyof EditInfo, string> = {
+  org: 'organization',
+  contact_name: 'contact name',
+  email: 'email',
+  ages: 'age',
+  kids_count: 'number of kids',
+  topic: 'topic',
+  style: 'style',
+};
+
 // new manual bookings start as Confirmed
 const NEW_BOOKING = {
   org: '',
@@ -66,6 +114,7 @@ const NEW_BOOKING = {
   ages: '',
   kids_count: '',
   topic: TOPICS[0],
+  style: '',
   notes: '',
   status: 'Confirmed' as Status,
 };
@@ -197,6 +246,7 @@ export default function BookingsPage() {
   const [editStart, setEditStart] = useState('');
   const [editEnd, setEditEnd] = useState('');
   const [editNotes, setEditNotes] = useState('');
+  const [editInfo, setEditInfo] = useState<EditInfo>(EMPTY_INFO);
   const [saving, setSaving] = useState(false);
 
   // add a booking by hand
@@ -223,6 +273,7 @@ export default function BookingsPage() {
     );
     setEditEnd(selected?.end_time ? hhmm(toMinutes(selected.end_time)) : '');
     setEditNotes(selected?.notes ?? '');
+    setEditInfo(selected ? infoOf(selected) : EMPTY_INFO);
     // reset delete confirmation when another booking opens
     setConfirmDelete(false);
   }, [selected]);
@@ -237,7 +288,8 @@ export default function BookingsPage() {
         (selected.start_time ? hhmm(toMinutes(selected.start_time)) : null) ||
       asTime(editEnd) !==
         (selected.end_time ? hhmm(toMinutes(selected.end_time)) : null) ||
-      editNotes !== (selected.notes ?? ''));
+      editNotes !== (selected.notes ?? '') ||
+      JSON.stringify(editInfo) !== JSON.stringify(infoOf(selected)));
 
   useEffect(() => {
     fetchBookings();
@@ -360,6 +412,28 @@ export default function BookingsPage() {
   async function saveDetails() {
     if (!selected) return;
 
+    const org = editInfo.org.trim();
+    const contact = editInfo.contact_name.trim();
+    const email = editInfo.email.trim();
+    const topic = editInfo.topic.trim();
+    const kids = Number(editInfo.kids_count);
+    if (!org || !contact) {
+      toast.error('Organization and contact name can’t be empty.');
+      return;
+    }
+    if (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      toast.error('That email address doesn’t look right.');
+      return;
+    }
+    if (!Number.isFinite(kids) || kids < 0) {
+      toast.error('Number of kids has to be 0 or more.');
+      return;
+    }
+    if (!topic) {
+      toast.error('Topic can’t be empty.');
+      return;
+    }
+
     // start and end must both be set or both be empty
     if (!!editStart !== !!editEnd) {
       toast.error('Set both a start and an end time, or neither.');
@@ -396,7 +470,28 @@ export default function BookingsPage() {
       );
     }
 
+    // one log entry naming the details that changed
+    const before = infoOf(selected);
+    const changed = (Object.keys(INFO_LABEL) as (keyof EditInfo)[]).filter(
+      (k) => editInfo[k].trim() !== before[k].trim(),
+    );
+    if (changed.length) {
+      newLogs.unshift(
+        makeLog(`Updated ${changed.map((k) => INFO_LABEL[k]).join(', ')}`),
+      );
+    }
+
+    const ages = editInfo.ages.trim();
     const patch = {
+      org,
+      contact_name: contact,
+      email,
+      // both age columns stay in step, like the add form
+      age_group: ages,
+      ages: ages || null,
+      kids_count: kids,
+      topic,
+      style: editInfo.style || null,
       requested_date: editDate,
       start_time: asTime(editStart),
       end_time: asTime(editEnd),
@@ -494,6 +589,7 @@ export default function BookingsPage() {
         ages: draft.ages.trim() || null,
         kids_count: Number(draft.kids_count) || 0,
         topic: draft.topic.trim() || 'Workshop',
+        style: draft.style || null,
         status: draft.status,
         notes: draft.notes.trim() || null,
         source: 'manual',
@@ -1022,6 +1118,12 @@ export default function BookingsPage() {
                       }}
                     >
                       {b.topic}
+                      {/* how the workshop runs, when they picked one */}
+                      {b.style && (
+                        <div style={{ fontSize: 12, color: '#9aa3ad', marginTop: 2 }}>
+                          {b.style}
+                        </div>
+                      )}
                     </td>
                     <td style={{ padding: '13px 14px' }}>
                       <Badge status={b.status} />
@@ -1137,14 +1239,106 @@ export default function BookingsPage() {
             <div
               style={{ flex: 1, overflow: 'auto', padding: '8px 26px 24px' }}
             >
+              {/* details, all editable. saved with the button below */}
+              <div style={{ padding: '12px 0 6px', display: 'grid', gap: 12 }}>
+                <div>
+                  <label style={fieldLabel}>Organization</label>
+                  <input
+                    value={editInfo.org}
+                    onChange={(e) => setEditInfo((i) => ({ ...i, org: e.target.value }))}
+                    style={field}
+                  />
+                </div>
+                <div style={{ display: 'flex', gap: 12 }}>
+                  <div style={{ flex: 1 }}>
+                    <label style={fieldLabel}>Contact name</label>
+                    <input
+                      value={editInfo.contact_name}
+                      onChange={(e) => setEditInfo((i) => ({ ...i, contact_name: e.target.value }))}
+                      style={field}
+                    />
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <label style={fieldLabel}>Email</label>
+                    <input
+                      type="email"
+                      value={editInfo.email}
+                      onChange={(e) => setEditInfo((i) => ({ ...i, email: e.target.value }))}
+                      placeholder="None given"
+                      style={field}
+                    />
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: 12 }}>
+                  <div style={{ flex: 1 }}>
+                    <label style={fieldLabel}>Age</label>
+                    <input
+                      value={editInfo.ages}
+                      onChange={(e) => setEditInfo((i) => ({ ...i, ages: e.target.value }))}
+                      placeholder="e.g. 8, 7-11, 13+"
+                      style={field}
+                    />
+                  </div>
+                  <div style={{ width: 120 }}>
+                    <label style={fieldLabel}># of kids</label>
+                    <input
+                      type="number"
+                      min={0}
+                      value={editInfo.kids_count}
+                      onChange={(e) => setEditInfo((i) => ({ ...i, kids_count: e.target.value }))}
+                      style={field}
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label style={fieldLabel}>Topic</label>
+                  <input
+                    list="edit-topics"
+                    value={editInfo.topic}
+                    onChange={(e) => setEditInfo((i) => ({ ...i, topic: e.target.value }))}
+                    style={field}
+                  />
+                  <datalist id="edit-topics">
+                    {TOPICS.map((t) => (
+                      <option key={t} value={t} />
+                    ))}
+                  </datalist>
+                </div>
+                <div>
+                  <label style={fieldLabel}>Style</label>
+                  {/* click again to clear */}
+                  <div style={{ display: 'flex', gap: 8 }}>
+                    {STYLES.map((st) => {
+                      const on = editInfo.style === st;
+                      return (
+                        <button
+                          key={st}
+                          type="button"
+                          onClick={() => setEditInfo((i) => ({ ...i, style: on ? '' : st }))}
+                          style={{
+                            flex: 1,
+                            padding: '9px 10px',
+                            borderRadius: 9,
+                            fontSize: 13,
+                            fontWeight: 700,
+                            fontFamily: 'inherit',
+                            cursor: 'pointer',
+                            background: on ? ACCENT : '#fff',
+                            color: on ? '#fff' : '#4b5563',
+                            border: `1px solid ${on ? ACCENT : '#e5e7eb'}`,
+                          }}
+                        >
+                          {st}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* what the requester wrote and where it came from */}
               {[
-                ['Contact name', selected.contact_name],
-                ['Email', selected.email || 'None given'],
-                ['Age', selected.ages || selected.age_group],
-                ['# of kids', String(selected.kids_count)],
                 ['Their notes', selected.requester_notes || 'None'],
-                ['Topic', selected.topic],
-                ['Style', selected.style || 'Not given'],
                 [
                   'Source',
                   selected.source === 'manual'
@@ -1862,6 +2056,49 @@ export default function BookingsPage() {
                     <option key={t} value={t} />
                   ))}
                 </datalist>
+              </div>
+
+              <div style={{ marginBottom: 14 }}>
+                <label style={fieldLabel}>
+                  Style{' '}
+                  <span
+                    style={{
+                      textTransform: 'none',
+                      letterSpacing: 0,
+                      fontWeight: 500,
+                      color: '#c3c9d0',
+                    }}
+                  >
+                    optional
+                  </span>
+                </label>
+                {/* click again to clear */}
+                <div style={{ display: 'flex', gap: 8 }}>
+                  {STYLES.map((st) => {
+                    const on = draft.style === st;
+                    return (
+                      <button
+                        key={st}
+                        type="button"
+                        onClick={() => setDraft((d) => ({ ...d, style: on ? '' : st }))}
+                        style={{
+                          flex: 1,
+                          padding: '9px 10px',
+                          borderRadius: 9,
+                          fontSize: 13,
+                          fontWeight: 700,
+                          fontFamily: 'inherit',
+                          cursor: 'pointer',
+                          background: on ? ACCENT : '#fff',
+                          color: on ? '#fff' : '#4b5563',
+                          border: `1px solid ${on ? ACCENT : '#e5e7eb'}`,
+                        }}
+                      >
+                        {st}
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
 
               <div style={{ marginBottom: 14 }}>

@@ -34,6 +34,8 @@ type Booking = {
   ages: string | null;
   kids_count: number;
   topic: string;
+  // 'Presentation' or 'Hands-on'. empty on older or manual bookings
+  style: string | null;
   status: Status;
   created_at: string;
 };
@@ -137,7 +139,7 @@ export default function CalendarPage() {
       showBookings
         ? supabase
             .from('bookings')
-            .select('id, org, contact_name, email, requested_date, start_time, end_time, age_group, ages, kids_count, topic, status, created_at')
+            .select('id, org, contact_name, email, requested_date, start_time, end_time, age_group, ages, kids_count, topic, style, status, created_at')
             .gte('requested_date', bookStart)
             .lte('requested_date', bookEnd)
         : Promise.resolve({ data: null }),
@@ -473,7 +475,7 @@ export default function CalendarPage() {
                           </div>
                         )}
                         <div style={{ fontSize: 13, color: '#4b5563', lineHeight: 1.6 }}>
-                          {b.topic} · {b.age_group}{b.ages ? ` (${b.ages})` : ''} · {b.kids_count} kids
+                          {b.topic}{b.style ? ` (${b.style})` : ''} · {b.age_group}{b.ages ? ` (${b.ages})` : ''} · {b.kids_count} kids
                         </div>
                       </div>
                     ))}
