@@ -3,6 +3,14 @@
 import workshopsHeroPic from 'public/images/workshops-hero.png';
 import Image from 'next/image';
 import { useState } from 'react';
+import dynamic from 'next/dynamic';
+
+const WorkshopsMap = dynamic(() => import('@/components/workshops-map'), {
+  ssr: false,
+  loading: () => (
+    <div className="w-full h-full rounded-3xl bg-muted animate-pulse" />
+  ),
+});
 import {
   ChevronRight,
   ChevronDown,
@@ -812,7 +820,7 @@ export default function Workshops() {
         </div>
 
         {/* Workshop Themes */}
-        <div className="space-y-6 pb-24">
+        <div className="space-y-6">
           <div>
             <h2 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
               Workshop Themes
@@ -900,6 +908,22 @@ export default function Workshops() {
               {/* Age group accordions */}
               <ActivitiesPanel activities={activeTheme.activities} />
             </div>
+          </div>
+        </div>
+
+        {/* Where We Run */}
+        <div className="space-y-6 pb-24">
+          <div>
+            <h2 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
+              Where We Run
+            </h2>
+            <p className="text-muted-foreground mt-2 text-sm">
+              Schools, community centres, and neighbourhood houses across
+              Vancouver.
+            </p>
+          </div>
+          <div className="w-full rounded-3xl overflow-hidden aspect-square sm:aspect-video md:aspect-[16/7] isolate">
+            <WorkshopsMap />
           </div>
         </div>
       </div>
