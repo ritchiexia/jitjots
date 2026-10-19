@@ -822,9 +822,9 @@ export default function Workshops() {
             </p>
           </div>
 
-          <div className="grid grid-cols-[180px_1fr] gap-6 items-start">
+          <div className="grid gap-6 items-start md:grid-cols-[180px_1fr]">
             {/* Theme nav */}
-            <div className="flex flex-col gap-1 sticky top-24">
+            <div className="flex flex-wrap gap-2 md:flex-col md:gap-1 md:sticky md:top-24">
               {themes.map((theme) => (
                 <button
                   key={theme.id}
@@ -833,7 +833,7 @@ export default function Workshops() {
                     'text-left px-4 py-2.5 rounded-2xl text-sm font-medium transition-all duration-150',
                     activeThemeId === theme.id
                       ? 'bg-primary text-primary-foreground'
-                      : 'text-muted-foreground hover:bg-muted hover:text-foreground',
+                      : 'bg-muted md:bg-transparent text-muted-foreground hover:bg-muted hover:text-foreground',
                   )}
                 >
                   {theme.label}
@@ -842,26 +842,26 @@ export default function Workshops() {
             </div>
 
             {/* Theme content */}
-            <div className="border border-border rounded-3xl p-6 space-y-6 bg-muted/10 min-h-[300px]">
+            <div className="min-w-0 border border-border rounded-3xl p-4 sm:p-6 space-y-6 bg-muted/10 min-h-[300px]">
               {/* Header */}
-              <div className="flex items-start justify-between gap-4">
-                <div>
+              <div>
+                <div className="flex items-start justify-between gap-4">
                   <h3 className="text-xl font-bold">{activeTheme.label}</h3>
-                  <p className="text-sm text-muted-foreground mt-0.5">
-                    {activeTheme.subtitle}
-                  </p>
+                  <span className="text-xs px-3 py-1.5 rounded-full bg-muted text-muted-foreground font-medium shrink-0">
+                    {activeTheme.activities.length}{' '}
+                    {activeTheme.activities.length === 1
+                      ? 'age group'
+                      : 'age groups'}
+                  </span>
                 </div>
-                <span className="text-xs px-3 py-1.5 rounded-full bg-muted text-muted-foreground font-medium shrink-0">
-                  {activeTheme.activities.length}{' '}
-                  {activeTheme.activities.length === 1
-                    ? 'age group'
-                    : 'age groups'}
-                </span>
+                <p className="text-sm text-muted-foreground mt-0.5">
+                  {activeTheme.subtitle}
+                </p>
               </div>
 
               {/* Outcome headline + Snapshot */}
-              <div className="flex items-stretch gap-3">
-                <div className="rounded-2xl bg-primary/5 border border-primary/15 px-4 py-3 flex-1 flex items-center">
+              <div className="grid grid-cols-[auto_1fr] gap-3 md:flex md:items-stretch">
+                <div className="col-span-2 rounded-2xl bg-primary/5 border border-primary/15 px-4 py-3 flex-1 flex items-center">
                   <p className="text-base font-bold">
                     {activeTheme.outcomeHeadline}
                   </p>
